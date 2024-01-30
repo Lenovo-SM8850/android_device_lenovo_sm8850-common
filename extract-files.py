@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from pathlib import Path
+import re
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -52,6 +55,19 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 
+def enable_ull_scan_requests(ctx, file, file_path, **kwargs):
+    path = Path(file_path)
+    data = path.read_bytes()
+    lines = data.splitlines(keepends=True)
+    ends = [i for i, line in enumerate(lines) if line.rstrip(b'\r\n') == b'END']
+    if len(ends) != 1 or re.search(rb'(?m)^\s*wlm_latency_flags_ultralow\s*=', data):
+        raise ValueError(f'{file.dst}: expected one END and no ULL latency assignment')
+
+    newline = b'\r\n' if lines[ends[0]].endswith(b'\r\n') else b'\n'
+    lines.insert(ends[0], b'wlm_latency_flags_ultralow=0x180c82' + newline)
+    path.write_bytes(b''.join(lines))
+
+
 def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
     # Stock compose blocks and reports fake durations. Clear only CAP_COMPOSE_EFFECTS (0x20).
     # Match instruction context, not file offsets: patchelf may move ELF sections.
@@ -81,6 +97,16 @@ def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
 
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
+        .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
+        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
+    'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
+        .regex_replace('\\s*<fqname>IComponentStore/dolby</fqname>', ''),
+    (
+        'vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini',
+        'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini',
+    ): blob_fixup()
+        .call(enable_ull_scan_requests, need_tmp_dir=False),
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
         .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
     'system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml': blob_fixup()
@@ -97,9 +123,6 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .add_needed('libaudiobase.so')
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
-    'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
-        .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
-        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
     'vendor/etc/seccomp_policy/qsap_qapeservice.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
     (
@@ -117,8 +140,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libstandbyfeature.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
-    'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
-        .regex_replace('\\s*<fqname>IComponentStore/dolby</fqname>', ''),
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
         .add_needed('libaudioutils_shim.so')
         .add_needed('libbluetooth_audio_session_aidl_shim.so'),
