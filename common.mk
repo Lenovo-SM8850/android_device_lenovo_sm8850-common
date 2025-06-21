@@ -85,6 +85,9 @@ PRODUCT_PACKAGES += \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
 
+# Recovery
+$(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery
 
