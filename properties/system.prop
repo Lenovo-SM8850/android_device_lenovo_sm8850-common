@@ -7,6 +7,7 @@ ro.charger.enable_suspend=1
 # Media
 media.settings.xml=/vendor/etc/media_profiles_canoe_sku3.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
+vendor.mm.enable.qcom_parser=16563967
 
 # SurfaceFlinger
 ro.surface_flinger.display_update_imminent_timeout_ms=1000
