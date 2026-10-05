@@ -496,3 +496,7 @@ sensor 0x02 ACCELEROMETER Z
 sensor 0x03 GYROSCOPE X
 sensor 0x04 GYROSCOPE Y
 sensor 0x05 GYROSCOPE Z
+
+# Lenovo Olympia: stock SCREEN_LOCK means turn the screen off.
+key usage 0x0c038e SLEEP
+# Stock SUPER_CONNECT (0x0c0397) has no AOSP equivalent; intentionally unmapped.
