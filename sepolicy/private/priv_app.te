@@ -1,0 +1,2 @@
+allow priv_app dataext_file:dir r_dir_perms;
+allow priv_app dataext_file:file r_file_perms;
