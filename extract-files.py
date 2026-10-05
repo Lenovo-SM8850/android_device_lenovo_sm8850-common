@@ -56,6 +56,18 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
     'system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml': blob_fixup()
         .regex_replace('<privapp-permissions package="(?:org.codeaurora.dialer|com.android.mms)">[\\s\\S]*?</privapp-permissions>', ''),
+    'system_ext/lib64/libwfdcommonutils.so': blob_fixup()
+        .remove_needed('libheif.so'),
+    'system_ext/priv-app/WfdService/WfdService.apk': blob_fixup()
+        .apktool_patch('blob-patches/WfdService'),
+    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
+        .replace_needed('libaudioclient.so', 'libaudiobase.so')
+        .add_needed('libgui_shim.so'),
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libinput_shim.so'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .add_needed('libaudiobase.so')
+        .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
         .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
@@ -101,6 +113,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
+    'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup().replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
 }  # fmt: skip
 
 
