@@ -44,6 +44,7 @@
 # device nodes
 # UFS LUN BSG nodes are flattened by ueventd; retain QCOM's separate LUN4 type.
 /dev/0:0:0:[0-35]                                        u:object_r:vendor_bsg_device:s0
+/dev/lenovo_penraw                                         u:object_r:lenovo_device:s0
 /dev/aw8697_haptic_r                                       u:object_r:aac_richtap_dev_device:s0
 /dev/aw8697_haptic_l                                       u:object_r:aac_richtap_dev_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oemowninfo  u:object_r:oemowninfo_block_device:s0

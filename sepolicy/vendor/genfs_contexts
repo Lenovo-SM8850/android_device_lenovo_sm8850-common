@@ -9,6 +9,35 @@ genfscon sysfs "/kernel/rkp_md5/rkp_md5" u:object_r:vendor_sysfs_kgsl_shell:s0
 genfscon sysfs "/class/hardinfo/interface/hardware_info/sdcard_status" u:object_r:vendor_sysfs_simtray:s0
 genfscon sysfs "/devices/virtual/hardinfo/interface/hardware_info/sdcard_status" u:object_r:vendor_sysfs_simtray:s0
 
+# battery / charger (qcom-battery class)
+genfscon sysfs "/class/qcom-battery/battery1_manufacturer" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/battery2_manufacturer" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/chip_cp1" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/chip_cp2" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/chip_fg1" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/chip_fg2" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/chip_pdphy" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/det_gpio_port1" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/det_gpio_port2" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg1_current" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg1_cycle_count" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg1_soc" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg1_temp" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg1_used" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg1_voltage" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg2_current" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg2_cycle_count" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /class/qcom-battery/fg2_produce_date u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg2_soc" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /class/qcom-battery/fg2_soh u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg2_temp" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg2_used" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/fg2_voltage" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/ibus_total" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/pps_status" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/typec_cc_orientation" u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs "/class/qcom-battery/typec_cc_orientation2" u:object_r:vendor_sysfs_battery_supply:s0
+
 # USB-C
 genfscon sysfs "/class/typec/usbc0" u:object_r:vendor_sysfs_usb_c:s0
 # denial
