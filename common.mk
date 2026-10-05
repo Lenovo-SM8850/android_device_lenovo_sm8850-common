@@ -33,6 +33,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     checkpoint_gc
 
+# Shared display plugin selection
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/clstc_config_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/clstc_config_library.xml
+
+# Audio and media configuration
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/stub_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/stub_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
+# Audio HAL extension
+PRODUCT_PACKAGES += \
+    qtiaudiohalvendorextn
+
 # AVF
 PRODUCT_BUILD_PVMFW_IMAGE := true
 $(call inherit-product, packages/modules/Virtualization/build/apex/product_packages.mk)
@@ -143,6 +162,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
     snapuserd.recovery
+
+# Hardware configuration
+PRODUCT_COPY_FILES += \
+    device/lenovo/sm8850-common/configs/display/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
+    device/lenovo/sm8850-common/configs/media/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml \
+    device/lenovo/sm8850-common/configs/media/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml \
+    hardware/qcom-caf/sm8850/display/hal/config/backlight_calib_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/backlight_calib_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml \
+    device/lenovo/sm8850-common/configs/input/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -294,6 +321,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.1.vendor \
     vendor.qti.hardware.perf@2.2.vendor \
     vendor.qti.hardware.wifi.supplicant-V1-ndk.vendor
+
+# Sensors
+PRODUCT_COPY_FILES += \
+    device/lenovo/sm8850-common/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
