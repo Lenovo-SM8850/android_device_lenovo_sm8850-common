@@ -193,6 +193,17 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResTargetCanoe \
+    SettingsProviderOverlayCanoe \
+    TetheringOverlayCanoe \
+    WifiResOverlayCanoe \
+    WifiResTargetCanoe
+
+# Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
