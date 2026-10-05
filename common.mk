@@ -515,6 +515,11 @@ PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
+PRODUCT_PACKAGES += \
+    FrameworksResTargetCommon
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Pen and touch
 PRODUCT_PACKAGES += \
     LenovoPen \
