@@ -1,0 +1,2 @@
+# Lenovo system_ext public types
+type dataext_file, file_type;

@@ -1,0 +1,7 @@
+;; Lenovo system_ext public types
+(typeattributeset dataext_block_device_202504 (dataext_block_device))
+(expandtypeattribute (dataext_block_device_202504) true)
+(typeattribute dataext_block_device_202504)
+(typeattributeset dataext_file_202504 (dataext_file))
+(expandtypeattribute (dataext_file_202504) true)
+(typeattribute dataext_file_202504)
