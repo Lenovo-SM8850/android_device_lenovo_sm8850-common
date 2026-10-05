@@ -677,3 +677,15 @@ PRODUCT_PACKAGES += \
 
 # Include the proprietary files makefile.
 $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
+
+# Evolution X
+PRODUCT_PACKAGES += SystemUIOverlayCanoeEvolution
+
+
+
+EVO_BUILD_TYPE := Unofficial
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_ENABLE_FP_OVERRIDE := false
+TARGET_SUPPORTS_QUICK_TAP := false
+WITH_GMS := true
+$(call inherit-product-if-exists, vendor/translations/translations.mk)
