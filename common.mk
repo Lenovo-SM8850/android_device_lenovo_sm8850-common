@@ -37,8 +37,134 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     xbl_config_arb_check
 
+# Audio
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8850/audio/primary-hal
+AUDIO_PAL_DIR := hardware/qcom-caf/sm8850/audio/pal
+
+PRODUCT_PACKAGES += \
+    qtiaudiohalvendorextn
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_effects.conf \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/audio_effects.conf \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_effects.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/audio_effects.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_effects_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_effects_config.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor_qssi/audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe_qssi/audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/mem_logger_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mem_logger_config.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/microphone_characteristics.xml:$(TARGET_COPY_OUT_VENDOR)/etc/microphone_characteristics.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/quasar_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/quasar_config.xml \
+    $(AUDIO_HAL_DIR)/configs/canoe/quasar_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/quasar_config.xml \
+    $(AUDIO_HAL_DIR)/configs/common/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/common/bluetooth_qti_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/common/bluetooth_qti_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/common/codec2/service/1.0/c2audio.vendor.base-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.base-arm.policy \
+    $(AUDIO_HAL_DIR)/configs/common/codec2/service/1.0/c2audio.vendor.base-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.base-arm64.policy \
+    $(AUDIO_HAL_DIR)/configs/common/codec2/service/1.0/c2audio.vendor.ext-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.ext-arm.policy \
+    $(AUDIO_HAL_DIR)/configs/common/codec2/service/1.0/c2audio.vendor.ext-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/Hapticsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/Hapticsconfig.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mcs_defs_canoe_cdp_wsa885xi2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_cdp_wsa885xi2s.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mcs_defs_canoe_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_mtp.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mcs_defs_canoe_mtp_wsa884x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_mtp_wsa884x.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mcs_defs_canoe_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_qrd.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mcs_defs_canoe_qrd_wsa884x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_qrd_wsa884x.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mixer_paths_alor_cdp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_cdp.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mixer_paths_alor_mtp_wcd9378.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_mtp_wcd9378.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mixer_paths_alor_mtp_wcd939x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_mtp_wcd939x.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mixer_paths_alor_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_qrd.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/mixer_paths_canoe_atp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mixer_paths_canoe_atp.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/plugin_manager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/plugin_manager.xml \
+    $(AUDIO_PAL_DIR)/configs/qcom/mobile/canoe/plugin_manager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/plugin_manager.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/stub_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/stub_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
+    vendor/qcom/opensource/vibrator/aidl/HapticsPolicy.xml:$(TARGET_COPY_OUT_VENDOR)/etc/HapticsPolicy.xml
+
+PRODUCT_PACKAGES += \
+    libwfdaac.lenovo
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.audio.core-V3-ndk.vendor \
+    android.hardware.audio.core.sounddose-V1-ndk.vendor \
+    android.hardware.audio.core.sounddose-V3-ndk.vendor \
+    audio.bluetooth.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    audioadsprpcd \
+    audiohalservice.qti \
+    customva_plugin \
+    hotword_plugin \
+    libagm_compress_plugin \
+    libagm_mixer_plugin \
+    libagm_pcm_plugin \
+    libagmipcservice \
+    libalsautilsv2.vendor \
+    libaudiochargerlistener \
+    libbatterylistener \
+    libbundleaidl \
+    libdev_display \
+    libdev_dummy \
+    libdev_ec_ref \
+    libdev_ext_ec \
+    libdev_fm \
+    libdev_handset \
+    libdev_handset_mic \
+    libdev_handset_va \
+    libdev_haptics \
+    libdev_headphone \
+    libdev_headset_mic \
+    libdev_headset_va \
+    libdev_proxy \
+    libdev_speaker_mic \
+    libdev_ultrasound \
+    libdev_usb \
+    libdownmixaidl \
+    libdynamicsprocessingaidl \
+    libfmpal \
+    libhfp_pal \
+    libloudnessenhanceraidl \
+    libmediautils_vendor.vendor \
+    libmemunreachable.vendor \
+    libpal_sounddose \
+    libpalipcservice \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libreverbaidl \
+    libsession_agm \
+    libsoundtriggerhal.qti \
+    libstream_acd \
+    libstream_asr \
+    libstream_calltranslation \
+    libstream_common \
+    libstream_commonproxy \
+    libstream_contextproxy \
+    libstream_dummy \
+    libstream_haptics \
+    libstream_incall \
+    libstream_nontunnel \
+    libstream_sensorpcmdata \
+    libstream_sensorrenderer \
+    libstream_soundtrigger \
+    libstream_ultrasound \
+    libtinyalsav2 \
+    libtinycompress \
+    libvisualizeraidl \
+    qti-audio-types-aidl-V1-ndk.vendor \
+    sva_plugin
+
+PRODUCT_PACKAGES += libpaleventnotifier
+
+PRODUCT_PACKAGES += libvolumelistener
 
 # AVF
 PRODUCT_BUILD_PVMFW_IMAGE := true
@@ -50,6 +176,14 @@ PRODUCT_PACKAGES += android.hardware.authsecret@1.0.vendor
 PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0.vendor
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio-impl \
+    lib_bt_aptx \
+    lib_bt_ble \
+    lib_bt_bundle
+
+PRODUCT_PACKAGES += android.hardware.bluetooth.audio@2.0-impl
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -248,8 +382,6 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.opengles.deqp.
 # GPS
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
-PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
-
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
@@ -302,6 +434,13 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
+# Media
+PRODUCT_COPY_FILES += \
+    $(AUDIO_HAL_DIR)/configs/common/codec2/media_codecs_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_audio.xml \
+    $(AUDIO_HAL_DIR)/configs/common/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
+
+PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
+
 # Permissions
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
@@ -321,6 +460,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
+
+# Runtime libraries
+PRODUCT_PACKAGES += vendor.qti.hardware.paleventnotifier-V2-ndk.vendor
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 36
