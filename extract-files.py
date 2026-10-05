@@ -127,8 +127,6 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/WfdService'),
     'system/framework/WfdCommon.jar': blob_fixup()
         .apktool_patch('blob-patches/WfdCommon.patch'),
-    'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
-        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
     ('vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini', 'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini'): blob_fixup()
         .call(enable_ull_scan_requests, need_tmp_dir=False),
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
