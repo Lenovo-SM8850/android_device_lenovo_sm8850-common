@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string-array name="config_angleAllowList" translatable="false">
+        <item>com.dreamgames.royalmatch</item>
+        <item>com.dts.freefiremax</item>
+        <item>com.dxx.firenow</item>
+        <item>com.gramgames.mergedragons</item>
+        <item>com.ludo.king</item>
+        <item>com.mojang.minecraftpe</item>
+        <item>com.my.defense</item>
+        <item>com.nintendo.zaka</item>
+        <item>com.os.airforce</item>
+        <item>com.playrix.fishdomdd.gplay</item>
+        <item>io.teslatech.callbreak</item>
+        <item>jp.konami.prospia</item>
+        <item>net.peakgames.toonblast</item>
+    </string-array>
+    <string-array name="config_defaultPinnerServiceFiles" translatable="false">
+        <item>/system/framework/framework.jar</item>
+        <item>/system/framework/services.jar</item>
+        <item>/apex/com.android.media/javalib/updatable-media.jar</item>
+        <item>/system/lib64/libhwui.so</item>
+        <item>/vendor/lib64/libllvm-qgl.so</item>
+        <item>/vendor/lib64/libllvm-glnext.so</item>
+    </string-array>
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    <bool name="config_useDevInputEventForAudioJack">true</bool>
+    <integer name="config_defaultPeakRefreshRate">165</integer>
+    <integer name="config_defaultRefreshRate">0</integer>
+</resources>
