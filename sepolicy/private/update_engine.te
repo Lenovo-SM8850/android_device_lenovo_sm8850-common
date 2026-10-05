@@ -1,0 +1,2 @@
+allow update_engine dataext_block_device:blk_file { rw_file_perms };
+allowxperm update_engine dataext_block_device:blk_file ioctl BLKROGET;
