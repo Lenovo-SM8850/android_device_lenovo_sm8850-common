@@ -37,6 +37,11 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
+        .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
+        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
+    'vendor/etc/seccomp_policy/qsap_qapeservice.policy': blob_fixup()
+        .add_line_if_missing('lseek: 1'),
     (
         'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service',
         'vendor/bin/hw/vendor.qti.media.c2@1.0-service',
@@ -52,9 +57,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libstandbyfeature.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
-    'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
-        .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
-        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
         .add_needed('libaudioutils_shim.so')
         .add_needed('libbluetooth_audio_session_aidl_shim.so'),
@@ -72,6 +74,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/vendor.qti.hardware.vibratorOL.impl-lenovo.so': blob_fixup()
         .replace_needed('libqtivibratoreffect.so', 'libqtivibratoreffect-lenovo.so')
         .replace_needed('libqtivibratoreffectoffload.so', 'libqtivibratoreffectoffload-lenovo.so'),
+    'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
+        .add_line_if_missing('lseek: 1'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup().replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
 }  # fmt: skip
 
