@@ -1,0 +1,2 @@
+# The client-side MediaCodec gate must also be readable by vendor codec domains.
+system_restricted_prop(lenovo_memc_prop)
