@@ -1,0 +1,38 @@
+# hwdiag / nvram_cc (Lenovo device info and calibration daemon).
+
+type hwdiag, domain, hal_keymint_client, halclientdomain;
+type hwdiag_exec, exec_type, file_type, vendor_file_type;
+
+allow hwdiag block_device:dir { search };
+allow hwdiag build_attestation_prop:file { read getattr map open };
+allow hwdiag hwdiag:capability { chown fowner };
+allow hwdiag hwdiag_exec:file { entrypoint };
+allow hwdiag init:unix_stream_socket { connectto };
+allow hwdiag mnt_vendor_file:dir { write create getattr add_name search };
+allow hwdiag mnt_vendor_file:file { read write create getattr setattr open };
+allow hwdiag oemowninfo_block_device:blk_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag property_socket:sock_file { write };
+allow hwdiag servicemanager:binder { call transfer };
+allow hwdiag tee_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_diag_device:chr_file { ioctl read write getattr setattr open };
+allow hwdiag vendor_dmabuf_secure_sp_tz_heap_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_dmabuf_sp_hlos_heap_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_firstboot_prop:file { read getattr map open };
+allow hwdiag vendor_firstboot_prop:property_service { set };
+allow hwdiag vendor_membuf_dev:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_shell_exec:file { execute_no_trans };
+allow hwdiag vendor_skp_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_spcom_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_spss_utils_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_tee_listener_prop:file { read getattr map open };
+allow hwdiag vendor_toolbox_exec:file { execute_no_trans };
+allow hwdiag vendor_vm_cp_spss_hlos_shared_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hwdiag vendor_vm_hlos_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow init hwdiag:process { siginh rlimitinh };
+allow init hwdiag:process { transition };
+allow init hwdiag_exec:file { execute };
+dontaudit init hwdiag:process { noatsecure };
+type_transition init hwdiag_exec:process hwdiag;
+
+# Suppress the unused QIPCRTR socket creation denial.
+dontaudit hwdiag self:qipcrtr_socket { create };

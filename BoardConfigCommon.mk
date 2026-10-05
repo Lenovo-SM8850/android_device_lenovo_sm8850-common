@@ -134,6 +134,12 @@ BOARD_SHIPPING_API_LEVEL := 202504
 BOOT_SECURITY_PATCH := 2026-08-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
+# SELinux
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
+include hardware/lenovo/sepolicy/qti/SEPolicy.mk
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA256_RSA4096

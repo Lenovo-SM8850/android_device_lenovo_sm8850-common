@@ -1,0 +1,15 @@
+allow system_app mnt_sdcard_file:lnk_file { read };
+allow system_app proc_asound:dir { search };
+allow system_app proc_asound:file { ioctl read getattr lock map open watch watch_reads };
+allow system_app sysfs_devices_system_cpu:file { write append };
+allow system_app sysfs_leds:dir { ioctl read lock open watch watch_reads search };
+allow system_app vendor_firstboot_prop:file { read getattr map open };
+allow system_app vendor_sysfs_battery_supply:dir { search };
+allow system_app vendor_sysfs_battery_supply:file { read getattr open };
+allow system_app vendor_sysfs_headset:dir { search };
+allow system_app vendor_sysfs_headset:file { read getattr open };
+allow system_app vendor_sysfs_qdss_dev:dir { search };
+allow system_app vendor_sysfs_usb_supply:dir { search };
+allow system_app vendor_sysfs_usb_supply:file { read getattr open };
+allow system_app vendor_sysfs_vibrator:dir { ioctl read lock open watch watch_reads search };
+allow system_app vendor_sysfs_vibrator:file { ioctl read write getattr lock append map open watch watch_reads };

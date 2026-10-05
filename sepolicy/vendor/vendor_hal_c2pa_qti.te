@@ -1,0 +1,2 @@
+allow vendor_hal_c2pa_qti vendor_hal_c2pa_qti_tmpfs:file { ioctl };
+allowxperm vendor_hal_c2pa_qti vendor_hal_c2pa_qti_tmpfs:file ioctl { 0x7701-0x770b };
