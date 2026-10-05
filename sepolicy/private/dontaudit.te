@@ -1,0 +1,21 @@
+# Stock vendor init scripts set/read properties owned by the platform
+dontaudit vendor_init {
+    bluetooth_prop
+    build_bootimage_prop
+    build_prop
+    config_prop
+}:property_service set;
+dontaudit vendor_init default_prop:file read;
+dontaudit vendor_init frp_block_device:blk_file setattr;
+
+# init
+dontaudit init debugfs_tracing_debug:dir mounton;
+
+# qseecomd probes UFS LUN bsg nodes
+dontaudit tee boot_block_device:blk_file read;
+
+# CachedAppOptimizer probes vndbinder
+dontaudit system_server vndbinder_device:chr_file write;
+
+# krfcommd (in-kernel Bluetooth RFCOMM)
+dontaudit kernel self:capability net_bind_service;
