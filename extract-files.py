@@ -37,9 +37,27 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service',
+        'vendor/bin/hw/vendor.qti.media.c2@1.0-service',
+    ): blob_fixup()
+        .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
+    (
+        'vendor/bin/poweropt-service',
+        'vendor/bin/qsap_mpamsvc',
+        'vendor/lib64/libaodoptfeature.so',
+        'vendor/lib64/libgamepoweroptfeature.so',
+        'vendor/lib64/liblearningmodule.so',
+        'vendor/lib64/libpowercallback.so',
+        'vendor/lib64/libstandbyfeature.so',
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
         .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
+    'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
+        .add_needed('libaudioutils_shim.so')
+        .add_needed('libbluetooth_audio_session_aidl_shim.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup().replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
     'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so': blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
