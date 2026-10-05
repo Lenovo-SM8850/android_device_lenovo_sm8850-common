@@ -499,6 +499,10 @@ PRODUCT_PACKAGES += \
     qspa_vendor.rc \
     vendor.qti.qspa-service
 
+# QTVM
+PRODUCT_PACKAGES += \
+    vendor.qti.qtvm.proxyclient-service
+
 # Recovery
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
 
