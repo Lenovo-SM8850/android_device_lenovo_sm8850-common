@@ -1,0 +1,2 @@
+# SystemUI reads the measured frame rate from the display driver.
+r_dir_file(platform_app, vendor_sysfs_graphics)
