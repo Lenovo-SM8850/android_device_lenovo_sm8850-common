@@ -82,6 +82,8 @@ PRODUCT_PACKAGES += libvndfwk_detect_jni.qti_vendor
 
 # Compatibility libraries
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator-V1-ndk.vendor \
+    android.hardware.graphics.common-V5-ndk.vendor \
     android.hardware.security.keymint-V4-ndk.vendor \
     android.hardware.security.sharedsecret-V2-ndk.vendor \
     libaudioutils_shim \
@@ -91,6 +93,69 @@ PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor \
     libtinyxml2-v36 \
     vendor.qti.hardware.camera.offlinecamera-V2-ndk.vendor
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/clstc_config_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/clstc_config_library.xml \
+    $(LOCAL_PATH)/configs/display/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-1.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_4.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_4.xml \
+    hardware/qcom-caf/sm8850/display/hal/config/backlight_calib_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/backlight_calib_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml
+
+PRODUCT_AAPT_CONFIG := normal large xlarge
+
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    init.qti.display_boot.rc \
+    init.qti.display_boot.sh \
+    libfilefinder \
+    mapper.qti \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.demura-service \
+    vendor.qti.hardware.display.snapalloc-impl
+
+PRODUCT_COPY_FILES += \
+    hardware/qcom-caf/sm8850/display/core/config/backlight_calib_nt37801_amoled_cmd_mode_dsi_csot_panel_with_DSC_CPHY.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/backlight_calib_nt37801_amoled_cmd_mode_dsi_csot_panel_with_DSC_CPHY.xml \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_RaonTech_Non-FSC_mode_video_1440x1440@60_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_RaonTech_Non-FSC_mode_video_1440x1440@60_mode_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_Sharp_qhd_cmd_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_qhd_cmd_mode_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_Sharp_qhd_video_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_qhd_video_mode_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_nt37802_video_PSR_amoled_VHM_120hz_dsi_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt37802_video_PSR_amoled_VHM_120hz_dsi_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_vtdr6130_amoled_qsync_cmd_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_qsync_cmd_mode_dsi_visionox_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_vtdr6130_amoled_qsync_video_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_qsync_video_mode_dsi_visionox_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/core/config/qdcm_calib_data_vtdr6130_amoled_video_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_video_mode_dsi_visionox_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/backlight_calib_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/backlight_calib_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_Sharp_2k_cmd_mode_qsync_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_2k_cmd_mode_qsync_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_Sharp_2k_video_mode_qsync_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_2k_video_mode_qsync_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_Sharp_4k_cmd_mode_dsc_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_4k_cmd_mode_dsc_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_without_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_without_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_without_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_without_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_without_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_without_DSC.json \
+    hardware/qcom-caf/sm8850/display/hal/config/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.json \
+    hardware/qcom-caf/sm8850/display/hal/config/smomo_setting.xml:$(TARGET_COPY_OUT_VENDOR)/etc/smomo_setting.xml
+
+PRODUCT_COPY_FILES += \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/camera_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/camera_alignments.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/cpu_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/cpu_alignments.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/default_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/default_alignments.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/display_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/display_alignments.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/formats.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/formats.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/graphics_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/graphics_alignments.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/ubwc_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/ubwc_alignments.json \
+    hardware/qcom-caf/sm8850/display/core/snapalloc/resources/video_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/video_alignments.json
+
+# Device hardware configuration
+PRODUCT_COPY_FILES += \
+    $(LENOVO_DEVICE_CONFIG_PATH)/configs/display/sdm_display_resolution_extn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/sdm_display_resolution_extn.xml
 
 # DRM
 PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
@@ -106,6 +171,76 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
     snapuserd.recovery
+
+PRODUCT_PACKAGES += android.hardware.graphics.composer3-V2-ndk.vendor
+
+PRODUCT_PACKAGES += android.hardware.graphics.composer3-V3-ndk.vendor
+
+PRODUCT_PACKAGES += android.hardware.graphics.composer@2.1.vendor
+
+PRODUCT_PACKAGES += android.hardware.graphics.composer@2.2.vendor
+
+PRODUCT_PACKAGES += android.hardware.graphics.composer@2.3.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.1.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.10.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.11.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.2.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.3.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.4.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.5.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.6.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.7.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.8.vendor
+
+PRODUCT_PACKAGES += vendor.display.config@1.9.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.allocator@1.0.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.allocator@3.0.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.composer3-V1-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.composer3-V2-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.composer3-V3-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.composer@1.0.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.composer@2.0.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V1-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V10-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V11-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V14-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V3-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V4-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V6-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V8-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.config-V9-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.mapper@1.0.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.display.mapper@1.1.vendor
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.opengles.deqp.level-2025-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
 # GPS
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
@@ -157,6 +292,12 @@ PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml
 
 PRODUCT_PACKAGES += rkp_factory_extraction_tool
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay-service.sdm
+
+$(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
 # Permissions
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
