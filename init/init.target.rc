@@ -80,10 +80,6 @@ service vendor.per_proxy /vendor/bin/pm-proxy
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
-on property:sys.boot_completed=1 && property:ro.vendor.build.type=userdebug
-    mkdir /mnt/vendor/logfs 0644 system system
-    mount vfat /dev/block/by-name/logfs /mnt/vendor/logfs rw wait noatime
-
 on property:sys.shutdown.requested=*
     write /sys/kernel/qcom_rproc/shutdown_in_progress 1
     stop vendor.per_proxy
