@@ -516,7 +516,9 @@ PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
-    FrameworksResTargetCommon
+    FrameworksResTargetCommon \
+    WifiResOverlayCommon \
+    WifiResTargetCommon
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
