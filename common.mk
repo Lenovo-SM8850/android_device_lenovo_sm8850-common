@@ -41,6 +41,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_BUILD_PVMFW_IMAGE := true
 $(call inherit-product, packages/modules/Virtualization/build/apex/product_packages.mk)
 
+# Biometrics
+PRODUCT_PACKAGES += android.hardware.authsecret@1.0.vendor
+
+PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0.vendor
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti.recovery
@@ -50,6 +57,20 @@ PRODUCT_PACKAGES += android.hardware.boot-service.qti
 # Boot images
 PRODUCT_BUILD_DEBUG_BOOT_IMAGE := false
 PRODUCT_BUILD_DEBUG_VENDOR_BOOT_IMAGE := false
+
+# Camera
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+
+PRODUCT_PACKAGES += vendor.qti.hardware.camera.aon-V1-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.camera.aon-V2-ndk.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.camera.offlinecamera-V1-ndk.vendor
 
 # Characteristics
 PRODUCT_CHARACTERISTICS := tablet
@@ -68,7 +89,11 @@ PRODUCT_PACKAGES += \
     libcodec2_aidl_noisurface.vendor \
     libcodec2_shim \
     libkeymaster_messages.vendor \
-    libtinyxml2-v36
+    libtinyxml2-v36 \
+    vendor.qti.hardware.camera.offlinecamera-V2-ndk.vendor
+
+# DRM
+PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -81,6 +106,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
     snapuserd.recovery
+
+# GPS
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
+PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -118,7 +148,26 @@ PRODUCT_PACKAGES += \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
 
-PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
+# Input
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
+
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore.xml
+
+PRODUCT_PACKAGES += rkp_factory_extraction_tool
+
+# Permissions
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Recovery
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
@@ -165,6 +214,10 @@ PRODUCT_PACKAGES += \
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
+
+# Vendor tools
+PRODUCT_PACKAGES += \
+    hs20-osu-client
 
 # VINTF
 DEVICE_MANIFEST_FILE += device/lenovo/sm8850-common/vintf/manifest_canoe.xml
