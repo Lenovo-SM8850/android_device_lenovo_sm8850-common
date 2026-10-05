@@ -634,6 +634,9 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepcou
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_canoe/android.hardware.sensor.stepdetector.xml
 
+# Shared clone-profile policy
+PRODUCT_PACKAGES += preinstalled-packages-lenovo.xml
+
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 36
 
