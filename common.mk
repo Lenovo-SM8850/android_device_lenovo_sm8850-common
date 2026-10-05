@@ -37,6 +37,84 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/clstc_config_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/clstc_config_library.xml
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.audio.core-V3-ndk.vendor \
+    android.hardware.audio.core.sounddose-V1-ndk.vendor \
+    android.hardware.audio.core.sounddose-V3-ndk.vendor \
+    audio.bluetooth.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    audioadsprpcd \
+    audiohalservice.qti \
+    customva_plugin \
+    hotword_plugin \
+    libagm_compress_plugin \
+    libagm_mixer_plugin \
+    libagm_pcm_plugin \
+    libagmipcservice \
+    libalsautilsv2.vendor \
+    libaudiochargerlistener \
+    libbatterylistener \
+    libbundleaidl \
+    libdev_display \
+    libdev_dummy \
+    libdev_ec_ref \
+    libdev_ext_ec \
+    libdev_fm \
+    libdev_handset \
+    libdev_handset_mic \
+    libdev_handset_va \
+    libdev_haptics \
+    libdev_headphone \
+    libdev_headset_mic \
+    libdev_headset_va \
+    libdev_proxy \
+    libdev_speaker_mic \
+    libdev_ultrasound \
+    libdev_usb \
+    libdownmixaidl \
+    libdynamicsprocessingaidl \
+    libfmpal \
+    libhfp_pal \
+    libloudnessenhanceraidl \
+    libmediautils_vendor.vendor \
+    libmemunreachable.vendor \
+    libpal_sounddose \
+    libpalipcservice \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libreverbaidl \
+    libsession_agm \
+    libsoundtriggerhal.qti \
+    libstream_acd \
+    libstream_asr \
+    libstream_calltranslation \
+    libstream_common \
+    libstream_commonproxy \
+    libstream_contextproxy \
+    libstream_dummy \
+    libstream_haptics \
+    libstream_incall \
+    libstream_nontunnel \
+    libstream_sensorpcmdata \
+    libstream_sensorrenderer \
+    libstream_soundtrigger \
+    libstream_ultrasound \
+    libtinyalsav2 \
+    libtinycompress \
+    libvisualizeraidl \
+    qti-audio-types-aidl-V1-ndk.vendor \
+    sva_plugin
+
+$(call soong_config_set,qtiaudio,extra_device_virtuals,4)
+$(call soong_config_set,qtiaudio,extra_out_devices,1)
+$(call soong_config_set,qtiaudio,extra_in_devices,1)
+$(call soong_config_set_bool,qtiaudio,nonvirtual_stream_isinitialized,true)
+$(call soong_config_set_bool,qtiaudio,no_stream_mixer_event_callback,true)
+
 # Audio and media configuration
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
