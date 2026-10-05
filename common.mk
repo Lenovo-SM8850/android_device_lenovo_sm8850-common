@@ -309,6 +309,9 @@ PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8850/display/core/snapalloc/resources/ubwc_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/ubwc_alignments.json \
     hardware/qcom-caf/sm8850/display/core/snapalloc/resources/video_alignments.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/video_alignments.json
 
+# Dolby
+$(call inherit-product, hardware/lenovo/dolby/dolby.mk)
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
