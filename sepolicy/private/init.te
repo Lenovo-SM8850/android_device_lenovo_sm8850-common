@@ -1,0 +1,2 @@
+allow init dataext_file:dir { create_dir_perms mounton };
+allow init dataext_file:file create_file_perms;

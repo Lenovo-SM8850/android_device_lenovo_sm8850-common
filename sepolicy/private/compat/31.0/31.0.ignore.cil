@@ -1,0 +1,7 @@
+;; Lenovo system_ext types have no analogue in the 31.0 policy
+(typeattribute new_objects)
+(typeattributeset new_objects
+  ( new_objects
+    dataext_block_device
+    dataext_file
+  ))
