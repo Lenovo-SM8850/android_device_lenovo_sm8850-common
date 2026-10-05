@@ -149,7 +149,22 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('lseek: 1'),
     'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service': blob_fixup()
         .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
-    ('vendor/bin/poweropt-service', 'vendor/bin/qsap_mpamsvc', 'vendor/lib64/libaodoptfeature.so', 'vendor/lib64/libgamepoweroptfeature.so', 'vendor/lib64/liblearningmodule.so', 'vendor/lib64/libpowercallback.so', 'vendor/lib64/libstandbyfeature.so'): blob_fixup()
+    (
+        'vendor/bin/poweropt-service',
+        'vendor/bin/qsap_mpamsvc',
+        'vendor/lib64/camera/components/com.qti.node.fd.so',
+        'vendor/lib64/hw/camera.qcom.core.so',
+        'vendor/lib64/libaodoptfeature.so',
+        'vendor/lib64/libcamerapoweroptfeature.so',
+        'vendor/lib64/libgamepoweroptfeature.so',
+        'vendor/lib64/liblearningmodule.so',
+        'vendor/lib64/liboffscreenpoweroptfeature.so',
+        'vendor/lib64/libpowercallback.so',
+        'vendor/lib64/libpsmoptfeature.so',
+        'vendor/lib64/libstandbyfeature.so',
+        'vendor/lib64/libvideooptfeature.so',
+        'vendor/lib64/soundfx/libquasar.so',
+    ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
         .add_needed('libaudioutils_shim.so')
@@ -191,6 +206,15 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/bin/hw/vendor.qti.media.c2@1.0-service': blob_fixup()
         .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
+    'vendor/bin/init.qti.kernel.early_debug.sh': blob_fixup()
+        .regex_replace(r'Copyright \(c\) Qualcomm Technologies, Inc\. and/or its subsidiaries\.', 'Copyright (c) 2024-2025 Qualcomm Technologies, Inc.'),
+    'vendor/etc/wifi/peach_v2/WCNSS_qcom_cfg.ini': blob_fixup()
+        .call(enable_ull_scan_requests, need_tmp_dir=False),
+    'vendor/lib64/camera/components/com.qti.node.dewarp.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
+    'vendor/lib64/soundfx/libswgamedapaidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
 }  # fmt: skip
 
 
