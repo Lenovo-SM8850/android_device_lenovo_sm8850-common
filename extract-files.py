@@ -55,6 +55,10 @@ lib_fixups: lib_fixups_user_type = {
         lib_fixup_system_suffix,
     'vendor.qti.imsrtpservice@3.1':
         lib_fixup_system_suffix,
+    'libdolbyui':
+        lambda lib, partition: f'{lib}-system' if partition == 'system' else lib,
+    'libdolbyproxyandroid':
+        lambda lib, partition: f'{lib}-system' if partition == 'system' else lib,
     'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
         lib_fixup_system_suffix,
 }
