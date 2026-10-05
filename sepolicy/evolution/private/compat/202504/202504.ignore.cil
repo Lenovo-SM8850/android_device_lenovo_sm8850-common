@@ -1,0 +1,6 @@
+;; The Lenovo MEMC vendor property has no analogue in older policy.
+(type new_objects)
+(typeattribute new_objects)
+(typeattributeset new_objects
+  ( new_objects
+    lenovo_memc_prop))
