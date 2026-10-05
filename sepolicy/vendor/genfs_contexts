@@ -44,4 +44,5 @@ genfscon sysfs "/class/typec/usbc0" u:object_r:vendor_sysfs_usb_c:s0
 genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink2" u:object_r:vendor_sysfs_usb_supply:s0
 
 # wakeup sources
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb2/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink2/wakeup" u:object_r:sysfs_wakeup:s0
