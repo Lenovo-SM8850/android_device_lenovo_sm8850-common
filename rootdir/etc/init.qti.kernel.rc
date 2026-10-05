@@ -32,13 +32,6 @@
 import /vendor/etc/init/hw/init.qti.kernel.test.rc
 import /vendor/etc/init/hw/init.qti.kernel.target.rc
 
-service memory-init-boot /vendor/bin/sh /vendor/bin/init.kernel.init_boot-memory.sh
-    class core
-    user root
-    group root
-    disabled
-    oneshot
-
 service memory-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot-memory.sh
     class core
     user root
@@ -63,9 +56,6 @@ on early-init
     chmod 0620 /dev/kmsg
 
     write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
-
-on init
-    start memory-init-boot
 
 on post-fs
     # Create cgroup mount point for memory
@@ -108,9 +98,6 @@ on boot
     write /sys/class/block/mmcblk0/queue/iosched/slice_idle 0
     write /sys/class/block/mmcblk1/queue/iosched/slice_idle 0
 
-    # Allow access to memory hotplug device attributes
-    chown system system /sys/kernel/mem-offline/anon_migrate
-
 on post-fs-data
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
@@ -139,9 +126,6 @@ on property:persist.vendor.sys.rawdump_copy=1
 on property:persist.vendor.sys.rawdump_copy=0
     write /sys/kernel/dload/emmc_dload 0
 
-on property:vendor.memory.min_free_kbytes=*
-    write /proc/sys/vm/min_free_kbytes ${vendor.memory.min_free_kbytes}
-
 service kernel-boot /vendor/bin/sh /vendor/bin/init.qti.kernel.sh
     class core
     user root
@@ -166,9 +150,6 @@ on property:sys.boot_completed=1
     start kernel-boot
     start kernel-post-boot
     start memory-post-boot
-
-on property:vendor.pasr.enabled=false
-    stop pasr-hal
 
 on charger
     start kernel-post-boot
