@@ -1,3 +1,7 @@
+# Attestation identity
+ro.product.brand_for_attestation=Lenovo
+ro.product.manufacturer_for_attestation=LENOVO
+
 # Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
