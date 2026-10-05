@@ -317,6 +317,13 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service \
     vendor.qti.qspa-service
 
+# Recovery
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot-service.example_recovery
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
+
 # Runtime libraries
 PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0.vendor \
