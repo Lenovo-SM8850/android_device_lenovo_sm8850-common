@@ -4,7 +4,6 @@
 # Display
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/lib64/libclstc_tm.so|3b4d06044cf5418d51668f40eeda8a5ffeb120a5
-vendor/lib64/libhdr_als_adapter.so|8141237958e3d6dadbc7fa19a8bf6ebf20f3054e
 vendor/lib64/libhdr_tm.so|d44de0576d7ea599358c7f586afcabe439a7fccf
 vendor/lib64/libsdm-color.so|c52281a3fcac6adc74475802def15fe1d1f3d14b
 vendor/lib64/libsdm-colormgr-algo.so|233873fb98e1ac97ebdb6e8ab2eac4342f6c111b
@@ -609,18 +608,14 @@ vendor/etc/init/vendor.qti.hardware.display.color-service.rc
 vendor/etc/seccomp_policy/wifidisplayhalservice.policy|0faebc4c4641f9d29661fcc1b70413d54238b4b5
 vendor/etc/vintf/manifest/vendor.lenovo.hardware.display-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml|d9bce16f45874f66ebeebe4a4269685a5fc2cb6d
-vendor/lib64/libclstc_algorithm_adapter.so|a6fdfc6edac7b5fca63b32bdabb879991635dcd9
-vendor/lib64/libclstc_gcp_adapter.so
 vendor/lib64/libcolor-default.so|a6f038f25d7af5d5a1923d288a72fd2a0cd0141a
 vendor/lib64/libfastcrc.so
-vendor/lib64/libhdr_backlight_adapter.so
 vendor/lib64/libhdr_stub.so|d37e8a64b40c74046f5e4029c31ea8fcba9b6d94
 vendor/lib64/libpdmapper.so
 vendor/lib64/libqdcm-algo.so|f0d885a31e167b1bb91c7681968933fe386642f3
 vendor/lib64/libqdcm-json-mode-parser.so|36946fa9200891095a8171a58c6a5549cc95ad16
 vendor/lib64/libqdcm-mode-parser.so|fb01d17b8a45d0d17382260284088c6b136236b1
 vendor/lib64/libsdm-brightnessaware-parser.so
-vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsnapdragoncolor-qdcm.so|faa84fbb0474c2d66c1bf05940a53926c912b04e
 vendor/lib64/libstcMotoColor.so
 vendor/lib64/libwfddisplayconfig_vendor.so|122960679b996aa5c2196f32b47529aa4e8f0e42
@@ -1650,7 +1645,6 @@ vendor/lib64/libwfduibcsrc_vendor.so|c4f7dd540c6efb8a9630fff153a24c22e80cbfe4
 vendor/lib64/libwfduibcsrcinterface_vendor.so|92b553398c41e81d2daff9d9c6a9de6ed28507bc
 vendor/lib64/libwfdutils_proprietary.so|c63bb2b17eddd4c0578461a7c4e5e209427f23b7
 vendor/lib64/libxml.so|8a31029067d78999150815c78be6ebbda49284f5
-vendor/lib64/libxtadapter.so
 vendor/lib64/qsn1nrt430.bin
 vendor/lib64/qsn1nrt43270.bin
 vendor/lib64/qsn1rt1690_vga.bin
@@ -1792,7 +1786,6 @@ vendor/lib64/libspukeymintutils.so
 vendor/lib64/libspuprovisionids.so|cfd5fcf5a3c0aedc521feb461667ac5b83c32215
 vendor/lib64/libtee_provisioner_qti.so|07e4137cac2ab7d8a430d82699e887755ebb201b
 vendor/lib64/libtlpd_crypto.so
-vendor/lib64/libtrustedapploader.so
 vendor/lib64/libtzdrmgenprov.so|ae4c4afa3d31b410c32fa7e7d54747e391d4e719
 vendor/lib64/mediadrm/libpseudocryptoplugin.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
@@ -1935,3 +1928,30 @@ vendor/etc/thermal-engine_gpu_1.conf
 vendor/etc/thermal-engine_gpu_2.conf
 vendor/etc/thermal-engine_gpu_5.conf
 vendor/etc/thermal-engine_sensor_0.conf
+
+# Dolby audio
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/lib64/libhdr_als_adapter.so|8141237958e3d6dadbc7fa19a8bf6ebf20f3054e
+system/lib64/libdolbyeffect.so
+system/lib64/libdolbyproxyandroid.so;MODULE_SUFFIX=-system
+system/lib64/libdolbyui.so;MODULE_SUFFIX=-system
+vendor/etc/media_codecs_dolby_audio.xml
+vendor/lib64/libcodec2_store_dolby.so
+vendor/lib64/libdolbyclstc.so
+vendor/lib64/libdolbyui.so
+vendor/bin/hw/vendor.dolby.dms.service
+vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+vendor/etc/init/dms-service.rc
+vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
+vendor/etc/vintf/manifest/dms-service.xml
+vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
+vendor/lib64/libdmshal.so
+vendor/lib64/vendor.dolby.dms-V1-ndk.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+vendor/lib64/libclstc_algorithm_adapter.so|a6fdfc6edac7b5fca63b32bdabb879991635dcd9
+vendor/lib64/libclstc_gcp_adapter.so
+vendor/lib64/libhdr_backlight_adapter.so
+vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libdapparamstorage.so
+vendor/lib64/libxtadapter.so
+vendor/lib64/libtrustedapploader.so
