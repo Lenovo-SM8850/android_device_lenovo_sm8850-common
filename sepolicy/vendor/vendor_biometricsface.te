@@ -1,0 +1,7 @@
+allow vendor_biometricsface camera_config_prop:file { read getattr map open };
+allow vendor_biometricsface dmabuf_system_heap_device:chr_file { read open };
+allow vendor_biometricsface fwk_camera_service:service_manager { find };
+allow vendor_biometricsface sysfs:dir { read open };
+allow vendor_biometricsface vendor_display_prop:file { read getattr map open };
+allow vendor_biometricsface vendor_dmabuf_qseecom_heap_device:chr_file { ioctl read open };
+allow vendor_biometricsface vendor_dmabuf_qseecom_ta_heap_device:chr_file { ioctl read open };

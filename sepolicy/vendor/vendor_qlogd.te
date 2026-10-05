@@ -1,0 +1,18 @@
+allow vendor_qlogd ctl_default_prop:property_service { set };
+allow vendor_qlogd mnt_user_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_qlogd mnt_user_file:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd mnt_user_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd priv_app:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd proc:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd rootfs:dir { ioctl read lock open watch watch_reads };
+allow vendor_qlogd rootfs:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd sdcardfs:dir { ioctl read write create setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow vendor_qlogd sdcardfs:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_qlogd storage_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_qlogd storage_file:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd storage_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd vendor_data_file:dir { ioctl read write create setattr lock rename open watch watch_reads add_name remove_name reparent rmdir };
+allow vendor_qlogd vendor_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_qlogd vendor_qlogd:capability { setgid setuid };
+allow vendor_qlogd vendor_qlogd_exec:file { execute_no_trans };
+allow vendor_qlogd vendor_toolbox_exec:file { ioctl lock watch watch_reads execute_no_trans };
