@@ -34,6 +34,10 @@ TARGET_CPU_VARIANT_RUNTIME := oryon
 TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Audio
+include $(COMMON_PATH)/configs/audio/source-builds.mk
+$(call soong_config_set_bool,lenovo_audio,source_effects,$(LENOVO_SOURCE_AUDIO_EFFECTS))
+$(call soong_config_set_bool,lenovo_audio,source_wfd_aac,$(LENOVO_SOURCE_WFD_AAC))
+
 AUDIO_FEATURE_ENABLED_DLKM := true
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 AUDIO_FEATURE_ENABLED_GKI := true

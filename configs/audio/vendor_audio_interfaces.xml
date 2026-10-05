@@ -38,7 +38,7 @@
             method="registerPalNotifierService" mandatory="false"/>
     <library name = "listenSoundModel" libraryName="liblistensoundmodelaidl.so"
             method="registerService" mandatory="false"/>
-    <library name = "audioeffecthal" libraryName="libaudioeffecthal.qti.so"
+    <library name = "audioeffecthal" libraryName="libaudioeffecthal.lenovo.so"
             method="registerService" mandatory="true"/>
     <library name = "sthal" libraryName="libsoundtriggerhal.qti.so"
             method="createISoundTriggerFactory" mandatory="true" />
