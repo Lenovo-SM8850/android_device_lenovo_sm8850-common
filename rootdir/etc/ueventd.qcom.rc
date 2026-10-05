@@ -679,3 +679,6 @@ subsystem mem_buf_vm
 /sys/devices/virtual/misc/uhid/*/input/*/* brightness  0666  system system
 # Add olympia keyboard  for usb input device
 /sys/devices/platform/soc/*.ssusb/*.dwc*/xhci-hcd.*.auto/usb*/*-*/*-*:*.*/0003:17EF:619E.*/input/*/* brightness 0666 system system
+
+# Charging control (vendor.lineage.health-service.default)
+/sys/class/power_supply/battery  charging_enabled  0664  system  system
