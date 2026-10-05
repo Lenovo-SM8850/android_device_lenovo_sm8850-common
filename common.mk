@@ -703,6 +703,8 @@ PRODUCT_PACKAGES += \
 # Include the proprietary files makefile.
 $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
 
+# Evolution X
+PRODUCT_PACKAGES += SystemUIOverlayCanoeEvolution
 
 
 
