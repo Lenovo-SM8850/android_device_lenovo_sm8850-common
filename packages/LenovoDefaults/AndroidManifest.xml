@@ -6,6 +6,7 @@
     package="io.github.miner7222.lenovodefaults"
     android:sharedUserId="android.uid.system">
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="lineageos.permission.WRITE_SETTINGS" />
     <application
         android:allowBackup="false"
