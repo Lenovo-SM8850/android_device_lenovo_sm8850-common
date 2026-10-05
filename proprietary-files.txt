@@ -829,11 +829,6 @@ vendor/firmware/factory_all_on_red.bin
 vendor/firmware/factory_all_on_white.bin
 
 # Media
-vendor/etc/media_canoe_sku1/video_system_specs.json
-vendor/etc/media_canoe_sku2/video_system_specs.json
-vendor/etc/media_canoe_sku3/video_system_specs.json
-vendor/etc/media_canoe_v1/video_system_specs.json
-vendor/etc/media_canoe_v2/video_system_specs.json
 vendor/lib64/libvideoml.so;DISABLE_DEPS
 
 # Media / Video
