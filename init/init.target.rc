@@ -181,8 +181,6 @@ service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    oneshot
 
 on early-boot && property:persist.vendor.pcie.boot_option=*
-    write /sys/bus/platform/devices/1c00000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
-    write /sys/bus/platform/devices/1c08000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
 
 on post-fs
      chown system system /sys/devices/system/cpu/cpu0/thermal/control
