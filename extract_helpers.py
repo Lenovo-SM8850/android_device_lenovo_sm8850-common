@@ -3,23 +3,10 @@
 #
 
 import os
-from pathlib import Path
 
 
 def source_audio_builds():
-    config = Path(__file__).resolve().parent / 'configs/audio/source-builds.mk'
-    settings = {}
-    for line in config.read_text().splitlines():
-        key, separator, value = line.partition(':=')
-        if separator:
-            settings[key.strip()] = value.strip()
-    keys = {'effects': 'LENOVO_SOURCE_AUDIO_EFFECTS',
-            'wfd_aac': 'LENOVO_SOURCE_WFD_AAC'}
-    if set(settings) != set(keys.values()) or any(
-        value not in ('true', 'false') for value in settings.values()
-    ):
-        raise ValueError('Invalid Lenovo source audio build selectors')
-    return {name: settings[key] == 'true' for name, key in keys.items()}
+    return {'effects': True, 'wfd_aac': True}
 
 
 def device_blob_fixup_recipes():
