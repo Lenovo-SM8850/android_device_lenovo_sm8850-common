@@ -1,0 +1,3 @@
+allow vendor_hal_usb_qti vendor_sysfs_usb_c:dir { ioctl read lock open watch watch_reads search };
+allow vendor_hal_usb_qti vendor_sysfs_usb_c:file { ioctl read write getattr lock append map open watch watch_reads };
+allow vendor_hal_usb_qti vendor_sysfs_usb_c:lnk_file { ioctl read getattr lock map open watch watch_reads };
