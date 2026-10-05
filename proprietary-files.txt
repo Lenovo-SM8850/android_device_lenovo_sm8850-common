@@ -409,7 +409,10 @@ vendor/lib64/rfs/dsp/libsvswdsp_skel.so
 vendor/etc/init/android.hardware.biometrics.face@4.0-service.face.rc
 vendor/etc/vintf/manifest/face-default.xml;EXTRACT_ONLY
 vendor/firmware/arcface_ta.b02
+vendor/lib64/libarcsoft_face_biometric.so
+vendor/lib64/libarcsoft_face_mink.so
 vendor/lib64/libarcsoft_faceid.so
+vendor/lib64/libbiometricsface_ca.arcsoft.so
 vendor/lib64/libfaceid_ca_proxy.arcsoft.so
 
 # Fingerprint
@@ -825,6 +828,11 @@ vendor/firmware/factory_all_on_red.bin
 vendor/firmware/factory_all_on_white.bin
 
 # Media
+vendor/etc/media_canoe_sku1/video_system_specs.json
+vendor/etc/media_canoe_sku2/video_system_specs.json
+vendor/etc/media_canoe_sku3/video_system_specs.json
+vendor/etc/media_canoe_v1/video_system_specs.json
+vendor/etc/media_canoe_v2/video_system_specs.json
 vendor/lib64/libvideoml.so;DISABLE_DEPS
 
 # Media / Video
@@ -833,11 +841,6 @@ vendor/bin/vppservice
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vppservice.rc
-vendor/etc/media_canoe_sku1/video_system_specs.json
-vendor/etc/media_canoe_sku2/video_system_specs.json
-vendor/etc/media_canoe_sku3/video_system_specs.json
-vendor/etc/media_canoe_v1/video_system_specs.json
-vendor/etc/media_canoe_v2/video_system_specs.json
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_canoe_sku1.xml
 vendor/etc/media_codecs_canoe_sku1_vendor.xml
@@ -1578,7 +1581,6 @@ system_ext/app/PowerOffAlarm/PowerOffAlarm.apk
 
 # Security
 vendor/lib64/hw/libqtigatekeeper.so
-vendor/lib64/libarcsoft_face_mink.so
 
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate-service
@@ -1845,8 +1847,6 @@ vendor/bin/wdsdaemon
 vendor/lib64/com.qualcomm.mcx.distortionmapper.so;DISABLE_DEPS
 vendor/lib64/libaidenoiser.so;DISABLE_DEPS
 vendor/lib64/libaidenoiserv2.so;DISABLE_DEPS
-vendor/lib64/libarcsoft_face_biometric.so
-vendor/lib64/libbiometricsface_ca.arcsoft.so
 vendor/lib64/libbitmlengine.so;DISABLE_DEPS
 vendor/lib64/libdscaalgo.so;DISABLE_DEPS
 vendor/lib64/libhwlispcffdump.so;DISABLE_DEPS
