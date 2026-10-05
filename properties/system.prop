@@ -8,6 +8,10 @@ ro.charger.enable_suspend=1
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
+# SurfaceFlinger
+ro.surface_flinger.display_update_imminent_timeout_ms=1000
+ro.surface_flinger.set_idle_timer_ms=500
+
 # Wi-Fi Display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
