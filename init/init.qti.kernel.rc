@@ -63,7 +63,6 @@ on early-init
     chmod 0620 /dev/kmsg
 
     write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
-
 on init
     start memory-init-boot
 
@@ -107,8 +106,6 @@ on boot
     # update io-scheduler tunables
     write /sys/class/block/mmcblk0/queue/iosched/slice_idle 0
     write /sys/class/block/mmcblk1/queue/iosched/slice_idle 0
-
-    # Allow access to memory hotplug device attributes
     chown system system /sys/kernel/mem-offline/anon_migrate
 
 on post-fs-data
