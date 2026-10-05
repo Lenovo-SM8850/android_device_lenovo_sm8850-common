@@ -168,6 +168,10 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 include hardware/lenovo/sepolicy/qti/SEPolicy.mk
 
+# Evolution X
+BOARD_VENDOR_SEPOLICY_DIRS += device/lenovo/sm8850-common/sepolicy/evolution
+
+# SELinux
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
