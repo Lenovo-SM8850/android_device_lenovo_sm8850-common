@@ -165,6 +165,13 @@ PRODUCT_PACKAGES += \
     qti-audio-types-aidl-V1-ndk.vendor \
     sva_plugin
 
+$(call soong_config_set,qtiaudio,extra_device_virtuals,4)
+# Stock PAL has no extra output devices, so its input devices start at 28.
+$(call soong_config_set,qtiaudio,extra_in_devices,1)
+$(call soong_config_set_bool,qtiaudio,no_stream_mixer_event_callback,true)
+# Stock SpeakerProtection is 8 bytes larger than the source declaration.
+$(call soong_config_set,qtiaudio,speaker_protection_extra_tail_bytes,8)
+
 PRODUCT_PACKAGES += libpaleventnotifier
 
 PRODUCT_PACKAGES += libvolumelistener
