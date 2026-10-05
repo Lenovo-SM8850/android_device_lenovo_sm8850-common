@@ -1,0 +1,2 @@
+# QTI defines mediacodec in vendor policy, outside the system_ext policy scope.
+get_prop(mediacodec, lenovo_memc_prop)
