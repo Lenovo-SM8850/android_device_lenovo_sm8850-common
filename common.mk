@@ -411,6 +411,13 @@ PRODUCT_PACKAGES += vendor.qti.hardware.display.mapper@1.1.vendor
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.opengles.deqp.level-2025-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
+# Health
+PRODUCT_PACKAGES += android.hardware.health-service.lenovo
+
+PRODUCT_PACKAGES += android.hardware.health-service.qti_recovery
+
+PRODUCT_PACKAGES += android.hardware.health-V4-ndk.vendor
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
@@ -462,6 +469,10 @@ PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml
 
 PRODUCT_PACKAGES += rkp_factory_extraction_tool
+
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
