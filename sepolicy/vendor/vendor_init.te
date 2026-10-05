@@ -1,0 +1,4 @@
+allow vendor_init oemowninfo_block_device:blk_file { setattr relabelfrom };
+allow vendor_init vendor_lenovotb_init_prop:property_service { set };
+allow vendor_init vendor_lgsi_battery_prop:property_service { set };
+allow vendor_init vendor_ssr_prop:property_service { set };

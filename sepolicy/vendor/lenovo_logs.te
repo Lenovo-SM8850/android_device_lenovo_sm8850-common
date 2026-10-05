@@ -1,0 +1,14 @@
+allow system_app mdlog_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow system_app mdlog_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow system_app zuk_logd_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow system_app zuk_logd_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_qlogd mdlog_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow vendor_qlogd mdlog_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_qlogd zuk_logd_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_qlogd zuk_logd_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow vendor_qlogd zuk_logd_file:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qlogd zuk_logd_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_qti_init_shell mdlog_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow vendor_qti_init_shell mdlog_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_wcnss_service zuk_logd_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow vendor_wcnss_service zuk_logd_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };

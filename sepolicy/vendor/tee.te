@@ -1,0 +1,4 @@
+allow tee ion_device:chr_file { ioctl read getattr lock map open watch watch_reads };
+
+# qseecomd GPT listener
+allow tee vendor_gpt_block_device:blk_file read;

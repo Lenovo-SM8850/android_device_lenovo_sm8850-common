@@ -1,0 +1,2 @@
+dontaudit vold vendor_qmcs_file:dir { open read ioctl };
+dontaudit vold vendor_spunvm_file:dir { open read ioctl };

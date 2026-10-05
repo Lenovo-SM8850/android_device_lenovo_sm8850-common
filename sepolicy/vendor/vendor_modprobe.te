@@ -1,0 +1,2 @@
+# Allow the boot-critical module loader to open rootfs.
+allow vendor_modprobe rootfs:dir { open };

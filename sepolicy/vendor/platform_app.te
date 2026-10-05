@@ -1,0 +1,2 @@
+allow platform_app vendor_persist_vibrator_prop:file { read getattr map open };
+allow platform_app vendor_persist_vibrator_prop:property_service { set };
