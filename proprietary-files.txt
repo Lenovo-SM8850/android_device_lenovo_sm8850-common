@@ -353,9 +353,23 @@ vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 # Dolby codec configuration
 system/lib64/libdolbyeffect.so
 system/lib64/libdolbyui.so;MODULE_SUFFIX=-system
+vendor/bin/hw/dvs-aidl-service
+vendor/bin/hw/vendor.dolby.media.c2-service-vision
+vendor/etc/init/dvs-aidl-service.rc
+vendor/etc/init/vendor.dolby.media.c2-service-vision.rc
 vendor/etc/media_codecs_dolby_audio.xml
+vendor/etc/vintf/manifest/dvs-aidl-service.xml
+vendor/etc/vintf/manifest/vendor.dolby.media.c2-service-vision.xml
+vendor/lib64/c2.dolby.client.so
+vendor/lib64/c2.dolby.store.so
+vendor/lib64/c2.dolby.vision.dec.so
+vendor/lib64/c2.dolby.vision.sec.dec.so
 vendor/lib64/libcodec2_store_dolby.so
 vendor/lib64/libdolbyclstc.so
+vendor/lib64/libdolbydecoderprocessor.so
+vendor/lib64/libdolbyeglcore.so
+vendor/lib64/libdolbyottcameracontrol.so
+vendor/lib64/libdolbyproxyandroid.so
 vendor/lib64/libdolbyui.so
 
 # DSP / FastRPC
