@@ -74,6 +74,12 @@ PRODUCT_BUILD_DEBUG_VENDOR_BOOT_IMAGE := false
 # Characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
+# Charging control
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/charging_enabled)
+
 # Codec2 audio seccomp policies
 PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/codec2/service/1.0/c2audio.vendor.base-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.base-arm.policy \
