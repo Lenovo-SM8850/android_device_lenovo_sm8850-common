@@ -85,6 +85,12 @@ PRODUCT_PACKAGES += \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
 
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot-service.example_recovery
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
+
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 36
 
