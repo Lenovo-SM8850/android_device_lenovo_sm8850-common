@@ -149,3 +149,6 @@ debug.sf.enable_gl_backpressure=1
 vendor.display.disable_sdr_dimming=0
 vendor.gralloc.enable_snapalloc=1
 vendor.display.disable_cwb_idle_fallback=1
+
+# Camera
+persist.vendor.camera.privapp.list=org.lineageos.aperture,org.codeaurora.snapcam
