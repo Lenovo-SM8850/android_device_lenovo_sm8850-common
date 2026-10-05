@@ -517,6 +517,9 @@ vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
 # Display
+system_ext/lib64/libwfddisplayconfig.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE=vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk-system
 vendor/bin/hw/vendor.lenovo.hardware.display-service
 vendor/bin/hw/vendor.qti.hardware.display.color-service
 vendor/bin/qdcmss
@@ -986,6 +989,8 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 
 # platform configuration
+system_ext/etc/seccomp_policy/wfdservice64.policy
+system_ext/etc/wfdconfigsink.xml
 vendor/etc/5GNR_LTE_CN_V9.cfg
 vendor/etc/CHGPD.cfg
 vendor/etc/CHGPD_Baldur.cfg
@@ -1090,6 +1095,7 @@ vendor/etc/sv/mldfs/mldfs_dyn.dat
 vendor/etc/wfdconfig.xml
 
 # platform init
+system_ext/etc/init/wfdservice.rc
 vendor/etc/init/android.hardware.security.secretkeeper-service-qti.rc
 vendor/etc/init/avf_qcvm_manager.rc
 vendor/etc/init/c2painternetservice.rc
@@ -1137,6 +1143,7 @@ vendor/etc/init/xtra-daemon.rc
 vendor/etc/init/yepdiag.rc
 
 # platform permissions
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 vendor/etc/permissions/android.hardware.keystore.app_attest_key.xml
 vendor/etc/permissions/android.software.device_id_attestation.xml
 vendor/etc/permissions/privapp-permissions-qti-vendor.xml
@@ -1225,9 +1232,30 @@ odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
 odm/lib64/outconvfiltcoeffqpd4x4.bin
+system/framework/WfdCommon.jar;BOOT_JAR
+system_ext/bin/wfdservice64
 system_ext/lib64/extractors/libmmparserextractor.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
+system_ext/lib64/libmmrtpdecoder.so
+system_ext/lib64/libmmrtpencoder.so
+system_ext/lib64/libwfdavenhancements.so
+system_ext/lib64/libwfdclient.so
+system_ext/lib64/libwfdcommonutils.so
+system_ext/lib64/libwfdconfigutils.so
+system_ext/lib64/libwfdmminterface.so
+system_ext/lib64/libwfdmmsink.so
+system_ext/lib64/libwfdmmsrc_system.so
+system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
+system_ext/lib64/libwfdrtsp.so
+system_ext/lib64/libwfdservice.so
+system_ext/lib64/libwfdsinksm.so
+system_ext/lib64/libwfduibcinterface.so
+system_ext/lib64/libwfduibcsink.so
+system_ext/lib64/libwfduibcsinkinterface.so
+system_ext/lib64/libwfduibcsrc.so
+system_ext/lib64/libwfduibcsrcinterface.so
+system_ext/priv-app/WfdService/WfdService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
 vendor/bin/C2PAInternetService
 vendor/bin/adpl

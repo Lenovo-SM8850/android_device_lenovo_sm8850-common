@@ -11,3 +11,7 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Audio: in-call volume steps
 ro.config.vc_call_vol_steps=15
+
+# Wi-Fi Display
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0

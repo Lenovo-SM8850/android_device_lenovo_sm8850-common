@@ -48,9 +48,23 @@ namespace_imports = [
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
+        lambda lib, partition: f'{lib}-system' if partition == 'system_ext' else lib,
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'system_ext/lib64/libwfdcommonutils.so': blob_fixup()
+        .remove_needed('libheif.so'),
+    'system_ext/priv-app/WfdService/WfdService.apk': blob_fixup()
+        .apktool_patch('blob-patches/WfdService'),
+    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
+        .add_needed('libaudioclient_shim.so')
+        .add_needed('libgui_shim.so'),
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libinput_shim.so'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .add_needed('libaudioclient_shim.so')
+        .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     'vendor/etc/seccomp_policy/qsap_qapeservice.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
     (
@@ -96,7 +110,6 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
-
 
 module = ExtractUtilsModule(
     'sm8850-common',
