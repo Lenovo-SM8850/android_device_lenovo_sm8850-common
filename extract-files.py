@@ -114,6 +114,10 @@ if not helpers.source_audio_builds()['effects']:
     blob_fixups['vendor/lib64/hw/libaudioeffecthal.qti.so'] = blob_fixup() \
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so')
 
+if helpers.source_audio_builds()['wfd_aac']:
+    blob_fixups['vendor/lib64/libwfdmmsrc_proprietary.so'] = blob_fixup() \
+        .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so')
+
 
 module = ExtractUtilsModule(
     'sm8850-common',

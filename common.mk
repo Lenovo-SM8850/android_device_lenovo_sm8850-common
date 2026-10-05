@@ -39,7 +39,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    libaudioeffecthal.lenovo
+    libaudioeffecthal.lenovo \
+    libwfdaac.lenovo
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk.vendor \
