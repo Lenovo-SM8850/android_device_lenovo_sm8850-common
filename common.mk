@@ -684,6 +684,8 @@ $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
 # Evolution X
 PRODUCT_PACKAGES += SystemUIOverlayCanoeEvolution
 
+PRODUCT_PACKAGES += \
+    VideoMotion
 
 
 EVO_BUILD_TYPE := Unofficial

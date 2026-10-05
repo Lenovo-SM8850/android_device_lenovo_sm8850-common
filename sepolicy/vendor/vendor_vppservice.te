@@ -1,0 +1,3 @@
+# Video FRC: VPP opens the trusted CDSP node to start its signed PD.
+hal_client_domain(vendor_vppservice, vendor_hal_dspmanager)
+allow vendor_vppservice vendor_qdsp_device:chr_file { open read ioctl };

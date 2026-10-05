@@ -229,3 +229,5 @@ include vendor/lenovo/sm8850-common/BoardConfigVendor.mk
 
 # Evolution X
 BOARD_VENDOR_SEPOLICY_DIRS += device/lenovo/sm8850-common/sepolicy/evolution
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/lenovo/sm8850-common/sepolicy/evolution/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/lenovo/sm8850-common/sepolicy/evolution/private

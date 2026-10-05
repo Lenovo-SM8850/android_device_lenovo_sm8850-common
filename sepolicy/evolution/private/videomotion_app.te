@@ -1,0 +1,20 @@
+type videomotion_app, domain;
+typeattribute videomotion_app coredomain, mlstrustedsubject;
+app_domain(videomotion_app)
+net_domain(videomotion_app)
+binder_service(videomotion_app)
+
+# Standard framework service discovery for this platform-signed controller.
+allow videomotion_app app_api_service:service_manager find;
+allow videomotion_app system_api_service:service_manager find;
+
+allow videomotion_app system_app_data_file:dir create_dir_perms;
+allow videomotion_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+set_prop(videomotion_app, lenovo_memc_prop)
+# No other app or daemon can publish UID enable bits (init owns property setup).
+neverallow { domain -init -videomotion_app } lenovo_memc_prop:property_service set;
+
+# The gate runs in libstagefright in the codec client's process.
+get_prop(appdomain, lenovo_memc_prop)
+get_prop({ mediaserver mediaswcodec hal_codec2_server }, lenovo_memc_prop)
