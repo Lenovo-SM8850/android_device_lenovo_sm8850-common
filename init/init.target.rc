@@ -86,21 +86,3 @@ on property:sys.shutdown.requested=*
 on post-fs
      chown system system /sys/devices/system/cpu/cpu0/thermal/control
      chmod 666 /sys/devices/system/cpu/cpu0/thermal/control
-on property:debug.zui.antutu_status=1
-   setprop sys.ui.perfmode.enable 1
-
-on property:debug.zui.antutu_status=2
-   setprop sys.ui.perfmode.enable 1
-
-on property:debug.zui.antutu_status=3
-   setprop sys.ui.perfmode.enable 1
-
-on property:debug.zui.antutu_status=4
-   setprop sys.ui.perfmode.enable 1
-
-on property:debug.zui.antutu_status=0
-   setprop sys.ui.perfmode.enable 1
-
-on property:debug.zui.antutu_status=-1
-   setprop sys.ui.perfmode.enable 0
-
