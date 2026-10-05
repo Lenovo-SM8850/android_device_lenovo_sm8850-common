@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string-array name="config_tether_ncm_regexs" translatable="false">
+        <item>"ncm\\d"</item>
+    </string-array>
+</resources>
