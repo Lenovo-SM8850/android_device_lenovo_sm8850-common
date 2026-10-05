@@ -73,7 +73,6 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
     (
-        'vendor/lib64/hw/libaudioeffecthal.qti.so',
         'vendor/bin/poweropt-service',
         'vendor/bin/qsap_mpamsvc',
         'vendor/lib64/libaodoptfeature.so',
@@ -110,6 +109,15 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
+
+if not helpers.source_audio_builds()['effects']:
+    blob_fixups['vendor/lib64/hw/libaudioeffecthal.qti.so'] = blob_fixup() \
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so')
+
+if helpers.source_audio_builds()['wfd_aac']:
+    blob_fixups['vendor/lib64/libwfdmmsrc_proprietary.so'] = blob_fixup() \
+        .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so')
+
 
 module = ExtractUtilsModule(
     'sm8850-common',
