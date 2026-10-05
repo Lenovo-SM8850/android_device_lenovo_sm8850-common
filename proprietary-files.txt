@@ -11,16 +11,7 @@ vendor/lib64/libsdmextension.so|c41c7bf5ec70944955479c058d6244aea6f23e5a
 
 # AI / QNN
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
-vendor/lib/rfsa/adsp/libQnnHtpV81.so
-vendor/lib/rfsa/adsp/libQnnHtpV81Skel.so
 vendor/lib/rfsa/adsp/libarc_htp_driver_skel.so
-vendor/lib64/libQnnGpu.so
-vendor/lib64/libQnnHtp.so
-vendor/lib64/libQnnHtpNetRunExtensions.so
-vendor/lib64/libQnnHtpPrepare.so
-vendor/lib64/libQnnHtpV81Stub.so|d27f7a1b699764e72448a5cfc2e60c3de112d6db
-vendor/lib64/libQnnNetRunDirectV81Skel.so
-vendor/lib64/rfs/dsp/libnspextensiongenericqnnprovider.so
 
 # Bluetooth
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
@@ -63,26 +54,17 @@ vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libsysmon_cdsp_skel.so
 vendor/lib64/rfs/dsp/libDLDPP_skel.so
-vendor/lib64/rfs/dsp/libHexlpQnnHtp.so
-vendor/lib64/rfs/dsp/libHexlpQnnSystem.so
 vendor/lib64/rfs/dsp/libapn_dsp_skel.so
-vendor/lib64/rfs/dsp/libbitml_nsp_81na_skel.so
-vendor/lib64/rfs/dsp/libbitml_nsp_skel.so
 vendor/lib64/rfs/dsp/libdspCV_skel.so
 vendor/lib64/rfs/dsp/libfastcvadsp.so
 vendor/lib64/rfs/dsp/libfastcvdsp_skel.so
 vendor/lib64/rfs/dsp/libhdr_skel.so
-vendor/lib64/rfs/dsp/libnsp_ipc_cdsp_skel.so
-vendor/lib64/rfs/dsp/libnspextensioncopyprovider.so
-vendor/lib64/rfs/dsp/libnspextensionsuperresolutionprovider.so
 vendor/lib64/rfs/dsp/libqsegnetengine_dsp_skel.so
 vendor/lib64/rfs/dsp/libscveT2T_skel.so
 vendor/lib64/rfs/dsp/libsvDescMatchImpl_dsp_skel.so
 vendor/lib64/rfs/dsp/libsvDescMatch_dsp.so
-vendor/lib64/rfs/dsp/libsvdsp.so
 vendor/lib64/rfs/dsp/libsvswdsp.so
 vendor/lib64/rfs/dsp/libsvswdsp_skel.so
-vendor/lib64/rfs/dsp/libvpp_svc_skel.so
 
 # GNSS location
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
@@ -839,10 +821,8 @@ vendor/lib64/libsvswcpu.so
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/hw/vendor.qti.media.c2@1.0-service;DISABLE_DEPS
 vendor/bin/init.qti.media.sh
-vendor/bin/vppservice
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
-vendor/etc/init/vppservice.rc
 vendor/etc/media_codecs_canoe_sku2.xml
 vendor/etc/media_codecs_canoe_sku2_vendor.xml
 vendor/etc/media_codecs_canoe_v1_vendor.xml
@@ -858,12 +838,10 @@ vendor/etc/media_profiles_canoe_v1.xml
 vendor/etc/media_profiles_canoe_v2.xml
 vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
-vendor/etc/vintf/manifest/vendor.qti.hardware.vpp-service.xml
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libOmxCore.so
 vendor/lib64/libQcelp13SwCodec.so
 vendor/lib64/libmm-omxcore.so
-vendor/lib64/libqc2vppfilter.so
 vendor/lib64/libqcodec2_base.so
 vendor/lib64/libqcodec2_basecodec.so
 vendor/lib64/libqcodec2_core.so;DISABLE_DEPS
@@ -879,17 +857,9 @@ vendor/lib64/libqcodec2_v4l2codec.so|5c7af0bce13b23c6c60a9036f3f69ff1ff690b55|15
 vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvideotxr.so
 vendor/lib64/libvideoutils.so
-vendor/lib64/libvppclient.so|bbe3098aeec6f1fc9cc9c40a8681e814544cfe69
-vendor/lib64/libvppcommon.so
-vendor/lib64/libvpphvx.so
-vendor/lib64/libvpplibrary.so
 vendor/lib64/libwfdcodecv4l2_proprietary.so|e19b42a685156c224b9ca9dcd81bae914db6411d
 vendor/lib64/qsn3_video.bin
 vendor/lib64/qti.video.utils.videobufferlayout.so
-vendor/lib64/vendor.qti.hardware.vpp-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so
-vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # Modem / Radio / QMI
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
@@ -1140,7 +1110,6 @@ vendor/etc/public.libraries.txt
 vendor/etc/qcvm_config.json
 vendor/etc/qguard.json
 vendor/etc/qspa/nav_disabled.rc
-vendor/etc/qspa/nsp_disabled.rc
 vendor/etc/recovery-resource.dat
 vendor/etc/res/images/WQHD_1600_2560/charger/Plugout_0.png
 vendor/etc/res/images/WQHD_1600_2560/charger/Plugout_10.png
@@ -1527,10 +1496,6 @@ vendor/lib64/libmmrtpdecoder_vendor.so|e89d7dc816d87186f12b1739bc3db191196005c5
 vendor/lib64/libmmrtpencoder_vendor.so|94e5a44f81fb03823a6d1a01cbaab7054e3b154c
 vendor/lib64/libmpbase.so
 vendor/lib64/libnative-api.so|53b73cf62e9396cc70859e397bae818825e13e87
-vendor/lib64/libnspextensioncopyservice.so
-vendor/lib64/libnspextensiongenericqnnservice.so
-vendor/lib64/libnspextensionsuperresolutionservice.so
-vendor/lib64/libnspframework.so|34b2e76ca72c69ad6e79d9c28d7bbac560e01b51
 vendor/lib64/liboem_specific.so
 vendor/lib64/liboischannel.so
 vendor/lib64/libopencv.so
@@ -1866,7 +1831,6 @@ vendor/etc/sensors/config/sns_rotv.json
 vendor/etc/sensors/config/sns_smd.json
 vendor/etc/sensors/config/sns_tilt.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
-vendor/etc/sensors/config/sns_transport_ppe.json
 vendor/etc/sensors/sns_reg_config
 
 # Sensors
@@ -1960,3 +1924,45 @@ vendor/lib64/libkeymasterprovision.so|9da9eac2fbff398f233f59f37ac37d73fc48bab6
 vendor/lib64/libspukeymintprovision.so;DISABLE_DEPS
 vendor/lib64/libspuprovisionids.so|cfd5fcf5a3c0aedc521feb461667ac5b83c32215
 vendor/lib64/libtee_provisioner_qti.so|07e4137cac2ab7d8a430d82699e887755ebb201b
+
+# Video processing
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/lib/rfsa/adsp/libQnnHtpV81.so
+vendor/lib/rfsa/adsp/libQnnHtpV81Skel.so
+vendor/lib64/libQnnGpu.so
+vendor/lib64/libQnnHtp.so
+vendor/lib64/libQnnHtpNetRunExtensions.so
+vendor/lib64/libQnnHtpPrepare.so
+vendor/lib64/libQnnHtpV81Stub.so|d27f7a1b699764e72448a5cfc2e60c3de112d6db
+vendor/lib64/libQnnNetRunDirectV81Skel.so
+vendor/lib64/rfs/dsp/libnspextensiongenericqnnprovider.so
+vendor/lib64/rfs/dsp/libHexlpQnnHtp.so
+vendor/lib64/rfs/dsp/libHexlpQnnSystem.so
+vendor/lib64/rfs/dsp/libVppFrcQnnHtp.so
+vendor/lib64/rfs/dsp/libbitml_nsp_81na_skel.so
+vendor/lib64/rfs/dsp/libbitml_nsp_skel.so
+vendor/lib64/rfs/dsp/libnsp_ipc_cdsp_skel.so
+vendor/lib64/rfs/dsp/libnspextensioncopyprovider.so
+vendor/lib64/rfs/dsp/libnspextensionfrcprovider.so
+vendor/lib64/rfs/dsp/libnspextensionsuperresolutionprovider.so
+vendor/lib64/rfs/dsp/libsvdsp.so
+vendor/lib64/rfs/dsp/libvpp_svc_skel.so
+vendor/bin/vppservice
+vendor/etc/init/vppservice.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.vpp-service.xml
+vendor/lib64/libqc2vppfilter.so
+vendor/lib64/libvppclient.so|bbe3098aeec6f1fc9cc9c40a8681e814544cfe69
+vendor/lib64/libvppcommon.so
+vendor/lib64/libvpphvx.so
+vendor/lib64/libvpplibrary.so
+vendor/lib64/vendor.qti.hardware.vpp-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so
+vendor/etc/qspa/nsp_disabled.rc
+vendor/lib64/libnspextensioncopyservice.so
+vendor/lib64/libnspextensionfrcservice.so
+vendor/lib64/libnspextensiongenericqnnservice.so
+vendor/lib64/libnspextensionsuperresolutionservice.so
+vendor/lib64/libnspframework.so|34b2e76ca72c69ad6e79d9c28d7bbac560e01b51
+vendor/etc/sensors/config/sns_transport_ppe.json
