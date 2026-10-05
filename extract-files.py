@@ -136,6 +136,11 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
     'system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml': blob_fixup()
         .regex_replace('<privapp-permissions package="(?:org.codeaurora.dialer|com.android.mms)">[\\s\\S]*?</privapp-permissions>', ''),
+    (
+        'system/lib64/libdolbyui.so',
+        'vendor/lib64/libdolbyui.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     'vendor/etc/seccomp_policy/qsap_qapeservice.policy': blob_fixup()
