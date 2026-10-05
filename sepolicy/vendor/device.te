@@ -1,0 +1,5 @@
+# Lenovo device node and block device types (see file_contexts).
+
+type aac_richtap_dev_device, dev_type;
+type lenovo_device, dev_type;
+type oemowninfo_block_device, dev_type;

@@ -1,0 +1,2 @@
+allow hal_graphics_allocator_default hal_graphics_allocator_default_tmpfs:file { ioctl };
+allowxperm hal_graphics_allocator_default hal_graphics_allocator_default_tmpfs:file ioctl { 0x7701-0x770b };

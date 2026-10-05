@@ -1,0 +1,54 @@
+# vendor_qti_init_shell
+
+type vendor_logcat_exec, exec_type, file_type, vendor_file_type;
+
+allow init vendor_logcat_exec:file { execute };
+allow vendor_qti_init_shell block_device:blk_file { getattr setattr };
+allow vendor_qti_init_shell debugfs_tracing:file { ioctl read write getattr lock append map open watch watch_reads };
+allow vendor_qti_init_shell debugfs_tracing_instances:dir { ioctl read write lock open watch watch_reads add_name remove_name search };
+allow vendor_qti_init_shell device_logging_prop:file { read getattr map open };
+allow vendor_qti_init_shell dumpstate_options_prop:file { read getattr map open };
+allow vendor_qti_init_shell hal_graphics_composer_default:unix_stream_socket { connectto };
+allow vendor_qti_init_shell init:dir { getattr search };
+allow vendor_qti_init_shell init:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell kernel:dir { getattr search };
+allow vendor_qti_init_shell kernel:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell log_tag_prop:property_service { set };
+allow vendor_qti_init_shell logpersistd_logging_prop:file { read getattr map open };
+allow vendor_qti_init_shell oemowninfo_block_device:blk_file { read write getattr setattr open };
+allow vendor_qti_init_shell proc_interrupts:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell proc_pid_max:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell proc_uptime:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell rootfs:dir { ioctl read lock open watch watch_reads };
+allow vendor_qti_init_shell self:capability { kill net_raw };
+allow vendor_qti_init_shell self:capability { setgid setuid net_raw };
+allow vendor_qti_init_shell self:capability2 { wake_alarm };
+allow vendor_qti_init_shell self:netlink_generic_socket { read write create getattr map bind setopt };
+allow vendor_qti_init_shell self:qipcrtr_socket { read write create getattr map bind setopt };
+allow vendor_qti_init_shell self:rawip_socket { read write create getopt setopt };
+allow vendor_qti_init_shell self:udp_socket { ioctl };
+allow vendor_qti_init_shell sysfs:file { write append };
+allow vendor_qti_init_shell system_block_device:blk_file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell system_data_file:file { read getattr };
+allow vendor_qti_init_shell system_data_root_file:file { append };
+allow vendor_qti_init_shell vendor_data_file:dir { ioctl read write lock open watch watch_reads add_name remove_name };
+allow vendor_qti_init_shell vendor_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow vendor_qti_init_shell vendor_diag_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow vendor_qti_init_shell vendor_file:file { execute_no_trans };
+allow vendor_qti_init_shell vendor_init:dir { getattr search };
+allow vendor_qti_init_shell vendor_init:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell vendor_ipa_dev:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow vendor_qti_init_shell vendor_logcat_exec:file { entrypoint };
+allow vendor_qti_init_shell vendor_per_mgr_state_prop:file { read getattr map open };
+allow vendor_qti_init_shell vendor_pps_socket:sock_file { write };
+allow vendor_qti_init_shell vendor_qdss_device:chr_file { ioctl read write getattr setattr lock append map open watch watch_reads };
+allow vendor_qti_init_shell vendor_qlogd_exec:file { execute_no_trans };
+allow vendor_qti_init_shell vendor_qti_init_shell:udp_socket { create };
+allow vendor_qti_init_shell vendor_rawdump_block_device:blk_file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_qti_init_shell vendor_sysfs_qdss_dev:file { write setattr append };
+type_transition init vendor_logcat_exec:process vendor_qti_init_shell;
+
+# SELinux-enforcing prep
+dontaudit vendor_qti_init_shell default_prop:file { getattr map open };
+
+dontaudit vendor_qti_init_shell vendor_qspmhal_data_file:dir { getattr };

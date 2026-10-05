@@ -132,6 +132,10 @@ BOOT_SECURITY_PATCH := 2026-08-05
 # Keep deferred expansion so a device can override the shared SPL after this include.
 VENDOR_SECURITY_PATCH = $(BOOT_SECURITY_PATCH)
 
+# SELinux
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
 # Shared Lenovo HAL policy
 include hardware/lenovo/sepolicy/qti/SEPolicy.mk
 

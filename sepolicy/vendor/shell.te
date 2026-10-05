@@ -1,0 +1,5 @@
+allow shell vendor_firstboot_prop:file { read getattr map open };
+allow shell vendor_spu_lifecycle_prop:file { read getattr map open };
+allow shell vendor_sysfs_battery_supply:dir { search };
+allow shell vendor_sysfs_battery_supply:file { read getattr open };
+allow shell vendor_sysfs_simtray:file { read getattr open };

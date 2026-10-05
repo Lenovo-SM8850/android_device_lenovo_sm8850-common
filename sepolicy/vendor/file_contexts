@@ -1,0 +1,53 @@
+# Lenovo daemons and HALs
+/(vendor|system/vendor)/bin/nvram_cc                                            u:object_r:hwdiag_exec:s0
+# Vibrator
+/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service-lenovo                   u:object_r:hal_vibrator_default_exec:s0
+
+# NFC / Weaver / Confirmation UI / Face
+/(vendor|system/vendor)/bin/hw/android\.hardware\.nqnfc-service\.nxp                       u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp-qti                  u:object_r:vendor_hal_weaver_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@(1|4)\.0-service        u:object_r:vendor_biometricsface_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@(1|4)\.0-service\.face  u:object_r:vendor_biometricsface_exec:s0
+/vendor/bin/hw/android\.hardware\.nfc-service-st                                           u:object_r:hal_nfc_default_exec:s0
+
+# init shell scripts run by the vendor init services (vendor_qti_init_shell)
+/(vendor|system/vendor)/bin/init\.qcom\.svi\.sh        u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.cabl\.sh       u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/setwlansardsi0.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/setwlansardsi1.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/setwlansardsi2.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/setwlansardsi3.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/setwlansardsi4.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.svi\.off\.sh   u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.cabl\.off\.sh  u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/profile_config_service.sh  u:object_r:vendor_qti_init_shell_exec:s0
+
+# data
+/data/vendor/newlog(/.*)?      u:object_r:zuk_logd_file:s0
+/data/vendor/qtvm_dtbo(/.*)?   u:object_r:vendor_vm_data_file:s0
+
+# sysfs
+/sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.i2c/i2c-[0-9]/[0-9]-0043/direction              u:object_r:vendor_sysfs_headset:s0
+/sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.i2c/i2c-[0-9]/[0-9]-0042/direction2             u:object_r:vendor_sysfs_headset:s0
+/sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a98000.i2c/i2c-[0-9]/[0-9]-005b/leds/vibrator_r(/.*)?  u:object_r:vendor_sysfs_vibrator:s0
+/sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a98000.i2c/i2c-[0-9]/[0-9]-005a/leds/vibrator_l(/.*)?  u:object_r:vendor_sysfs_vibrator:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:6/block/sdg/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:7/block/sdh/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:8/block/sdi/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
+
+# device nodes
+# UFS LUN BSG nodes are flattened by ueventd; retain QCOM's separate LUN4 type.
+/dev/0:0:0:[0-35]                                        u:object_r:vendor_bsg_device:s0
+/dev/aw8697_haptic_r                                       u:object_r:aac_richtap_dev_device:s0
+/dev/aw8697_haptic_l                                       u:object_r:aac_richtap_dev_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/oemowninfo  u:object_r:oemowninfo_block_device:s0
+
+# Lenovo fork uses the existing QTI USB HAL domain.
+/vendor/bin/hw/android\.hardware\.usb-service\.lenovo    u:object_r:vendor_hal_usb_qti_exec:s0
+/vendor/bin/lenovo-cover                                  u:object_r:lenovo_cover_exec:s0

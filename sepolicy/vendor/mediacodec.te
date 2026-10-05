@@ -1,0 +1,1 @@
+allow mediacodec ion_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };

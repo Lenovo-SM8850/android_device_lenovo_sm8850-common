@@ -1,0 +1,4 @@
+# QSPM HAL callers
+dontaudit bootanim vendor_hal_qspmhal_default:binder { call };
+dontaudit surfaceflinger vendor_hal_qspmhal_default:binder { call };
+dontaudit priv_app_36 vendor_hal_qspmhal_default:binder { call };

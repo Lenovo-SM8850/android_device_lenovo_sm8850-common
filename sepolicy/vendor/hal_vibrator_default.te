@@ -1,0 +1,5 @@
+allow hal_vibrator_default aac_richtap_dev_device:chr_file { ioctl read write getattr map open };
+allow hal_vibrator_default mnt_vendor_file:file { read open };
+allow hal_vibrator_default vendor_persist_vibrator_prop:file { read getattr map open };
+allow hal_vibrator_default vendor_sysfs_vibrator:dir { ioctl read getattr lock open watch watch_reads search };
+allow hal_vibrator_default vendor_sysfs_vibrator:file { ioctl read write getattr lock append map open watch watch_reads };

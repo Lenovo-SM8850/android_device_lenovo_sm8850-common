@@ -1,0 +1,2 @@
+allow charger_vendor sysfs:file { ioctl read write getattr lock append map open watch watch_reads };
+allow charger_vendor sysfs:lnk_file { ioctl lock map open watch watch_reads };
