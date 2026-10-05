@@ -98,6 +98,9 @@ PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor \
     vendor.qti.hardware.camera.offlinecamera-V2-ndk.vendor
 
+# HWUI
+TARGET_USES_VULKAN := true
+
 # Display
 PRODUCT_AAPT_CONFIG := normal large xlarge
 
