@@ -998,17 +998,12 @@ vendor/etc/display/backlight_calib_nt37801_amoled_cmd_mode_dsi_csot_panel_with_D
 vendor/etc/display/backlight_calib_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC.xml
 vendor/etc/display/backlight_calib_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.xml
 vendor/etc/display/backlight_calib_nt37802_video_PSR_amoled_VHM_120hz_dsi_panel_with_DSC.xml
-vendor/etc/display/backlight_calib_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.xml
-vendor/etc/display/backlight_calib_vtdr6130_amoled_qsync_cmd_mode_dsi_visionox_panel_with_DSC.xml
-vendor/etc/display/backlight_calib_vtdr6130_amoled_qsync_video_mode_dsi_visionox_panel_with_DSC.xml
-vendor/etc/display/backlight_calib_vtdr6130_amoled_video_mode_dsi_visionox_panel_with_DSC.xml
 vendor/etc/display/nt37801_amoled_cmd_mode_dsi_csot_panel_with_DSC.json
 vendor/etc/display/nt37801_amoled_cmd_mode_dsi_csot_panel_with_DSC_CPHY.json
 vendor/etc/display/nt37801_amoled_qsync_cmd_mode_dsi_csot_panel_with_DSC.json
 vendor/etc/display/nt37801_amoled_qsync_video_mode_dsi_csot_panel_with_DSC.json
 vendor/etc/display/nt37801_amoled_video_mode_dsi_csot_panel_with_DSC.json
 vendor/etc/display/nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.json
-vendor/etc/display/vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json
 
 # Platform HAL interfaces
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
@@ -1773,7 +1768,6 @@ vendor/lib64/libTrustedUIAIDL.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so|da234428387e194672a9b22e005c0cd8605da614
 vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterprovision.so|9da9eac2fbff398f233f59f37ac37d73fc48bab6
 vendor/lib64/libkeymasterutils.so|3f43b078b648ca191c061007f631b1e4c6833953
 vendor/lib64/libloadtrusteduiapp.so
 vendor/lib64/libqseed3.so
@@ -1781,10 +1775,7 @@ vendor/lib64/libqti-qesdk-secure.so
 vendor/lib64/libqtikeymaster4.so|e7d5fb2831f3261bc8a175796435fd3b44296375
 vendor/lib64/libspukeymint.so;DISABLE_DEPS
 vendor/lib64/libspukeymintdeviceutils.so
-vendor/lib64/libspukeymintprovision.so;DISABLE_DEPS
 vendor/lib64/libspukeymintutils.so
-vendor/lib64/libspuprovisionids.so|cfd5fcf5a3c0aedc521feb461667ac5b83c32215
-vendor/lib64/libtee_provisioner_qti.so|07e4137cac2ab7d8a430d82699e887755ebb201b
 vendor/lib64/libtlpd_crypto.so
 vendor/lib64/libtzdrmgenprov.so|ae4c4afa3d31b410c32fa7e7d54747e391d4e719
 vendor/lib64/mediadrm/libpseudocryptoplugin.so
@@ -1955,3 +1946,17 @@ vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libtrustedapploader.so
+
+# Dolby Vision
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/etc/init/dvs-aidl-service.rc
+vendor/etc/vintf/manifest/dvs-aidl-service.xml
+vendor/etc/display/backlight_calib_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.xml
+vendor/etc/display/backlight_calib_vtdr6130_amoled_qsync_cmd_mode_dsi_visionox_panel_with_DSC.xml
+vendor/etc/display/backlight_calib_vtdr6130_amoled_qsync_video_mode_dsi_visionox_panel_with_DSC.xml
+vendor/etc/display/backlight_calib_vtdr6130_amoled_video_mode_dsi_visionox_panel_with_DSC.xml
+vendor/etc/display/vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json
+vendor/lib64/libkeymasterprovision.so|9da9eac2fbff398f233f59f37ac37d73fc48bab6
+vendor/lib64/libspukeymintprovision.so;DISABLE_DEPS
+vendor/lib64/libspuprovisionids.so|cfd5fcf5a3c0aedc521feb461667ac5b83c32215
+vendor/lib64/libtee_provisioner_qti.so|07e4137cac2ab7d8a430d82699e887755ebb201b
