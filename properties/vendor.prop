@@ -66,6 +66,9 @@ vendor.audio.feature.hfp.enable=true
 debug.stagefright.c2inputsurface=-1
 media.c2.hal.selection=aidl
 
+# Dolby
+ro.vendor.dolby.dax.version=DAX3_3.14.0.10_r1
+
 # Bluetooth
 ro.bluetooth.a2dp_offload.supported=true
 persist.bluetooth.a2dp_offload.disabled=false

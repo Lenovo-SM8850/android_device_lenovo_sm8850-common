@@ -80,6 +80,20 @@ vendor/lib64/rfs/dsp/libsvDescMatch_dsp.so
 vendor/lib64/rfs/dsp/libsvswdsp.so
 vendor/lib64/rfs/dsp/libsvswdsp_skel.so
 
+# Dolby codec configuration
+vendor/etc/media_codecs_dolby_audio.xml
+
+# Dolby audio
+vendor/bin/hw/vendor.dolby.dms.service
+vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+vendor/etc/init/dms-service.rc
+vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
+vendor/etc/vintf/manifest/dms-service.xml
+vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
+vendor/lib64/libdmshal.so
+vendor/lib64/vendor.dolby.dms-V1-ndk.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+
 # GNSS location
 vendor/bin/edgnss-daemon
 vendor/bin/hw/android.hardware.gnss-aidl-service-qti
@@ -398,6 +412,8 @@ vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
+vendor/lib64/libcodec2_soft_ac4dec.so
+vendor/lib64/libcodec2_soft_ddpdec.so
 vendor/lib64/liblistensoundmodelaidl.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqc2audio_basecodec.so
@@ -406,6 +422,7 @@ vendor/lib64/libqc2audio_hooks.so
 vendor/lib64/libqc2audio_platform.so
 vendor/lib64/libqc2audio_swaudiocodec.so
 vendor/lib64/libqc2audio_utils.so
+vendor/lib64/soundfx/libdlbvolaidl.so;DISABLE_DEPS
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V2-ndk.so
 
@@ -1384,7 +1401,9 @@ vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
 vendor/lib64/libcenterface.so
 vendor/lib64/libcpion.so
+vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdataitems.so
+vendor/lib64/libdeccfg.so
 vendor/lib64/libdepthcomputation.so
 vendor/lib64/libdiagjni.so
 vendor/lib64/libdigital-dimming.so
