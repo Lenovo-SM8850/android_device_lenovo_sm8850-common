@@ -110,12 +110,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
-    (
-        'vendor/etc/media_codecs_canoe_sku2_vendor.xml',
-        'vendor/etc/media_codecs_canoe_v1_vendor.xml',
-        'vendor/etc/media_codecs_performance_canoe_sku1.xml',
-    ): blob_fixup()
-        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
 
 
