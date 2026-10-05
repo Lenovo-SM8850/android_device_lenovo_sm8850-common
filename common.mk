@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     checkpoint_gc
 
+# AVF
+PRODUCT_BUILD_PVMFW_IMAGE := true
+$(call inherit-product, packages/modules/Virtualization/build/apex/product_packages.mk)
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti.recovery
