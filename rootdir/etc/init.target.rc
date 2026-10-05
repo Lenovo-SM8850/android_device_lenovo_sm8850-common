@@ -1,0 +1,256 @@
+
+# Copyright (c) 2019-2021, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+import /vendor/etc/init/hw/init.qti.kernel.rc
+
+on early-init
+    write /proc/sys/kernel/printk_devkmsg ratelimited
+    export MEMTAG_OPTIONS off
+
+on init
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    chown system system /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
+    chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
+    start logd
+
+on early-fs
+    start vold
+
+on fs
+    mount_all /vendor/etc/fstab.qcom --early
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    restorecon_recursive /mnt/vendor/persist
+    mkdir /mnt/vendor/persist/secnvm 0770 system system
+    mkdir /mnt/vendor/persist/data 0700 system system
+
+
+on late-fs
+    #exec_start wait_for_keymaster
+    mount_all /vendor/etc/fstab.qcom --late
+
+on post-fs-data
+    mkdir /vendor/data/tombstones 0771 system system
+    # Enable WLAN cold boot calibration
+    write /sys/kernel/cnss/fs_ready 1
+
+    # Audio add for smartpa calibration
+    mkdir /mnt/vendor/persist/factory
+    mkdir /mnt/vendor/persist/factory/audio
+    chmod 0777 mnt/vendor/persist/factory/audio
+    chown system system mnt/vendor/persist/factory/audio/aw_cali.bin
+    chmod 0777 /dev/aw882xx_smartpa
+on early-boot
+    verity_update_state
+
+on boot
+    write /dev/cpuset/audio-app/cpus 0-1
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
+    chown system /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/trusted_touch_enable
+    chmod 0660 /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/trusted_touch_enable
+    chown system /sys/devices/platform/soc/990000.spi/spi_master/spi0/spi0.0/trusted_touch_enable
+    chmod 0660 /sys/devices/platform/soc/990000.spi/spi_master/spi0/spi0.0/trusted_touch_enable
+    chown system /sys/devices/system/cpu/hyp_core_ctl/enable
+    chown system /sys/devices/system/cpu/hyp_core_ctl/hcc_min_freq
+    chmod 0666 mnt/vendor/persist/factory/audio/aw_cali.bin
+    # speaker id
+    chown media audio /sys/kernel/spk_id_gpio_level/spk_id_level
+    # rkp_md5
+    chown root shell /sys/kernel/rkp_md5/rkp_md5
+    #add for mpss and cnss ssr
+    chown system system /sys/class/remoteproc/remoteproc3/recovery
+    chmod 0664 /sys/class/remoteproc/remoteproc3/recovery
+    write /sys/class/remoteproc/remoteproc3/recovery enabled
+    write /sys/kernel/cnss/recovery 1
+
+#camera property start
+on property:vendor.lenovocamera.packagename.client=*
+   setprop vendor.camera.packagename.client ${vendor.lenovocamera.packagename.client}
+on property:vendor.lenovocamera.packagename.zui=*
+    setprop vendor.camera.packagename.zui ${vendor.lenovocamera.packagename.zui}
+on property:vendor.lenovocamera.packagename.cts=*
+    setprop vendor.camera.packagename.cts ${vendor.lenovocamera.packagename.cts}
+on property:persist.lenovo.camera.superportraitvideo.enable=*
+    setprop persist.odm.camera.superportraitvideo.enable ${persist.lenovo.camera.superportraitvideo.enable}
+on property:persist.lenovo.camera.superportraitvideo.level=*
+    setprop persist.odm.camera.superportraitvideo.level ${persist.lenovo.camera.superportraitvideo.level}
+#camera property end
+
+on property:vendor.display.lcd_density=560
+   setprop dalvik.vm.heapgrowthlimit 256m
+
+on property:vendor.display.lcd_density=640
+   setprop dalvik.vm.heapgrowthlimit 256m
+
+on init && property:ro.boot.mode=charger
+#   wait_for_prop vendor.all.modules.ready 1
+    mount_all /vendor/etc/charger_fstab.qcom --early
+
+on charger
+    start vendor.power_off_alarm
+    write /sys/kernel/cnss/charger_mode 1
+
+#service vendor.lowi /vendor/bin/sscrpcd
+#   class core
+#   user system
+#   group system wakelock
+#   capabilities BLOCK_SUSPEND
+
+#pd-mapper
+service vendor.pd_mapper /vendor/bin/pd-mapper
+    class core
+    user system
+    group system
+
+#Peripheral manager
+service vendor.per_mgr /vendor/bin/pm-service
+    class core
+    user system
+    group system
+    ioprio rt 4
+
+service vendor.per_proxy /vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+#service vendor.mdm_helper /vendor/bin/mdm_helper
+#    class core
+#    group system wakelock
+#    disabled
+
+on property:init.svc.vendor.per_mgr=running
+    start vendor.per_proxy
+
+on property:sys.boot_completed=1 && property:ro.vendor.build.type=userdebug
+    mkdir /mnt/vendor/logfs 0644 system system
+    mount vfat /dev/block/by-name/logfs /mnt/vendor/logfs rw wait noatime
+
+on property:sys.shutdown.requested=*
+    write /sys/kernel/qcom_rproc/shutdown_in_progress 1
+    stop vendor.per_proxy
+
+on property:vold.decrypt=trigger_restart_framework
+   start vendor.cnss_diag
+
+service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
+   class main
+   user system
+   group system wifi inet sdcard_rw media_rw diag
+   oneshot
+
+on early-boot && property:persist.vendor.pcie.boot_option=*
+    write /sys/bus/platform/devices/1c00000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
+    write /sys/bus/platform/devices/1c08000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
+
+on post-fs
+     chown system system /sys/devices/system/cpu/cpu0/thermal/control
+     chmod 666 /sys/devices/system/cpu/cpu0/thermal/control
+
+     # CPU scheduler
+     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+     chown system system /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+     chmod 666 /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+
+on property:sys.RemotelyProvisionedKey.fetch.completed=1
+    setprop ro.odm.lenovo.attestationkey ${sys.RemotelyProvisionedKey.fetch.completed}
+
+on property:debug.zui.antutu_status=1
+   setprop sys.ui.perfmode.enable 1
+
+on property:debug.zui.antutu_status=2
+   setprop sys.ui.perfmode.enable 1
+
+on property:debug.zui.antutu_status=3
+   setprop sys.ui.perfmode.enable 1
+
+on property:debug.zui.antutu_status=4
+   setprop sys.ui.perfmode.enable 1
+
+on property:debug.zui.antutu_status=0
+   setprop sys.ui.perfmode.enable 1
+
+on property:debug.zui.antutu_status=-1
+   setprop sys.ui.perfmode.enable 0
+
+service setwlansardsi0 /vendor/bin/setwlansardsi0.sh
+    disabled
+    user root
+    oneshot
+    group root root
+
+service setwlansardsi1 /vendor/bin/setwlansardsi1.sh
+    disabled
+    user root
+    oneshot
+    group root root
+
+service setwlansardsi2 /vendor/bin/setwlansardsi2.sh
+    disabled
+    user root
+    oneshot
+    group root root
+
+service setwlansardsi3 /vendor/bin/setwlansardsi3.sh
+    disabled
+    user root
+    oneshot
+    group root root
+
+service setwlansardsi4 /vendor/bin/setwlansardsi4.sh
+    disabled
+    user root
+    oneshot
+    group root root
