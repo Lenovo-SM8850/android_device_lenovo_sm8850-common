@@ -742,7 +742,6 @@ service vendor.ssr_diag /system/vendor/bin/ssr_diag
     group system
     disabled
 
-
 service vm_bms /vendor/bin/vm_bms
     user root
     group root
