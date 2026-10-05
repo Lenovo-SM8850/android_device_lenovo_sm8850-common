@@ -37,6 +37,9 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     xbl_config_arb_check
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
+
 # AVF
 PRODUCT_BUILD_PVMFW_IMAGE := true
 $(call inherit-product, packages/modules/Virtualization/build/apex/product_packages.mk)
