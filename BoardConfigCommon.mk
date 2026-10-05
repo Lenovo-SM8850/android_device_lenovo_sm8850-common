@@ -217,6 +217,9 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Include the proprietary files makefile.
 include vendor/lenovo/sm8850-common/BoardConfigVendor.mk
 
+# Evolution X
+BOARD_VENDOR_SEPOLICY_DIRS += device/lenovo/sm8850-common/sepolicy/evolution
+
 # Device hardware configuration
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
