@@ -168,7 +168,7 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
-# Shared Lenovo HAL policy
+# Shared Lenovo and Dolby HAL policy
 include hardware/lenovo/sepolicy/qti/SEPolicy.mk
 
 # Verified Boot

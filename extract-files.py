@@ -46,6 +46,10 @@ lib_fixups: lib_fixups_user_type = {
         lib_fixup_system_suffix,
     'vendor.qti.imsrtpservice@3.1':
         lib_fixup_system_suffix,
+    'libdolbyui':
+        lambda lib, partition: f'{lib}-system' if partition == 'system' else lib,
+    'libdolbyproxyandroid':
+        lambda lib, partition: f'{lib}-system' if partition == 'system' else lib,
     'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
         lib_fixup_system_suffix,
 }
@@ -89,6 +93,11 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'Copyright \(c\) Qualcomm Technologies, Inc\. and/or its subsidiaries\.', 'Copyright (c) 2024-2025 Qualcomm Technologies, Inc.'),
     'system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml': blob_fixup()
         .regex_replace('<privapp-permissions package="(?:org.codeaurora.dialer|com.android.mms)">[\\s\\S]*?</privapp-permissions>', ''),
+    (
+        'system/lib64/libdolbyui.so',
+        'vendor/lib64/libdolbyui.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'system_ext/lib64/libwfdcommonutils.so': blob_fixup()
         .remove_needed('libheif.so'),
     'system_ext/priv-app/WfdService/WfdService.apk': blob_fixup()
@@ -142,12 +151,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
-    (
-        'vendor/etc/media_codecs_canoe_sku2_vendor.xml',
-        'vendor/etc/media_codecs_canoe_v1_vendor.xml',
-        'vendor/etc/media_codecs_performance_canoe_sku1.xml',
-    ): blob_fixup()
-        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
 
 
