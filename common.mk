@@ -335,6 +335,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 PRODUCT_PACKAGES += \
     snapuserd.recovery
 
+# GPS
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
+# Graphics
+PRODUCT_PACKAGES += vendor.qti.hardware.memtrack-service
+
 PRODUCT_PACKAGES += android.hardware.graphics.composer3-V2-ndk.vendor
 
 PRODUCT_PACKAGES += android.hardware.graphics.composer3-V3-ndk.vendor
@@ -405,9 +411,6 @@ PRODUCT_PACKAGES += vendor.qti.hardware.display.mapper@1.1.vendor
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.opengles.deqp.level-2025-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
-# GPS
-PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
-
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
@@ -448,6 +451,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
+# IPACM
+PRODUCT_PACKAGES += \
+    IPACM_Filter_cfg.xml \
+    IPACM_cfg.xml \
+    ipacm
+
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml
@@ -483,6 +492,12 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:$
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+
+# QSPA
+PRODUCT_PACKAGES += \
+    qspa_application_packages.xml \
+    qspa_vendor.rc \
+    vendor.qti.qspa-service
 
 # Recovery
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
