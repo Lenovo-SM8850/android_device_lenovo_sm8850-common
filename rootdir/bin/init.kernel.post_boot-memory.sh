@@ -159,9 +159,6 @@ function configure_vm_params() {
 
 	echo $MinFreeKbytes  > /proc/sys/vm/min_free_kbytes
 	echo $WatermarkScale > /proc/sys/vm/watermark_scale_factor
-	# We store min_free_kbytes into a vendor property so that the PASR
-	# HAL can read and set the value for it.
-	setprop vendor.memory.min_free_kbytes $MinFreeKbytes
 }
 
 function configure_memory_parameters() {
