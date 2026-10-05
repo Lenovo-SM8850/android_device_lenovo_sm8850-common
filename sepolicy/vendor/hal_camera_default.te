@@ -1,0 +1,5 @@
+allow hal_camera_default vendor_cam_prop:file { read getattr map open };
+allow hal_camera_default vendor_cam_prop:property_service { set };
+allow hal_camera_default vendor_persist_vibrator_prop:property_service { set };
+
+dontaudit hal_camera_default vendor_default_prop:property_service { set };

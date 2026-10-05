@@ -1,0 +1,9 @@
+# hal_graphics_composer_default
+
+allow servicemanager hal_graphics_composer_default:binder { call };
+
+# Traverse /mnt/user/0 during display service startup; no app-data access.
+allow hal_graphics_composer_default mnt_user_file:dir search;
+
+# stat("/mnt/vendor/persist") existence probe
+dontaudit hal_graphics_composer_default mnt_vendor_file:dir { getattr };

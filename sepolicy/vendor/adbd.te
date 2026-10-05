@@ -1,0 +1,1 @@
+get_prop(adbd, vendor_spu_lifecycle_prop)

@@ -1,0 +1,8 @@
+# Lenovo file, procfs and sysfs types (see file_contexts and genfs_contexts).
+
+type mdlog_data_file, data_file_type, file_type;
+type vendor_sysfs_headset, fs_type, sysfs_type;
+type vendor_sysfs_simtray, fs_type, sysfs_type;
+type vendor_sysfs_usb_c, fs_type, sysfs_type;
+type vendor_sysfs_vibrator, fs_type, sysfs_type;
+type zuk_logd_file, data_file_type, file_type, mlstrustedobject;
