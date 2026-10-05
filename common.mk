@@ -318,7 +318,10 @@ PRODUCT_COPY_FILES += \
     $(LENOVO_DEVICE_CONFIG_PATH)/configs/audio/sku_canoe/resourcemanager_canoe_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/resourcemanager_canoe_qrd.xml \
     $(LENOVO_DEVICE_CONFIG_PATH)/configs/audio/sku_canoe/resourcemanager_canoe_qrd_wsa884x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/resourcemanager_canoe_qrd_wsa884x.xml \
     $(LENOVO_DEVICE_CONFIG_PATH)/configs/audio/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml \
-    $(LENOVO_DEVICE_CONFIG_PATH)/configs/display/sdm_display_resolution_extn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/sdm_display_resolution_extn.xml
+    $(LENOVO_DEVICE_CONFIG_PATH)/configs/display/sdm_display_resolution_extn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/sdm_display_resolution_extn.xml \
+    $(LENOVO_DEVICE_CONFIG_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml \
+    $(LENOVO_DEVICE_CONFIG_PATH)/configs/perf/qapeconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/qapeconfigstore.xml \
+    $(LENOVO_DEVICE_CONFIG_PATH)/configs/power/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # DRM
 PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
@@ -504,6 +507,15 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.verified_boot.
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# Power
+PRODUCT_PACKAGES += android.hardware.power-service-qti
+
+PRODUCT_PACKAGES += vendor.qti.hardware.perf@2.0.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.perf@2.1.vendor
+
+PRODUCT_PACKAGES += vendor.qti.hardware.perf@2.2.vendor
+
 # QSPA
 PRODUCT_PACKAGES += \
     qspa_application_packages.xml \
@@ -577,6 +589,9 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Thermal
+PRODUCT_PACKAGES += android.hardware.thermal-service.qti
 
 # USB
 PRODUCT_PACKAGES += \
