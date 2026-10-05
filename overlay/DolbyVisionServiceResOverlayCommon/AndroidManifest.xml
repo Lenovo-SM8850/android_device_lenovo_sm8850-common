@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="io.github.miner7222.overlay.dolbyvision.canoe">
+    <application android:hasCode="false" />
+    <overlay android:targetPackage="io.github.miner7222.dolbyvision" android:targetName="PlaybackColorModeConfig" android:isStatic="true" android:priority="500" />
+</manifest>
