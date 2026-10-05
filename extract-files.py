@@ -115,7 +115,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/media_codecs_canoe_v1_vendor.xml',
         'vendor/etc/media_codecs_performance_canoe_sku1.xml',
     ): blob_fixup()
-        .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
 
