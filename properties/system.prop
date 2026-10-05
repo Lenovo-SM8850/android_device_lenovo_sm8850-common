@@ -1,3 +1,13 @@
+# Audio
+ro.config.vc_call_vol_steps=15
+
+# Charger
+ro.charger.enable_suspend=1
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
 # Wi-Fi Display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
