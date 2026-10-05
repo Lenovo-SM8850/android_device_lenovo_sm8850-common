@@ -552,7 +552,3 @@ PRODUCT_PACKAGES += \
 
 # Include the proprietary files makefile.
 $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
-
-# Camera privileged applications
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.privapp.list=org.lineageos.aperture,org.codeaurora.snapcam
