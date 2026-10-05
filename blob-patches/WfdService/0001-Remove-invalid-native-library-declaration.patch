@@ -1,0 +1,10 @@
+diff --git a/AndroidManifest.xml b/AndroidManifest.xml
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -26,6 +26,5 @@
+                 <action android:name="com.qualcomm.wfd.service.WfdService"/>
+             </intent-filter>
+         </service>
+-        <uses-native-library android:name=".WfdService" android:required="true"/>
+     </application>
+ </manifest>
