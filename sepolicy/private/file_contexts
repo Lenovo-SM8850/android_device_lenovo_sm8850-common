@@ -1,0 +1,3 @@
+/dataext(/.*)?                                              u:object_r:dataext_file:s0
+/dev/block/by-name/dataext_[ab]                             u:object_r:dataext_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/dataext_[ab] u:object_r:dataext_block_device:s0
