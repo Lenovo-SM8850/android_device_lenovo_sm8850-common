@@ -102,13 +102,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libqtivibratoreffectoffload.so', 'libqtivibratoreffectoffload-lenovo.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
-    (
-        'vendor/etc/media_codecs_canoe_sku2_vendor.xml',
-        'vendor/etc/media_codecs_canoe_v1_vendor.xml',
-        'vendor/etc/media_codecs_performance_canoe_sku1.xml',
-    ): blob_fixup()
-        .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
-        .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
 
 if not helpers.source_audio_builds()['effects']:
