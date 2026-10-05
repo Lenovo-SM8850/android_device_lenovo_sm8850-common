@@ -1,0 +1,6 @@
+# Lenovo vendor property types (see property_contexts).
+
+vendor_restricted_prop(vendor_cam_prop)
+vendor_public_prop(vendor_firstboot_prop)
+system_public_prop(vendor_persist_vibrator_prop)
+vendor_public_prop(vendor_spu_lifecycle_prop)

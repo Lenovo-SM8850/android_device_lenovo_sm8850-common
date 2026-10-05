@@ -1,0 +1,2 @@
+allow vendor_spdaemon vendor_spu_lifecycle_prop:file { read getattr map open };
+allow vendor_spdaemon vendor_spu_lifecycle_prop:property_service { set };

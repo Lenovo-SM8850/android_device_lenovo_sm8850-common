@@ -1,0 +1,7 @@
+allow system_server sysfs_devices_system_cpu:file { write append };
+allow system_server vendor_firstboot_prop:file { read getattr map open };
+allow system_server vendor_persist_vibrator_prop:file { read getattr map open };
+allow system_server vendor_persist_vibrator_prop:property_service { set };
+
+# Suppress vibrator LED probe denials.
+dontaudit system_server vendor_sysfs_vibrator:file { getattr open read };
