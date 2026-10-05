@@ -35,7 +35,7 @@ if [ -f /sys/devices/soc0/soc_id ]; then
 fi
 
 case "$platformid" in
-	"660"|"661"|"704"|"722"|"723")
+	"660"|"661"|"704"|"722"|"723"|"743")
 		# pass as an argument the number of max clusters supported
 		/vendor/bin/sh /vendor/bin/init.kernel.post_boot-canoe.sh 2
 		;;

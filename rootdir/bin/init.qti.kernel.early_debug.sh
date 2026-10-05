@@ -35,7 +35,7 @@ if [ -f /sys/devices/soc0/soc_id ]; then
 fi
 
 case "$platformid" in
-    "660"|"661"|"704"|"685"|"722"|"723"|"727")
+    "660"|"661"|"704"|"685"|"722"|"723"|"727"|"743")
 		/vendor/bin/sh /vendor/bin/init.qti.kernel.early_debug-canoe.sh
 		;;
 
