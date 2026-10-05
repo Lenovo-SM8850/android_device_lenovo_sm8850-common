@@ -134,5 +134,8 @@ PRODUCT_PACKAGES += \
     vendor_soccp_firmware_mountpoint \
     vendor_vm-system_mountpoint
 
+# VINTF
+DEVICE_MANIFEST_FILE += device/lenovo/sm8850-common/vintf/manifest_canoe.xml
+
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
