@@ -54,6 +54,22 @@ PRODUCT_BUILD_DEBUG_VENDOR_BOOT_IMAGE := false
 # Characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
+# CNE
+PRODUCT_PACKAGES += libvndfwk_detect_jni.qti.vendor
+
+PRODUCT_PACKAGES += libvndfwk_detect_jni.qti_vendor
+
+# Compatibility libraries
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-V4-ndk.vendor \
+    android.hardware.security.sharedsecret-V2-ndk.vendor \
+    libaudioutils_shim \
+    libbluetooth_audio_session_aidl_shim \
+    libcodec2_aidl_noisurface.vendor \
+    libcodec2_shim \
+    libkeymaster_messages.vendor \
+    libtinyxml2-v36
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
@@ -65,6 +81,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
     snapuserd.recovery
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.allocator@1.0-service \
+    android.hidl.memory@1.0-impl \
+    hwservicemanager
+
+PRODUCT_PACKAGES += android.hidl.token@1.0-utils.vendor
+
+PRODUCT_PACKAGES += android.hidl.token@1.0.vendor
 
 # Init
 PRODUCT_PACKAGES += \
@@ -91,6 +117,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
+
+PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
 
 # Recovery
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
@@ -133,6 +161,10 @@ PRODUCT_PACKAGES += \
     vendor_firmware_mnt_mountpoint \
     vendor_soccp_firmware_mountpoint \
     vendor_vm-system_mountpoint
+
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
 
 # VINTF
 DEVICE_MANIFEST_FILE += device/lenovo/sm8850-common/vintf/manifest_canoe.xml

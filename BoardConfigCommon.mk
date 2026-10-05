@@ -58,6 +58,9 @@ BOARD_BOOTCONFIG := \
     androidboot.serialconsole=0
 # Header v4: the dtb goes to vendor_boot; boot.img has no dtb.
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -73,7 +76,6 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-# Filesystem
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
