@@ -94,6 +94,9 @@ vendor.gralloc.disable_ubwc=0
 vendor.gralloc.enable_logs=0
 vendor.gralloc.enable_snapalloc=1
 
+# Dolby
+ro.vendor.dolby.dax.version=DAX3_3.14.0.10_r1
+
 # DRM
 drm.service.enabled=true
 vendor.wv.oemcrypto.debug.enable_external_display_check=false
