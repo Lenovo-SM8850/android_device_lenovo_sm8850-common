@@ -59,10 +59,10 @@ on factory-fs && property:ro.bootmode=ffbm-00
 on factory-fs && property:ro.bootmode=ffbm-01
     mount tmpfs tmpfs /data
 
-# aligned the usb port with system standard, otherwise if only diag be added
+# Aligned the usb port with system standard, otherwise if only diag be added
 # Then in QMMI mode, the whole Andoid be booted, but due to the ro.bootmode is
-# not normal/unknow, then when it apply the default funcs, it will turn to MTP
-# which cause the diag/Wwan/modem port all be lost in qmmi mode. Details:
+# Not normal/unknow, then when it apply the default funcs, it will turn to MTP
+# Which cause the diag/Wwan/modem port all be lost in qmmi mode. Details:
 # UsbDeviceManager.java---->getDefaultFunctions and trySetEnabledFunctions
 on property:persist.vendor.usb.config=*
     setprop persist.sys.usb.qmmi.func ${persist.vendor.usb.config}
@@ -110,10 +110,10 @@ on ffbm
     trigger post-fs
 
     # Mount fstab in init.{$device}.rc by mount_all with '--late' parameter
-    # to only mount entries with 'latemount'. This is needed if '--early' is
-    # specified in the previous mount_all command on the fs stage.
+    # To only mount entries with 'latemount'. This is needed if '--early' is
+    # Specified in the previous mount_all command on the fs stage.
     # With /system mounted and properties form /system + /factory available,
-    # some services can be started.
+    # Some services can be started.
     trigger late-fs
 
     # Now we can mount /data. File encryption requires keymaster to decrypt

@@ -5,11 +5,11 @@ genfscon proc "/rkp_md5" u:object_r:proc_stat:s0
 genfscon sysfs "/kernel/extend_reclaim/reclaim" u:object_r:sysfs_zram:s0
 genfscon sysfs "/kernel/rkp_md5/rkp_md5" u:object_r:vendor_sysfs_kgsl_shell:s0
 
-# sd card / sim tray status
+# Sd card / sim tray status
 genfscon sysfs "/class/hardinfo/interface/hardware_info/sdcard_status" u:object_r:vendor_sysfs_simtray:s0
 genfscon sysfs "/devices/virtual/hardinfo/interface/hardware_info/sdcard_status" u:object_r:vendor_sysfs_simtray:s0
 
-# battery / charger (qcom-battery class)
+# Battery / charger (qcom-battery class)
 genfscon sysfs "/class/qcom-battery/battery1_manufacturer" u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs "/class/qcom-battery/battery2_manufacturer" u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs "/class/qcom-battery/chip_cp1" u:object_r:vendor_sysfs_battery_supply:s0
@@ -40,9 +40,9 @@ genfscon sysfs "/class/qcom-battery/typec_cc_orientation2" u:object_r:vendor_sys
 
 # USB-C
 genfscon sysfs "/class/typec/usbc0" u:object_r:vendor_sysfs_usb_c:s0
-# denial
+# Denial
 genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink2" u:object_r:vendor_sysfs_usb_supply:s0
 
-# wakeup sources
+# Wakeup sources
 genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb2/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink2/wakeup" u:object_r:sysfs_wakeup:s0

@@ -1,14 +1,14 @@
-# camera (vendor_cam_prop)
+# Camera (vendor_cam_prop)
 vendor.camera.sn.main                    u:object_r:vendor_cam_prop:s0
 vendor.camera.sn.front                   u:object_r:vendor_cam_prop:s0
 persist.vendor.lenovo.mirror             u:object_r:vendor_cam_prop:s0
 vendor.camera.superportraitvideo.enable  u:object_r:vendor_cam_prop:s0
 vendor.camera.superportraitvideo.level   u:object_r:vendor_cam_prop:s0
 
-# first boot (vendor_firstboot_prop)
+# First boot (vendor_firstboot_prop)
 persist.odm.firstboot  u:object_r:vendor_firstboot_prop:s0
 
-# vibrator (vendor_persist_vibrator_prop)
+# Vibrator (vendor_persist_vibrator_prop)
 persist.vendor.vibrate.pkg       u:object_r:vendor_persist_vibrator_prop:s0
 persist.vendor.disable.vibrator  u:object_r:vendor_persist_vibrator_prop:s0
 

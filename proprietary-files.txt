@@ -512,7 +512,7 @@ vendor/lib64/libmmcamera_pdpc.so
 vendor/lib64/libqshcamera.so
 vendor/lib64/libqshcamera_sensinghubapi.so
 
-# display HDRdynamic
+# Display (HDR)
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
@@ -574,13 +574,13 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
-# fingerprint
+# Fingerprint
 vendor/lib64/libqfp-service.so
 vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# haptic HAL
+# Haptic HAL
 vendor/bin/hw/vendor.lenovo.hardware.vibrator_dual-service
 vendor/bin/hw/vendor.qti.hardware.vibrator.service:vendor/bin/hw/vendor.qti.hardware.vibrator.service-lenovo
 vendor/etc/init/vendor.lenovo.hardware.vibrator_dual-service.rc
@@ -597,7 +597,7 @@ vendor/lib64/vendor.qti.hardware.vibratorCL.impl.so:vendor/lib64/vendor.qti.hard
 vendor/lib64/vendor.qti.hardware.vibratorOL.impl.so:vendor/lib64/vendor.qti.hardware.vibratorOL.impl-lenovo.so;FIX_SONAME
 vendor/lib64/vendor.qti.hardware.vibratorSel.impl.so:vendor/lib64/vendor.qti.hardware.vibratorSel.impl-lenovo.so;FIX_SONAME
 
-# haptic waveforms
+# Haptic waveforms
 odm/etc/aac_richtap_l.config
 odm/etc/aac_richtap_r.config
 vendor/etc/acdbdata/haptics_data/click.pcm
@@ -881,7 +881,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
 
-# panel calibration
+# Display calibration
 vendor/etc/display/backlight_calib_Sharp_qhd_cmd_mode_dsi_panel.xml
 vendor/etc/display/backlight_calib_Sharp_qhd_video_mode_dsi_panel.xml
 vendor/etc/display/backlight_calib_nt37801_amoled_cmd_mode_dsi_csot_panel_with_DSC.xml
@@ -900,7 +900,7 @@ vendor/etc/display/nt37801_amoled_video_mode_dsi_csot_panel_with_DSC.json
 vendor/etc/display/nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.json
 vendor/etc/display/vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json
 
-# platform HAL interfaces
+# Platform HAL interfaces
 vendor/bin/hw/vendor.qti.hardware.minkipcbinder@1.0-service
 vendor/etc/seccomp_policy/qwesd@2.0.policy
 vendor/lib64/vendor.lenovo.hardware.touchscreen-V5-ndk.so
@@ -963,7 +963,7 @@ vendor/lib64/vendor.qti.qvirt-V2-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices-V2-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
-# platform VINTF
+# Platform VINTF
 vendor/etc/vintf/manifest/android.hardware.security.secretkeeper-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service-qti.xml
 vendor/etc/vintf/manifest/avf_qcvm_manager.xml
@@ -988,7 +988,7 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 
-# platform configuration
+# Platform configuration
 system_ext/etc/seccomp_policy/wfdservice64.policy
 system_ext/etc/wfdconfigsink.xml
 vendor/etc/5GNR_LTE_CN_V9.cfg
@@ -1094,7 +1094,7 @@ vendor/etc/ssg/tz_whitelist.json
 vendor/etc/sv/mldfs/mldfs_dyn.dat
 vendor/etc/wfdconfig.xml
 
-# platform init
+# Init
 system_ext/etc/init/wfdservice.rc
 vendor/etc/init/android.hardware.security.secretkeeper-service-qti.rc
 vendor/etc/init/avf_qcvm_manager.rc
@@ -1142,7 +1142,7 @@ vendor/etc/init/wfdvndservice.rc
 vendor/etc/init/xtra-daemon.rc
 vendor/etc/init/yepdiag.rc
 
-# platform permissions
+# Platform permissions
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 vendor/etc/permissions/android.hardware.keystore.app_attest_key.xml
 vendor/etc/permissions/android.software.device_id_attestation.xml
@@ -1150,7 +1150,7 @@ vendor/etc/permissions/privapp-permissions-qti-vendor.xml
 vendor/etc/permissions/sku_canoe/android.hardware.strongbox_keystore.xml
 vendor/etc/permissions/vendor.qti.dcf.xml
 
-# platform runtime
+# Platform runtime
 odm/lib64/bm6a81v04s14n00.sm8845.bin
 odm/lib64/bm6a81v04s14n01.sm8845.bin
 odm/lib64/bm6a81v04s14n02.bin
@@ -1543,7 +1543,7 @@ vendor/lib64/vendor.qti.qesdhal-impl.so
 vendor/lib64/vendor.qti.qspmhal-impl.so
 vendor/rfs/rfs_symlinks
 
-# power performance
+# Performance
 vendor/bin/feature_enabler_client
 vendor/bin/hw/android.hardware.powerstats-service.qti
 vendor/bin/hw/vendor.lenovo.hardware.battery-service
@@ -1673,7 +1673,7 @@ vendor/lib64/vendor.qti.hardware.soter-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.spu-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.trustedui-V1-ndk.so
 
-# sensor configuration
+# Sensors config
 vendor/etc/sensors/config/kaanapali_ccd_base.json
 vendor/etc/sensors/config/kaanapali_ccd_v6_0_amd.json
 vendor/etc/sensors/config/kaanapali_ccd_v6_0_regs.json
@@ -1770,10 +1770,10 @@ vendor/lib64/libsns_dynamic_loader_stub.so
 vendor/lib64/libsns_remote_proc_state_stub.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate-V1-ndk.so
 
-# thermal engine
+# Thermal engine
 vendor/etc/init/init_thermal-engine-v2.rc
 
-# thermal power tuning
+# Thermal power tuning
 vendor/etc/perf/avcsysnodesconfigs.xml
 vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/factorsconfig.xml

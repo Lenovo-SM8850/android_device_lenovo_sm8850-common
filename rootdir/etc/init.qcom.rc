@@ -69,7 +69,7 @@ on early-init
     mount tracefs tracefs /sys/kernel/tracing
     chmod 0755 /sys/kernel/tracing
 
-    # create symlink for vendor mount points
+    # Create symlink for vendor mount points
     symlink /vendor/firmware_mnt /firmware
     symlink /vendor/bt_firmware /bt_firmware
     symlink /vendor/dsp /dsp
@@ -106,7 +106,7 @@ on init
 on post-fs
 
 on early-boot
-    # set RLIMIT_MEMLOCK to 64KB
+    # Set RLIMIT_MEMLOCK to 64KB
     setrlimit 8 65536 65536
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qti.can.sh
@@ -158,8 +158,8 @@ on boot
     chown media audio /sys/kernel/snd_card/card_state
 
     # This location is used by QCRIL to host UNIX domain
-    # socket files used for internal IPC within QCRIL
-    # modules
+    # Socket files used for internal IPC within QCRIL
+    # Modules
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
 
@@ -187,11 +187,11 @@ on boot
     setprop net.tcp.2g_init_rwnd 10
 
     # To prevent out of order acknowledgements from making
-    # connection tracking to treat them as not belonging to
-    # the connection they belong to.
+    # Connection tracking to treat them as not belonging to
+    # The connection they belong to.
     # Otherwise, a weird issue happens in which some long
-    # connections on high-throughput links get dropped when
-    # an ack packet comes out of order
+    # Connections on high-throughput links get dropped when
+    # An ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
     # Allow access for CCID command/response timeout configuration
@@ -254,7 +254,7 @@ on boot
     chown system system /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
 
     # Create directory used for display
-    # for backward compatibility
+    # For backward compatibility
     mkdir /persist/display 0770 system graphics
     mkdir /mnt/vendor/persist/display 0770 system graphics
 
@@ -267,10 +267,10 @@ on boot
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
-    # limit discard size to 128MB in order to avoid long IO latency
+    # Limit discard size to 128MB in order to avoid long IO latency
     write /sys/block/sda/queue/discard_max_bytes 134217728
 
-# msm specific files that need to be created on /data
+# Msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
 
@@ -425,7 +425,7 @@ on post-fs-data
     mkdir /data/vendor/swap 0770 root system
     chmod 2770 /data/vendor/swap
 
-    # set aggressive read ahead for dm-0 and dm-1 during boot up
+    # Set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/dm-2/queue/read_ahead_kb 2048
@@ -586,7 +586,7 @@ on property:persist.vendor.radio.atfwd.start=false
 on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
-# corefile limit
+# Corefile limit
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
@@ -842,7 +842,7 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
 
-#add poweroffhandler
+#Add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
     class core
     user media
@@ -902,25 +902,25 @@ on property:vendor.debug.camera.3Adebug=1
     chown system system /data/vendor/camera/Capture3AData.dat
     chmod 0777 /data/vendor/camera/Capture3AData.dat
 
-# use minidump for user build by default
+# Use minidump for user build by default
 on early-init && property:ro.build.type=user
     write /sys/kernel/dload/dload_mode mini
     write /sys/module/qcom_ramdump/parameters/enable_dump_collection 1
     write /sys/kernel/dload/emmc_dload 1
 
-# use fulldump for userdebug build by default
+# Use fulldump for userdebug build by default
 on early-init && property:ro.build.type=userdebug
     write /sys/kernel/dload/dload_mode full
     write /sys/module/qcom_ramdump/parameters/enable_dump_collection 1
     write /sys/kernel/dload/emmc_dload 0
 
-# if persist.vendor.force_fulldump not null then force to do full dump
+# If persist.vendor.force_fulldump not null then force to do full dump
 on boot && property:persist.vendor.force_full_dump=*
     write /sys/kernel/dload/dload_mode full
     write /sys/kernel/dload/emmc_dload 0
-# ssr config is controlled by ####3333#
+# Ssr config is controlled by ####3333#
 
-#enable modem ssr
+#Enable modem ssr
 on property:ro.build.type=user
     setprop persist.sys.ssr.enable_debug 1
     setprop persist.vendor.ssr.enable_ramdumps 0

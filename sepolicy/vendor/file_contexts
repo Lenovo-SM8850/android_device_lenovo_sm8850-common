@@ -22,7 +22,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.cabl\.off\.sh  u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/profile_config_service.sh  u:object_r:vendor_qti_init_shell_exec:s0
 
-# data
+# Data
 /data/vendor/newlog(/.*)?      u:object_r:zuk_logd_file:s0
 /data/vendor/qtvm_dtbo(/.*)?   u:object_r:vendor_vm_data_file:s0
 
@@ -41,7 +41,7 @@
 /sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:7/block/sdh/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
 /sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:8/block/sdi/queue/read_ahead_kb              u:object_r:vendor_sysfs_sd:s0
 
-# device nodes
+# Device nodes
 # UFS LUN BSG nodes are flattened by ueventd; retain QCOM's separate LUN4 type.
 /dev/0:0:0:[0-35]                                        u:object_r:vendor_bsg_device:s0
 /dev/lenovo_penraw                                         u:object_r:lenovo_device:s0

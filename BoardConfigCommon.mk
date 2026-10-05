@@ -73,7 +73,7 @@ BOARD_BOOTCONFIG := \
     androidboot.hypervisor.version=gunyah \
     androidboot.vendor.qspa=true \
     androidboot.serialconsole=0
-# (header v4: the dtb goes to vendor_boot; boot.img has no dtb)
+# Header v4: the dtb goes to vendor_boot; boot.img has no dtb.
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # Filesystem
@@ -93,7 +93,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-# vendor and odm are built
+# Vendor and odm are built
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
