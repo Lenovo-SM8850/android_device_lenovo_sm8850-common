@@ -20,6 +20,7 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
+from extract_utils.source import DiskSource
 
 # Regeneration must select exactly one device's firmware cohort.
 active_device = os.environ.get('LENOVO_ACTIVE_DEVICE')
@@ -119,7 +120,20 @@ if helpers.source_audio_builds()['wfd_aac']:
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so')
 
 
-module = ExtractUtilsModule(
+class LenovoCommonModule(ExtractUtilsModule):
+    def process_file(self, file, source, backup_source, vendor_path,
+                     is_firmware, kang, allow_prohibited_files=False):
+        # Common extraction normally reads TB324ZC; the source display HAL's
+        # private C++ interfaces require the matching TB323FU color libraries.
+        if file.src in helpers.PRC088_DISPLAY_BLOBS:
+            source = DiskSource(str(helpers.common_blob_source(file.src, '.')))
+        return super().process_file(
+            file, source, backup_source, vendor_path, is_firmware, kang,
+            allow_prohibited_files,
+        )
+
+
+module = LenovoCommonModule(
     'sm8850-common',
     'lenovo',
     blob_fixups=blob_fixups,

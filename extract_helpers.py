@@ -6,6 +6,26 @@ import os
 from pathlib import Path
 
 
+PRC088_DISPLAY_BLOBS = frozenset({
+    'vendor/lib64/libsdm-color.so',
+    'vendor/lib64/libsdm-colormgr-algo.so',
+    'vendor/lib64/libsnapdragoncolor-manager.so',
+    'vendor/lib64/libsdmextension.so',
+    'vendor/lib64/libdpps.so',
+    'vendor/lib64/libclstc_tm.so',
+    'vendor/lib64/libhdr_tm.so',
+    'vendor/lib64/libhdr_als_adapter.so',
+})
+PRC088_RELEASE = 'TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610'
+
+
+def common_blob_source(source_path, default_root):
+    if source_path in PRC088_DISPLAY_BLOBS:
+        stock_root = Path(os.environ.get('BALDUR_STOCK_ROOT', '~/stock/prc088')).expanduser()
+        return Path(os.environ.get('BALDUR_STOCK', str(stock_root / 'fs'))).expanduser()
+    return Path(default_root)
+
+
 def source_audio_builds():
     config = Path(__file__).resolve().parent / 'configs/audio/source-builds.mk'
     settings = {}

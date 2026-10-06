@@ -1,6 +1,24 @@
 # All blobs are from TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919 unless otherwise noted.
 # Per-file exceptions are identified by a preceding "From <release>" comment.
 
+# Display
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libclstc_tm.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libdpps.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libhdr_als_adapter.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libhdr_tm.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libsdm-color.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libsdm-colormgr-algo.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libsdmextension.so
+# From TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610
+vendor/lib64/libsnapdragoncolor-manager.so
+
 # AI / QNN
 vendor/lib/rfsa/adsp/libQnnHtpV81.so
 vendor/lib/rfsa/adsp/libQnnHtpV81Skel.so
@@ -573,6 +591,7 @@ vendor/lib64/vendor.lenovo.hardware.display-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+
 
 # Fingerprint
 vendor/lib64/libqfp-service.so
