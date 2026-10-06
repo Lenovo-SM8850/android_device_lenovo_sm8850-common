@@ -574,6 +574,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
+
 # Fingerprint
 vendor/lib64/libqfp-service.so
 vendor/lib64/libsns_registry_skel.so
