@@ -1,0 +1,4 @@
+;; Shared Lenovo LightRing service has no analogue in older policy.
+(type new_objects)
+(typeattribute new_objects)
+(typeattributeset new_objects (new_objects hal_lightring_service))
