@@ -139,7 +139,11 @@ TARGET_PRODUCT_PROP += $(COMMON_PATH)/properties/product.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/properties/vendor.prop
 TARGET_ODM_PROP += $(COMMON_PATH)/properties/odm.prop
 
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+
 # Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
