@@ -3,7 +3,7 @@ ro.charger.enable_suspend=1
 
 # Display: SurfaceFlinger idle timer
 ro.surface_flinger.display_update_imminent_timeout_ms=1000
-ro.surface_flinger.set_idle_timer_ms=500
+ro.surface_flinger.set_idle_timer_ms?=500
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
