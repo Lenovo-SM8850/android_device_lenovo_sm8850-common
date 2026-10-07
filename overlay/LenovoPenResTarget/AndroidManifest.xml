@@ -1,0 +1,8 @@
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.miner7222.pen.overlay.common">
+    <overlay android:targetPackage="io.github.miner7222.pen"
+        android:isStatic="true" android:priority="350" />
+</manifest>
