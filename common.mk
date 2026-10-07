@@ -347,6 +347,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    FrameworksResOverlayCanoe \
     SettingsOverlayCanoe
 
 PRODUCT_PACKAGES += \
