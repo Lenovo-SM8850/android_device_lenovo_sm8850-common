@@ -1,0 +1,8 @@
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.miner7222.overlay.systemui.common">
+    <application android:hasCode="false" />
+    <overlay android:targetPackage="com.android.systemui" android:isStatic="true" android:priority="250" />
+</manifest>
