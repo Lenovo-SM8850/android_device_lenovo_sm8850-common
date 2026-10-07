@@ -30,4 +30,6 @@
     <integer name="config_wifiBssidBlocklistMonitorApUnableToHandleNewStaThreshold">3</integer>
     <integer name="config_wifiDisableReasonByWrongPasswordThreshold">2</integer>
     <integer name="config_wifiHardwareSoftapMaxClientCount">32</integer>
+    <string name="config_wifiP2pDeviceNamePrefix" translatable="false">Lenovo Legion Tab_</string>
+    <string name="wifi_tether_configure_ssid_default" translatable="false">Lenovo Legion Tab</string>
 </resources>
