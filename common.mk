@@ -516,6 +516,7 @@ PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
+    FrameworksResOverlayCommon \
     FrameworksResTargetCommon \
     SettingsProviderResOverlayCommon \
     SettingsResOverlayCommon \
