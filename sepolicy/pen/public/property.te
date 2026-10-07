@@ -1,0 +1,2 @@
+# System-owned LenovoPen selection, read by vendor init's property bridge.
+system_public_prop(lenovo_pen_type_prop)

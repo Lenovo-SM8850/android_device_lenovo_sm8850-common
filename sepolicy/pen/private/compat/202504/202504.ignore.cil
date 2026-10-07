@@ -1,0 +1,6 @@
+;; Lenovo system/vendor contracts have no analogue in older policy.
+(type new_objects)
+(typeattribute new_objects)
+(typeattributeset new_objects
+  ( new_objects
+    lenovo_pen_type_prop))
