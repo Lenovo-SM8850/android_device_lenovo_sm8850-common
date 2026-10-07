@@ -1628,9 +1628,7 @@ vendor/apex/com.google.android.widevine-13130248.apex
 vendor/bin/hw/android.hardware.gatekeeper-service-spu-qti
 vendor/bin/hw/android.hardware.security.keymint-service-spu-qti;DISABLE_DEPS
 vendor/bin/hw/android.hardware.security.onekeymint-service-qti
-vendor/bin/hw/vendor.qti.hardware.soter-service
 vendor/bin/hw/vendor.qti.hardware.trustedui-aidl-service-qti
-vendor/bin/vendor.qti.hardware.soter-provision
 vendor/etc/android.hardware.security.onekeymint-service-qti.rc
 vendor/etc/avf/early_vms_trusted_vm.xml
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
@@ -1638,14 +1636,12 @@ vendor/etc/init/android.hardware.security.onekeymint-service-qti.rc
 vendor/etc/init/qseecomd.rc
 vendor/etc/init/trusteduilistener.rc
 vendor/etc/init/vendor.qti.hardware.secureprocessor.rc
-vendor/etc/init/vendor.qti.hardware.soter-service.rc
 vendor/etc/init/vendor.qti.hardware.trustedui-aidl-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.drm-service.xml
 vendor/etc/vintf/manifest/android.hardware.gatekeeper-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.security.onekeymint-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service-qti.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.secureprocessor.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.soter-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.trustedui-aidl-service.xml
 vendor/firmware/evass.b04
 vendor/firmware/evass.b05
@@ -1668,7 +1664,6 @@ vendor/firmware/gen80900_gmu.bin
 vendor/firmware/gen80900_sqe.fw
 vendor/firmware/wigig.ini
 vendor/lib64/hw/libqtigatekeeper.so
-vendor/lib64/hw/vendor.qti.hardware.soter-impl.so
 vendor/lib64/libTrustedInputAIDL.so
 vendor/lib64/libTrustedInputUtils.so
 vendor/lib64/libdrmtime.so
@@ -1688,7 +1683,6 @@ vendor/lib64/vendor.qti.hardware.secureprocessor.common-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.secureprocessor.common-helper.so
 vendor/lib64/vendor.qti.hardware.secureprocessor.config-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.secureprocessor.device-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.soter-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.spu-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.trustedui-V1-ndk.so
 
