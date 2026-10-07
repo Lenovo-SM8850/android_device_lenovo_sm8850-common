@@ -247,6 +247,9 @@ PRODUCT_PACKAGES += \
     libtinyxml2-v36 \
     vendor.qti.hardware.camera.offlinecamera-V2-ndk.vendor
 
+# Cover
+PRODUCT_PACKAGES += lenovo-cover
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/clstc_config_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/clstc_config_library.xml \
     $(LOCAL_PATH)/configs/display/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
