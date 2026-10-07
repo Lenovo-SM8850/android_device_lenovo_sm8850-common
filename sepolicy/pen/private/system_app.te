@@ -1,0 +1,5 @@
+# LenovoPen receives NVT identity and battery uevents.
+allow system_app self:netlink_kobject_uevent_socket { create read setopt bind };
+
+# LenovoPen selects a controller type through init, never by writing proc nodes.
+set_prop(system_app, lenovo_pen_type_prop)
