@@ -37,6 +37,56 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/clstc_config_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/clstc_config_library.xml
 
+# Shared board audio, sensor and camera defaults
+PRODUCT_COPY_FILES += \
+    device/lenovo/sm8850-common/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/Hapticsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/Hapticsconfig.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mcs_defs_canoe_cdp_wsa885xi2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_cdp_wsa885xi2s.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mcs_defs_canoe_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_mtp.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mcs_defs_canoe_mtp_wsa884x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_mtp_wsa884x.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mcs_defs_canoe_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_qrd.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mcs_defs_canoe_qrd_wsa884x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mcs_defs_canoe_qrd_wsa884x.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mixer_paths_alor_cdp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_cdp.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mixer_paths_alor_mtp_wcd9378.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_mtp_wcd9378.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mixer_paths_alor_mtp_wcd939x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_mtp_wcd939x.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mixer_paths_alor_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/mixer_paths_alor_qrd.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/mixer_paths_canoe_atp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/mixer_paths_canoe_atp.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/plugin_manager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/plugin_manager.xml \
+    hardware/qcom-caf/sm8850/audio/pal/configs/qcom/mobile/canoe/plugin_manager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/plugin_manager.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_effects.conf \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/audio_effects.conf \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_effects.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/audio_effects.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_effects_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_effects_config.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor_qssi/audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe_qssi/audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/mem_logger_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mem_logger_config.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/microphone_characteristics.xml:$(TARGET_COPY_OUT_VENDOR)/etc/microphone_characteristics.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/quasar_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_alor/quasar_config.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/quasar_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_canoe/quasar_config.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/bluetooth_qti_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/bluetooth_qti_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/codec2/media_codecs_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_audio.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
+    vendor/qcom/opensource/vibrator/aidl/HapticsPolicy.xml:$(TARGET_COPY_OUT_VENDOR)/etc/HapticsPolicy.xml
+
+# Board post-boot tuning
+PRODUCT_PACKAGES += \
+    init.kernel.post_boot-canoe_5_1.sh \
+    init.kernel.post_boot-canoe_5_2.sh \
+    init.kernel.post_boot-canoe_6_1.sh \
+    init.kernel.post_boot-canoe_default_6_2.sh \
+    init.kernel.post_boot-memory.sh
+
 # Audio
 include $(LOCAL_PATH)/configs/audio/source-builds.mk
 
@@ -351,6 +401,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_canoe/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_canoe/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_canoe/android.hardware.sensor.stepdetector.xml
+
 
 # Platform init
 PRODUCT_PACKAGES += \
