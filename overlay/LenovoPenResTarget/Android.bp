@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: Apache-2.0
+
+filegroup {
+    name: "LenovoPenOverlayManifest",
+    srcs: ["AndroidManifest.xml"],
+}
+
+android_library {
+    name: "LenovoPenOverlayResources",
+    sdk_version: "current",
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+}
+
+java_defaults {
+    name: "LenovoPenOverlayDefaults",
+    static_libs: ["//device/lenovo/sm8850-common:LenovoPenOverlayResources"],
+    manifest: "//device/lenovo/sm8850-common:LenovoPenOverlayManifest",
+}
