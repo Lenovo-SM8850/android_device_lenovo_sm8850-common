@@ -413,6 +413,16 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_canoe/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_canoe/android.hardware.sensor.stepdetector.xml
 
+# Pen and touch
+PRODUCT_PACKAGES += \
+    LenovoPen \
+    LenovoTouchscreenRotation \
+    LineageParts \
+    init.lenovo.touch.rc \
+    vendor.lineage.touch-service.lenovo
+
+# Cover
+PRODUCT_PACKAGES += lenovo-cover
 
 # Platform init
 PRODUCT_PACKAGES += \
