@@ -520,6 +520,7 @@ PRODUCT_PACKAGES += \
     FrameworksResTargetCommon \
     SettingsProviderResOverlayCommon \
     SettingsResOverlayCommon \
+    SystemUIResTargetCommon \
     TetheringResOverlayCommon \
     WifiResOverlayCommon \
     WifiResTargetCommon
