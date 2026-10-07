@@ -46,3 +46,5 @@ genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/p
 # Wakeup sources
 genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb2/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink2/wakeup" u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.i2c/i2c-5/5-006a/leds/aw22xxx_led/reg u:object_r:sysfs_lenovo_rgb:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.i2c/i2c-5/5-006a/leds/aw22xxx_led/effect u:object_r:sysfs_lenovo_rgb:s0

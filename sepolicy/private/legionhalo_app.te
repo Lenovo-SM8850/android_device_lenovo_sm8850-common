@@ -1,0 +1,16 @@
+type legionhalo_app, domain;
+typeattribute legionhalo_app coredomain, mlstrustedsubject;
+app_domain(legionhalo_app)
+net_domain(legionhalo_app)
+binder_service(legionhalo_app)
+
+# Standard framework service discovery for a platform-signed app.
+allow legionhalo_app app_api_service:service_manager find;
+allow legionhalo_app system_api_service:service_manager find;
+
+allow legionhalo_app system_app_data_file:dir create_dir_perms;
+allow legionhalo_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+# Discover and call the vendor LightRing service.
+allow legionhalo_app hal_lightring_service:service_manager find;
+binder_call(legionhalo_app, hal_light_server)
