@@ -3,10 +3,8 @@
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service-lenovo                   u:object_r:hal_vibrator_default_exec:s0
 
-# Weaver / Confirmation UI / Face
+# Weaver / Confirmation UI
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp-qti                  u:object_r:vendor_hal_weaver_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@(1|4)\.0-service        u:object_r:vendor_biometricsface_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@(1|4)\.0-service\.face  u:object_r:vendor_biometricsface_exec:s0
 
 # Init shell scripts run by the vendor init services (vendor_qti_init_shell)
 /(vendor|system/vendor)/bin/setwlansardsi0.sh          u:object_r:vendor_qti_init_shell_exec:s0
