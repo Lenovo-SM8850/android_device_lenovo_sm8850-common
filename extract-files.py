@@ -154,10 +154,6 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 
-def write_face_manifest(ctx, packages_ctx):
-    ctx.bp_out.write('\nprebuilt_etc {\n    name: "face-lenovo.xml",\n    src: "proprietary/vendor/etc/vintf/manifest/face-default.xml",\n    filename: "face-default.xml",\n    relative_install_path: "vintf/manifest",\n    vendor: true,\n}\n')
-    ctx.product_mk_out.write('\nPRODUCT_PACKAGES += face-lenovo.xml\n')
-
 class LenovoCommonModule(ExtractUtilsModule):
     def process(self, source, kang, no_cleanup, extract_factory, section, allow_prohibited_files=False):
         from extract_utils.source import DiskSource
@@ -232,11 +228,6 @@ module = LenovoCommonModule(
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
-
-
-
-for proprietary_file in module.proprietary_files:
-    proprietary_file.add_post_makefile_generation_fn(write_face_manifest)
 
 
 def begin_modem_packages(ctx, packages_ctx):

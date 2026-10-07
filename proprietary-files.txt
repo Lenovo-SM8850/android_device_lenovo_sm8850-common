@@ -505,11 +505,6 @@ vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.lenovo.hardware.display-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# Face unlock
-vendor/etc/init/android.hardware.biometrics.face@4.0-service.face.rc
-vendor/etc/vintf/manifest/face-default.xml;EXTRACT_ONLY
-vendor/firmware/arcface_ta.b02
-
 # Fingerprint
 vendor/lib64/libqfp-service.so
 vendor/lib64/libsns_registry_skel.so

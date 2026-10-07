@@ -207,8 +207,6 @@ PRODUCT_PACKAGES += android.hardware.authsecret@1.0.vendor
 
 PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0.vendor
 
-PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
-
 # Bluetooth
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -746,3 +744,7 @@ TARGET_ENABLE_FP_OVERRIDE := false
 TARGET_SUPPORTS_QUICK_TAP := false
 WITH_GMS := true
 $(call inherit-product-if-exists, vendor/translations/translations.mk)
+
+# Sense registers the face provider on Evolution X.
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
