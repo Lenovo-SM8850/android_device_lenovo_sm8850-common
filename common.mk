@@ -351,6 +351,9 @@ $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
 # Overlays
 PRODUCT_PACKAGES += \
+    SettingsOverlayCanoe
+
+PRODUCT_PACKAGES += \
     FrameworksResTargetCanoe \
     SettingsProviderOverlayCanoe \
     TetheringOverlayCanoe \
@@ -362,6 +365,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <bool name="config_face_enroll_hal_owns_camera">true</bool>
+    <bool name="config_face_attention_supported">false</bool>
+</resources>

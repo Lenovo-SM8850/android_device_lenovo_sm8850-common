@@ -592,6 +592,12 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
+# Face unlock
+vendor/etc/init/android.hardware.biometrics.face@4.0-service.face.rc
+vendor/etc/vintf/manifest/face-default.xml;MODULE=face-lenovo.xml
+vendor/firmware/arcface_ta.b02
+vendor/lib64/libarcsoft_face_mink.so
+vendor/lib64/libbiometricsface_ca.arcsoft.so
 
 # Fingerprint
 vendor/lib64/libqfp-service.so
