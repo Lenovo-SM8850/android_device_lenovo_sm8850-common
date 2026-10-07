@@ -104,9 +104,18 @@ BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 # Kernel
+BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_KERNEL_VERSION := 6.12
 BOARD_DO_NOT_STRIP_VENDOR_RAMDISK_MODULES := true
 BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
+
+# Module load and blocklist selection
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.vendor_boot))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.recovery))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist.vendor_boot
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.vendor_dlkm))
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist.vendor_dlkm
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 
 # Partitions
 BOARD_ROOT_EXTRA_FOLDERS := dataext
@@ -159,6 +168,7 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
 
 # Shared Lenovo HAL policy
 include hardware/lenovo/sepolicy/qti/SEPolicy.mk
