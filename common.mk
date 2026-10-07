@@ -562,6 +562,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
 
+# Vendor DLKM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules.blocklist.system_dlkm:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
+
 # Vendor mount points
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
