@@ -473,6 +473,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += rkp_factory_extraction_tool
 
+# Lights
+PRODUCT_PACKAGES += \
+    LenovoLegionHalo \
+    android.hardware.light-service.lenovo
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
