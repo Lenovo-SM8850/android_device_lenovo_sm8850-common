@@ -33,6 +33,6 @@ bluetooth.profile.hap.client.enabled=true
 bluetooth.profile.asha.central.enabled=true
 
 # Remote key provisioning
-remote_provisioning.hostname=remoteprovisioning.googleapis.com
-remote_provisioning.strongbox.rkp_only=true
-remote_provisioning.tee.rkp_only=true
+remote_provisioning.hostname?=remoteprovisioning.googleapis.com
+remote_provisioning.strongbox.rkp_only?=true
+remote_provisioning.tee.rkp_only?=true
