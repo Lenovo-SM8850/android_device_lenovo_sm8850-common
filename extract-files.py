@@ -217,11 +217,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
 }  # fmt: skip
 
-
-def write_face_manifest(ctx, packages_ctx):
-    ctx.bp_out.write('\nprebuilt_etc {\n    name: "face-lenovo.xml",\n    src: "proprietary/vendor/etc/vintf/manifest/face-default.xml",\n    filename: "face-default.xml",\n    relative_install_path: "vintf/manifest",\n    vendor: true,\n}\n')
-    ctx.product_mk_out.write('\nPRODUCT_PACKAGES += face-lenovo.xml\n')
-
 module = ExtractUtilsModule(
     'sm8850-common',
     'lenovo',
@@ -229,10 +224,6 @@ module = ExtractUtilsModule(
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
-
-
-for proprietary_file in module.proprietary_files:
-    proprietary_file.add_post_makefile_generation_fn(write_face_manifest)
 
 
 if __name__ == '__main__':
