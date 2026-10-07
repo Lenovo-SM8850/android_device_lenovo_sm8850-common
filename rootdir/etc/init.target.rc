@@ -36,6 +36,7 @@ import /vendor/etc/init/hw/init.lenovo.${ro.vendor.config.lgsi.project}.rc
 import /vendor/etc/init/hw/init.qti.kernel.rc
 
 on early-init
+    setprop ro.boot.hardware.revision ${ro.boot.hwboardid}
     write /proc/sys/kernel/printk_devkmsg ratelimited
 
 on init
