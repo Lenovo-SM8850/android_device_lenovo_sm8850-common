@@ -340,6 +340,11 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.lenovo \
+    LenovoLegionHalo
+
 # Overlays
 PRODUCT_PACKAGES += \
     SettingsOverlayCanoe
