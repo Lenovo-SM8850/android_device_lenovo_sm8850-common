@@ -353,6 +353,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworksResTargetCanoe \
     SettingsProviderOverlayCanoe \
+    SystemUIOverlayCanoe \
     TetheringOverlayCanoe \
     WifiResOverlayCanoe \
     WifiResTargetCanoe
