@@ -282,3 +282,10 @@ sh_binary {
     src: "bin/vendor_modprobe.sh",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "init.lenovo.common.rc",
+    src: "etc/init.lenovo.common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
