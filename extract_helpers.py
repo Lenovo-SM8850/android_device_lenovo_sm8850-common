@@ -78,7 +78,21 @@ def device_blob_fixups():
 
 
 def write_elf_data_modules(proprietary_file, ctx, packages_ctx, *, device, owner):
-    from extract_utils.file import SimpleFileList
+    from extract_utils import makefiles
+    from extract_utils.file import FileArgs, SimpleFileList
+
+    # This extract-utils revision applies MODULE only to stem-capable rules.
+    # The OEM face XML needs a distinct module name, retaining filename_from_src.
+    original = makefiles.file_stem_package_name
+    if not getattr(original, '_lenovo_face_name', False):
+        def face_module_name(file, can_have_stem=False, any_extension=False):
+            if (file.dst == 'vendor/etc/vintf/manifest/face-default.xml'
+                    and file.args.get(FileArgs.MODULE) == 'face-lenovo.xml'):
+                can_have_stem = True
+            return original(file, can_have_stem, any_extension)
+
+        face_module_name._lenovo_face_name = True
+        makefiles.file_stem_package_name = face_module_name
 
     # Preserve ELF data bytes and installation paths.
     copies = SimpleFileList()
