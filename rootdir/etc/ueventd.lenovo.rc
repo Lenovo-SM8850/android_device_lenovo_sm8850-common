@@ -33,6 +33,9 @@
 # Base path for all VM's
 firmware_directories /vendor/vm-system/
 
+# Goodix capacitive fingerprint device, when present.
+/dev/goodix_fp 0660 system system
+
 # TrustedUI VM
 external_firmware_handler /devices/platform/soc/soc:qcom,guestvm_loader@f3c00000/firmware/trustedvm.mdt system "/vendor/bin/vmmgr -r"
 external_firmware_handler /devices/platform/soc/soc:qcom,guestvm_loader@f3c00000/firmware/trustedvm.b00 system "/vendor/bin/vmmgr -r"
