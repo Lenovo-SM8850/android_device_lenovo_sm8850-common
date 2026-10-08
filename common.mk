@@ -464,7 +464,7 @@ PRODUCT_PACKAGES += \
 
 # Keymint
 PRODUCT_PACKAGES += \
-    android.hardware.hardware_keystore.xml
+    android.hardware.hardware_keystore_V4.xml
 
 PRODUCT_PACKAGES += rkp_factory_extraction_tool
 
