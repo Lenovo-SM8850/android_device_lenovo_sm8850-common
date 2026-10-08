@@ -1,1 +1,3 @@
 allow init block_device:blk_file { write };
+
+allow init vendor_sysfs_ufs_discard:file { open write };
