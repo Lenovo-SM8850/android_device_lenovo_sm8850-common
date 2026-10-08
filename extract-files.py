@@ -100,8 +100,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
         .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
-    'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
-        .regex_replace('\\s*<fqname>IComponentStore/dolby</fqname>', ''),
     (
         'vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini',
         'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini',

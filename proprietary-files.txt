@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from baldur (TB323FU_CN_OPEN_USER_Q00020.0_A16_ZUXOS_2.0.12.088_ST_260610).
+## are from wuji (TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919).
 
 # Audio
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service;DISABLE_DEPS

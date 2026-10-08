@@ -37,13 +37,18 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <library>
         <name>libclstc_algorithm_adapter.so</name>
+        <priority>2</priority>
+        <enable>1</enable>
+    </library>
+    <library>
+        <name>libdolbyclstc.so</name>
         <priority>1</priority>
         <enable>1</enable>
     </library>
 
     <library>
         <name>libclstc_gcp_adapter.so</name>
-        <priority>2</priority>
+        <priority>3</priority>
         <enable>1</enable>
     </library>
 
