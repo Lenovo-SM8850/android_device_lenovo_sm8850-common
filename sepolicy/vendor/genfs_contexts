@@ -15,3 +15,6 @@ genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/p
 
 # Wakeup sources
 genfscon sysfs "/devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink2/wakeup" u:object_r:sysfs_wakeup:s0
+
+# UFS discard limit set by init.qcom.rc.
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes u:object_r:vendor_sysfs_ufs_discard:s0
