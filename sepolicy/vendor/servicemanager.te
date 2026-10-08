@@ -1,0 +1,2 @@
+# Codec services register for service availability notifications.
+allow servicemanager { mediacodec mediaswcodec }:binder call;
