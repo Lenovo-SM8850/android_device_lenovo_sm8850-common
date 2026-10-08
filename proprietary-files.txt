@@ -964,6 +964,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.qccvndhal_aidl-V2-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-halimpl.so
 
 # NFC / UCE / QAPE / WFD native dependencies
