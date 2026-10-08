@@ -495,8 +495,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery
 
+ifneq ($(strip $(LENOVO_RECOVERY_EXTRA_RC)),)
+# The device packages the additional rc; append its import to the common rc.
+PRODUCT_PACKAGES += init.recovery.lenovo.rc
+else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
+endif
 
 # Runtime libraries
 PRODUCT_PACKAGES += \
