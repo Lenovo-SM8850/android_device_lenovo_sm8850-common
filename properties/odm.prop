@@ -1,1 +1,5 @@
 ro.vendor.qti.va_odm.support=1
+
+# Launch API levels; the Evolution X build clamps them to 32
+ro.board.first_api_level=202504
+ro.product.first_api_level=36
