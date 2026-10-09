@@ -3,6 +3,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <bool name="config_supportDoubleTapWake">true</bool>
     <!-- Closing sleeps; opening wakes through PhoneWindowManager. -->
     <bool name="config_lidControlsSleep">true</bool>
     <bool name="config_lidControlsScreenLock">false</bool>
