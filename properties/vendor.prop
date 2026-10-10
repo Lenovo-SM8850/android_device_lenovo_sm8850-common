@@ -191,4 +191,5 @@ vendor.perf.framepacing.enable=1
 vendor.power.pasr.enabled=true
 
 # Camera
+ro.camera.disableJpegR=true
 persist.vendor.camera.privapp.list=org.lineageos.aperture,org.codeaurora.snapcam
