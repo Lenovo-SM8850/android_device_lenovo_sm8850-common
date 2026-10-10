@@ -220,6 +220,9 @@ PRODUCT_BUILD_DEBUG_VENDOR_BOOT_IMAGE := false
 # Characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
+# Battery light defaults
+PRODUCT_PACKAGES += LenovoDefaults
+
 # Charging control
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
