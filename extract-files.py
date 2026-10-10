@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-import os
 from functools import partial
 from pathlib import Path
 
@@ -21,11 +20,6 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
-# Regeneration must select exactly one device's firmware cohort.
-active_device = os.environ.get('LENOVO_ACTIVE_DEVICE')
-if active_device not in ('baldur', 'wuji'):
-    raise ValueError('LENOVO_ACTIVE_DEVICE must be baldur or wuji')
-
 from extract_utils.utils import import_module
 
 helpers = import_module(
@@ -35,7 +29,6 @@ helpers = import_module(
 write_elf_data_modules = helpers.write_elf_data_modules
 
 namespace_imports = [
-    f'vendor/lenovo/{active_device}',
     'device/lenovo/sm8850-common',
     'hardware/qcom-caf/sm8850',
     'hardware/qcom-caf/wlan',
