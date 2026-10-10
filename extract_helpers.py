@@ -2,8 +2,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-import os
-
 
 def device_blob_fixups():
     from extract_utils.fixups_blob import blob_fixup
@@ -28,9 +26,10 @@ def device_blob_fixups():
             .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     }  # fmt: skip
 
-def write_elf_data_modules(proprietary_file, ctx, packages_ctx, *, device, owner):
+
+def preserve_face_module_name(ctx, packages_ctx):
     from extract_utils import makefiles
-    from extract_utils.file import FileArgs, SimpleFileList
+    from extract_utils.file import FileArgs
 
     # This extract-utils revision applies MODULE only to stem-capable rules.
     # The OEM face XML needs a distinct module name, retaining filename_from_src.
@@ -44,37 +43,3 @@ def write_elf_data_modules(proprietary_file, ctx, packages_ctx, *, device, owner
 
         face_module_name._lenovo_face_name = True
         makefiles.file_stem_package_name = face_module_name
-
-    # Preserve ELF data bytes and installation paths.
-    copies = SimpleFileList()
-    for file in proprietary_file.file_list.copy_files:
-        data_path = (
-            file.dst.endswith('.odex')
-            or file.dst.startswith(('vendor/firmware/', 'vendor/etc/bpf/',
-                                    'vendor/etc/dcp_symbols/'))
-        )
-        is_elf = False
-        if data_path:
-            with open(os.path.join(packages_ctx.vendor_prop_path, file.dst), 'rb') as source:
-                is_elf = source.read(4) == b'\x7fELF'
-        if not is_elf:
-            copies.add(file)
-            continue
-        name = 'lenovo_' + device + '_' + file.dst.replace('/', '_').replace('.', '_')
-        directory, filename = file.dst.split('/', 1)[1].rsplit('/', 1)
-        if device != 'sm8850-common':
-            ctx.mk_out.write(f'\nifeq ($(TARGET_DEVICE),{device})\n')
-        ctx.mk_out.write(
-            '\ninclude $(CLEAR_VARS)\n'
-            f'LOCAL_MODULE := {name}\n'
-            f'LOCAL_MODULE_OWNER := {owner}\n'
-            'LOCAL_MODULE_CLASS := ETC\n'
-            f'LOCAL_SRC_FILES := {packages_ctx.vendor_prop_rel_sub_path}/{file.dst}\n'
-            f'LOCAL_MODULE_PATH := $(TARGET_OUT_{file.partition.upper()})/{directory}\n'
-            f'LOCAL_MODULE_STEM := {filename}\n'
-            'include $(BUILD_PREBUILT)\n'
-        )
-        if device != 'sm8850-common':
-            ctx.mk_out.write('endif\n')
-        ctx.product_mk_out.write(f'\nPRODUCT_PACKAGES += {name}\n')
-    proprietary_file.file_list.copy_files = copies
