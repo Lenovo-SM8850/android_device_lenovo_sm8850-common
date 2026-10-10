@@ -136,7 +136,6 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib64/libsn300u_fw.so
-vendor/lib64/libwfdsourcesession_proprietary.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
 # USB charging
@@ -517,13 +516,9 @@ vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
 # Display
-system_ext/lib64/libwfddisplayconfig.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE=vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk-system
 vendor/bin/hw/vendor.lenovo.hardware.display-service
 vendor/bin/hw/vendor.qti.hardware.display.color-service
 vendor/bin/qdcmss
-vendor/bin/wifidisplayhalservice
 vendor/etc/display/DPU1010.xml
 vendor/etc/display/DPU10__.xml
 vendor/etc/display/DPU11__.xml
@@ -538,13 +533,10 @@ vendor/etc/display/DPU980.xml
 vendor/etc/display/DPU9__.xml
 vendor/etc/display/pipe_config_DPU11__.xml
 vendor/etc/display/thermallevel_to_fps.xml
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/vendor.lenovo.hardware.display-service.rc
 vendor/etc/init/vendor.qti.hardware.display.color-service.rc
-vendor/etc/seccomp_policy/wifidisplayhalservice.policy
 vendor/etc/vintf/manifest/vendor.lenovo.hardware.display-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml
 vendor/lib64/com.qualcomm.mcx.distortionmapper.so
 vendor/lib64/libclstc_algorithm_adapter.so
 vendor/lib64/libclstc_gcp_adapter.so
@@ -561,7 +553,6 @@ vendor/lib64/libsdm-brightnessaware-parser.so
 vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/libstcMotoColor.so
-vendor/lib64/libwfddisplayconfig_vendor.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
@@ -571,8 +562,6 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.lenovo.hardware.display-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
 # Face unlock
 vendor/etc/init/android.hardware.biometrics.face@4.0-service.face.rc
@@ -801,7 +790,6 @@ vendor/lib64/libvideotxr.so
 vendor/lib64/libvideoutils.so
 vendor/lib64/libvppclient.so
 vendor/lib64/libvppcommon.so
-vendor/lib64/libwfdcodecv4l2_proprietary.so
 vendor/lib64/qsn3_video.bin
 vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/lib64/vendor.qti.hardware.vpp-V1-ndk.so
@@ -996,8 +984,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 
 # Platform configuration
-system_ext/etc/seccomp_policy/wfdservice64.policy
-system_ext/etc/wfdconfigsink.xml
 vendor/etc/5GNR_LTE_CN_V9.cfg
 vendor/etc/CHGPD.cfg
 vendor/etc/CHGPD_Baldur.cfg
@@ -1092,17 +1078,13 @@ vendor/etc/seccomp_policy/qsap_dcfd.policy
 vendor/etc/seccomp_policy/qspm.policy
 vendor/etc/seccomp_policy/qti-systemd.policy
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
-vendor/etc/seccomp_policy/wfdhdcphalservice.policy
-vendor/etc/seccomp_policy/wfdvndservice.policy
 vendor/etc/ssg/c2pa_enroll_config.json
 vendor/etc/ssg/c2pa_network_config.json
 vendor/etc/ssg/ta_config.json
 vendor/etc/ssg/tz_whitelist.json
 vendor/etc/sv/mldfs/mldfs_dyn.dat
-vendor/etc/wfdconfig.xml
 
 # Init
-system_ext/etc/init/wfdservice.rc
 vendor/etc/init/android.hardware.security.secretkeeper-service-qti.rc
 vendor/etc/init/avf_qcvm_manager.rc
 vendor/etc/init/c2painternetservice.rc
@@ -1145,12 +1127,10 @@ vendor/etc/init/vendor.qti.qspmhal-service.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.smp2p.rc
 vendor/etc/init/vendor.qti.tftp.rc
-vendor/etc/init/wfdvndservice.rc
 vendor/etc/init/xtra-daemon.rc
 vendor/etc/init/yepdiag.rc
 
 # Platform permissions
-system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 vendor/etc/permissions/android.hardware.keystore.app_attest_key.xml
 vendor/etc/permissions/android.software.device_id_attestation.xml
 vendor/etc/permissions/privapp-permissions-qti-vendor.xml
@@ -1239,30 +1219,9 @@ odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
 odm/lib64/outconvfiltcoeffqpd4x4.bin
-system/framework/WfdCommon.jar;BOOT_JAR
-system_ext/bin/wfdservice64
 system_ext/lib64/extractors/libmmparserextractor.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
-system_ext/lib64/libmmrtpdecoder.so
-system_ext/lib64/libmmrtpencoder.so
-system_ext/lib64/libwfdavenhancements.so
-system_ext/lib64/libwfdclient.so
-system_ext/lib64/libwfdcommonutils.so
-system_ext/lib64/libwfdconfigutils.so
-system_ext/lib64/libwfdmminterface.so
-system_ext/lib64/libwfdmmsink.so
-system_ext/lib64/libwfdmmsrc_system.so
-system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
-system_ext/lib64/libwfdrtsp.so
-system_ext/lib64/libwfdservice.so
-system_ext/lib64/libwfdsinksm.so
-system_ext/lib64/libwfduibcinterface.so
-system_ext/lib64/libwfduibcsink.so
-system_ext/lib64/libwfduibcsinkinterface.so
-system_ext/lib64/libwfduibcsrc.so
-system_ext/lib64/libwfduibcsrcinterface.so
-system_ext/priv-app/WfdService/WfdService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
 vendor/bin/C2PAInternetService
 vendor/bin/adpl
@@ -1326,8 +1285,6 @@ vendor/bin/tlpd
 vendor/bin/vendor.qti.qspmhal-service
 vendor/bin/vendor_cmd_tool
 vendor/bin/wdsdaemon
-vendor/bin/wfdhdcphalservice
-vendor/bin/wfdvndservice
 vendor/bin/xtra-daemon
 vendor/lib64/com.qualcomm.qti.cslcustomhw.so
 vendor/lib64/ftm_fm_lib.so
@@ -1411,8 +1368,6 @@ vendor/lib64/libmlremosaicengine.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmmfp.so
 vendor/lib64/libmmosal_vendor.so
-vendor/lib64/libmmrtpdecoder_vendor.so
-vendor/lib64/libmmrtpencoder_vendor.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libnative-api.so
 vendor/lib64/libnspextensioncopyservice.so
@@ -1519,23 +1474,6 @@ vendor/lib64/libtlpd_internal.so
 vendor/lib64/libtlpd_logger.so
 vendor/lib64/libubifocus.so
 vendor/lib64/libvmfilexfer.so
-vendor/lib64/libwfdcommonutils_proprietary.so
-vendor/lib64/libwfdconfigutils_proprietary.so
-vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libwfdhdcpservice_proprietary.so
-vendor/lib64/libwfdmminterface_proprietary.so
-vendor/lib64/libwfdmmservice_proprietary.so
-vendor/lib64/libwfdmmsrc_proprietary.so;DISABLE_DEPS
-vendor/lib64/libwfdmodulehdcpsession.so
-vendor/lib64/libwfdrtsp_vendor.so
-vendor/lib64/libwfdsessionmodule.so
-vendor/lib64/libwfdsourcesm_proprietary.so
-vendor/lib64/libwfduibcinterface_vendor.so
-vendor/lib64/libwfduibcsink_vendor.so
-vendor/lib64/libwfduibcsinkinterface_vendor.so
-vendor/lib64/libwfduibcsrc_vendor.so
-vendor/lib64/libwfduibcsrcinterface_vendor.so
-vendor/lib64/libwfdutils_proprietary.so
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/qsn1nrt430.bin
@@ -1792,3 +1730,68 @@ vendor/etc/thermal-engine_gpu_1.conf
 vendor/etc/thermal-engine_gpu_2.conf
 vendor/etc/thermal-engine_gpu_5.conf
 vendor/etc/thermal-engine_sensor_0.conf
+
+# Wi-Fi Display
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+system/framework/WfdCommon.jar;BOOT_JAR|5c834d8af38bb6aca3cf6d68337261426c1977a8
+system_ext/bin/wfdservice64|589621520da356f6724dbe17c5f1209ef1fc7490
+system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|6669d5ee462c981663b8ac573d84d334e4eed96c
+system_ext/etc/seccomp_policy/wfdservice64.policy|1e331272649395423b11c575892e0bdc9433b820
+system_ext/etc/wfdconfigsink.xml|c829bce6c01358615ae9021a201d2ef445269fe1
+system_ext/lib64/libmmrtpdecoder.so|124b031b69015cf0993d8f223edfed4b5f68dc2b
+system_ext/lib64/libmmrtpencoder.so|4653d181f1808c1ca67675f55a81ec2cdb1b27c3
+system_ext/lib64/libwfdavenhancements.so|dad0add27e5082e2f9ad6aea06294d3851818178
+system_ext/lib64/libwfdclient.so|161fc77fa284befe5ca109c5e7cc7cc66f77a454
+system_ext/lib64/libwfdcommonutils.so|c4b22b8dddb7e898f072d514a1287ebab43d7fb3|40022a85798d0d742320e2c5af5987a1c556f5fc
+system_ext/lib64/libwfdconfigutils.so|7b205c5c653f3fd175ec873116549e56003b074f
+system_ext/lib64/libwfddisplayconfig.so|6d5ed77a65d765e48a23f3519c6c7a5005945086
+system_ext/lib64/libwfdmminterface.so|cc61087a298aff53c32832cac5256606e202ce29
+system_ext/lib64/libwfdmmsink.so|a1fab6dbf095a967f4a0949e1a4113ab7e623d5c
+system_ext/lib64/libwfdmmsrc_system.so|3df06e9b841d8c6bd21f63d04c65c28fbe528acd|539eeebd8e49f6c42aca1b669d03660ea3de0b20
+system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so|9a2c2bc1b9b64c9b0e3a838e0b186eb47201be0a|df7f81d7c2eef4d77ef279c8ec93588cf7172ad3
+system_ext/lib64/libwfdrtsp.so|337d830acb59644c91a84dea4a5e5e2e33b8242d
+system_ext/lib64/libwfdservice.so|718c813d142cf0e74980f5b7da5a1773f53a9448|4b1b77f06d0d7d67b7ffa79221628ee0d2e16b5f
+system_ext/lib64/libwfdsinksm.so|0ad7086e7231b43db55bed59a44bd9dab5385b51
+system_ext/lib64/libwfduibcinterface.so|de8ae1660abbd14a6df278ae3e0e56296cefea19
+system_ext/lib64/libwfduibcsink.so|2f6debd17ed86e0fc73502b6318f5704dec8c4fa
+system_ext/lib64/libwfduibcsinkinterface.so|70fa6a4228df4a849220c6f375078d689dedcd76
+system_ext/lib64/libwfduibcsrc.so|d4c86e85be9622eca5cb5e095c6ec935e5c7d86a
+system_ext/lib64/libwfduibcsrcinterface.so|587457b2a5f33f996966f2d35ec4af421a6ea6df
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|ab8766f017f49bce0ee765fdab7241703084426f
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE=vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk-system|862439ea491b4b88c812bcc6b240076e309c0f9b
+system_ext/priv-app/WfdService/WfdService.apk|4040fc410abd97117b27849b8be8f4858e9ceb0c|8b46f50e0941557584af802b215aea72858d9e65
+vendor/bin/wfdhdcphalservice|939d14fdbc0cd7cf29900d6bba4670ba077e8ae1
+vendor/bin/wfdvndservice|ce2d4e63a150b0d5dfd651c64811b0351c2b5d62
+vendor/bin/wifidisplayhalservice|c26dbeccbd4f1f021faf2c1d7d42cfa0fffa21b5
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|1b27c2a2ccdad6d74fdb53457c0237d49115307a
+vendor/etc/init/wfdvndservice.rc|e7491c03c180cbaf9979a603dca0846f36f089b0
+vendor/etc/seccomp_policy/wfdhdcphalservice.policy|9f9b5bcaf19ae7f4ee576187257fcaa0f1159240
+vendor/etc/seccomp_policy/wfdvndservice.policy|9a586523a28481d384ce3cf9037be9bdd5662ee8
+vendor/etc/seccomp_policy/wifidisplayhalservice.policy|0faebc4c4641f9d29661fcc1b70413d54238b4b5
+vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml|d9bce16f45874f66ebeebe4a4269685a5fc2cb6d
+vendor/etc/wfdconfig.xml|7e6e27db065b2ff83508a5e8f3c4367cf5a3f048
+vendor/lib64/libmmrtpdecoder_vendor.so|e89d7dc816d87186f12b1739bc3db191196005c5
+vendor/lib64/libmmrtpencoder_vendor.so|94e5a44f81fb03823a6d1a01cbaab7054e3b154c
+vendor/lib64/libwfdcodecv4l2_proprietary.so|e19b42a685156c224b9ca9dcd81bae914db6411d
+vendor/lib64/libwfdcommonutils_proprietary.so|3c32ad298c3774d5242e53e272c781b7d31cd031
+vendor/lib64/libwfdconfigutils_proprietary.so|66a3a23c520f42ed4de09b8c7578e9273ff5d364
+vendor/lib64/libwfddisplayconfig_vendor.so|122960679b996aa5c2196f32b47529aa4e8f0e42
+vendor/lib64/libwfdhdcpcp.so|70c8158db71e1683a79de99b3c1cabe35b285ef3
+vendor/lib64/libwfdhdcpservice_proprietary.so|d7398703afb77c0896021b2667a7435459ecc0d5
+vendor/lib64/libwfdmminterface_proprietary.so|b6db3a7c03d6b2267c24278cd719b160571f6611
+vendor/lib64/libwfdmmservice_proprietary.so|c60a13b278825a88bfe56d1bbf067832e08434a9
+vendor/lib64/libwfdmmsrc_proprietary.so;DISABLE_DEPS|b27d9b6cdfccb666971b21218e989aafc72bd8ac|ec17401a460d0ddf2edd054c085a5cdb3876313e
+vendor/lib64/libwfdmodulehdcpsession.so|c6849b5846550419888f512e4c2ebb9fb81a2a8c
+vendor/lib64/libwfdrtsp_vendor.so|65edbd60d14cd6899d2a1ff577f8e4757a4aed90
+vendor/lib64/libwfdsessionmodule.so|d1bd1025a28b64204074ed77d4179c1f60db1d19
+vendor/lib64/libwfdsourcesession_proprietary.so|d8c00254f2867dad66b7a99b5061f7efd6526976
+vendor/lib64/libwfdsourcesm_proprietary.so|096e72ec2868927928c9fb0c2a1adfeeb1cba2d7
+vendor/lib64/libwfduibcinterface_vendor.so|e79d2ddc86cdbe04654312f1cce8a79bb56ad9fb
+vendor/lib64/libwfduibcsink_vendor.so|b67267a3e367cc39a9bf9f0779241f2a11abb3f6
+vendor/lib64/libwfduibcsinkinterface_vendor.so|0ca2e0d15bedd4b6053ec4c98671bb051e6f7e80
+vendor/lib64/libwfduibcsrc_vendor.so|c4f7dd540c6efb8a9630fff153a24c22e80cbfe4
+vendor/lib64/libwfduibcsrcinterface_vendor.so|92b553398c41e81d2daff9d9c6a9de6ed28507bc
+vendor/lib64/libwfdutils_proprietary.so|c63bb2b17eddd4c0578461a7c4e5e209427f23b7
+vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so|345689ad1b4cb36d2302dc66a79b6e436ecce4e4
+vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|de01512650882a6a9bc4580bf592901003cb62cf
