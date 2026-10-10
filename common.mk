@@ -88,18 +88,9 @@ PRODUCT_PACKAGES += \
     init.kernel.post_boot-memory.sh
 
 # Audio
-include $(LOCAL_PATH)/configs/audio/source-builds.mk
-
-ifeq ($(LENOVO_SOURCE_AUDIO_EFFECTS),true)
-PRODUCT_PACKAGES += libaudioeffecthal.lenovo
-LENOVO_AUDIO_INTERFACES := $(LOCAL_PATH)/configs/audio/vendor_audio_interfaces.xml
-else
-LENOVO_AUDIO_INTERFACES := hardware/qcom-caf/sm8850/audio/primary-hal/configs/canoe/vendor_audio_interfaces.xml
-endif
-
-ifeq ($(LENOVO_SOURCE_WFD_AAC),true)
-PRODUCT_PACKAGES += libwfdaac.lenovo
-endif
+PRODUCT_PACKAGES += \
+    libaudioeffecthal.lenovo \
+    libwfdaac.lenovo
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk.vendor \
@@ -191,8 +182,8 @@ PRODUCT_COPY_FILES += \
 
 # Shared audio HAL interface contract
 PRODUCT_COPY_FILES += \
-    $(LENOVO_AUDIO_INTERFACES):$(TARGET_COPY_OUT_VENDOR)/etc/audio/vendor_audio_interfaces.xml \
-    $(LENOVO_AUDIO_INTERFACES):$(TARGET_COPY_OUT_VENDOR)/etc/vendor_audio_interfaces.xml
+    $(LOCAL_PATH)/configs/audio/vendor_audio_interfaces.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/vendor_audio_interfaces.xml \
+    $(LOCAL_PATH)/configs/audio/vendor_audio_interfaces.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vendor_audio_interfaces.xml
 
 # Audio HAL extension
 PRODUCT_PACKAGES += \
