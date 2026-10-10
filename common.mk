@@ -468,7 +468,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
     android.hardware.drm-service.clearkey \
-    $(if $(LENOVO_HEALTH_SERVICE),$(LENOVO_HEALTH_SERVICE),android.hardware.health-service.qti) \
+    android.hardware.health-service.lenovo \
     android.hardware.health-service.qti_recovery \
     android.hardware.power-service-qti \
     android.hardware.sensors-service.multihal \
