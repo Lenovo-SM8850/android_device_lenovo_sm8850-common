@@ -156,8 +156,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 BOARD_SHIPPING_API_LEVEL := 202504
 # Boot patch level must follow the GKI release for KeyMint.
 BOOT_SECURITY_PATCH := 2026-08-05
-# Keep deferred expansion so a device can override the shared SPL after this include.
-VENDOR_SECURITY_PATCH = $(BOOT_SECURITY_PATCH)
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
