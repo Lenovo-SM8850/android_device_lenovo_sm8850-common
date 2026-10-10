@@ -1,0 +1,12 @@
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "LenovoDefaults",
+    srcs: ["src/**/*.java"],
+    certificate: "platform",
+    platform_apis: true,
+    static_libs: ["org.lineageos.platform.internal"],
+    system_ext_specific: true,
+}
