@@ -5,11 +5,9 @@
 import os
 
 
-def source_audio_builds():
-    return {'effects': True, 'wfd_aac': True}
+def device_blob_fixups():
+    from extract_utils.fixups_blob import blob_fixup
 
-
-def device_blob_fixup_recipes():
     return {
         (
             'vendor/lib64/soundfx/libquasar.so',
@@ -19,30 +17,16 @@ def device_blob_fixup_recipes():
             'vendor/lib64/libcamxdumpinforecorder.so',
             'vendor/lib64/libpowercore.so',
             'vendor/lib64/libvideooptfeature.so',
-        ): [('replace_needed', ['libtinyxml2.so', 'libtinyxml2-v36.so'])],
+        ): blob_fixup()
+            .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
         (
             'vendor/lib64/camera/components/com.qti.node.dewarp.so',
             'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so',
-        ): [('replace_needed', ['android.hardware.graphics.allocator-V1-ndk.so',
-                               'android.hardware.graphics.allocator-V2-ndk.so'])],
-        'vendor/lib64/libqcodec2_core.so': [
-            ('replace_needed', ['android.hardware.graphics.common-V5-ndk.so',
-                               'android.hardware.graphics.common-V7-ndk.so']),
-        ],
-    }
-
-
-def device_blob_fixups():
-    from extract_utils.fixups_blob import blob_fixup
-
-    fixups = {}
-    for paths, operations in device_blob_fixup_recipes().items():
-        fixup = blob_fixup()
-        for operation, arguments in operations:
-            getattr(fixup, operation)(*arguments)
-        fixups[paths] = fixup
-    return fixups
-
+        ): blob_fixup()
+            .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
+        'vendor/lib64/libqcodec2_core.so': blob_fixup()
+            .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    }  # fmt: skip
 
 def write_elf_data_modules(proprietary_file, ctx, packages_ctx, *, device, owner):
     from extract_utils import makefiles
