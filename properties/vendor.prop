@@ -53,6 +53,7 @@ ro.vendor.qcom.bluetooth.nl_xdump.supported=true
 # Camera
 persist.vendor.camera.privapp.list=org.lineageos.aperture,org.codeaurora.snapcam
 ro.camera.disableJpegR=true
+ro.camera.enableCamera1MaxZsl=1
 
 # Chipset
 ro.soc.manufacturer=QTI
