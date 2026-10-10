@@ -1,3 +1,6 @@
+# Camera
+ro.camera.enableCamera1MaxZsl=1
+
 # Device identity
 ro.soc.manufacturer=QTI
 ro.vendor.board.family=f-canoe
