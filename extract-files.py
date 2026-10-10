@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-from functools import partial
 from pathlib import Path
 
 from extract_utils.fixups_blob import (
@@ -26,7 +25,6 @@ helpers = import_module(
     'lenovo_extract_helpers',
     str((Path(__file__).resolve().parent) / 'extract_helpers.py'),
 )
-write_elf_data_modules = helpers.write_elf_data_modules
 
 namespace_imports = [
     'device/lenovo/sm8850-common',
@@ -114,14 +112,9 @@ module = ExtractUtilsModule(
 )
 
 
-# ELF data modules
+# Keep the lineage OEM face manifest identity until it has a separate module.
 for proprietary_file in module.proprietary_files:
-    proprietary_file.add_pre_makefile_generation_fn(
-        partial(
-            write_elf_data_modules, proprietary_file,
-            device=module.device, owner=module.vendor,
-        )
-    )
+    proprietary_file.add_pre_makefile_generation_fn(helpers.preserve_face_module_name)
 
 
 if __name__ == '__main__':
