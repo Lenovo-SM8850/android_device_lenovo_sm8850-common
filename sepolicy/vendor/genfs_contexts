@@ -51,3 +51,7 @@ genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.i2c/i2c-
 
 # UFS discard limit set by init.qcom.rc.
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes u:object_r:vendor_sysfs_ufs_discard:s0
+
+# Huaqin hardware information node (class alias and actual device kobject).
+genfscon sysfs /class/hardinfo/interface/hardware_info u:object_r:sysfs_hardware_info:s0
+genfscon sysfs /devices/virtual/hardinfo/interface/hardware_info u:object_r:sysfs_hardware_info:s0
