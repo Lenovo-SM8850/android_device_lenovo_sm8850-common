@@ -45,6 +45,12 @@ on late-fs
 
 
 on post-fs-data
+    # Apply the stock LED permissions after the vendor modules have probed.
+    wait_for_prop vendor.all.modules.ready 1
+    chown system system /sys/class/leds/aw22xxx_led/effect
+    chown system system /sys/class/leds/aw22xxx_led/reg
+    chmod 0660 /sys/class/leds/aw22xxx_led/effect
+    chmod 0660 /sys/class/leds/aw22xxx_led/reg
     mkdir /mnt/vendor/persist/factory
     mkdir /mnt/vendor/persist/factory/audio
     chmod 0777 /mnt/vendor/persist/factory/audio
