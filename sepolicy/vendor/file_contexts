@@ -48,3 +48,6 @@
 
 # Health
 /vendor/bin/hw/android\.hardware\.health-service\.lenovo    u:object_r:hal_health_default_exec:s0
+
+# Keep each device's own Dolby panel calibration readable as vendor configuration.
+/vendor/etc/dolby_vision\.cfg    u:object_r:vendor_configs_file:s0

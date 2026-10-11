@@ -60,6 +60,10 @@ vendor/etc/vintf/manifest/dvs-aidl-service.xml
 vendor/lib64/libcodec2_store_dolby.so
 
 # Dolby Vision display
+system/lib64/libdolbyeffect.so
+system/lib64/libdolbyproxyandroid.so;MODULE_SUFFIX=-system
+system/lib64/libdolbyui.so;MODULE_SUFFIX=-system
+vendor/lib64/libdolbyui.so
 vendor/lib64/libdolbyclstc.so
 
 # Dolby audio
