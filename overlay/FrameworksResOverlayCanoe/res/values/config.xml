@@ -3,6 +3,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <bool name="config_enableDefaultNotes">true</bool>
     <bool name="config_isDesktopModeSupported">true</bool>
     <bool name="config_canInternalDisplayHostDesktops">true</bool>
     <bool name="config_isDesktopModeDevOptionSupported">true</bool>
