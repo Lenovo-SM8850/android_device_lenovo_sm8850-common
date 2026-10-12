@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: Apache-2.0
+
+aconfig_values {
+    name: "aconfig-values-lenovo-notes-cp2a-com.android.systemui",
+    package: "com.android.systemui",
+    srcs: ["enable_note_qs_tile_flag_values.textproto"],
+}
+
+aconfig_value_set {
+    name: "aconfig_value_set-lenovo-notes-cp2a",
+    values: ["aconfig-values-lenovo-notes-cp2a-com.android.systemui"],
+}
