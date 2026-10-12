@@ -6,6 +6,10 @@
     <bool name="config_enableDefaultNotes">true</bool>
     <bool name="config_isDesktopModeSupported">true</bool>
     <bool name="config_canInternalDisplayHostDesktops">true</bool>
+    <!-- Enable synchronization of the displays refresh rates by applying the default low refresh
+         rate. -->
+    <bool name="config_refreshRateSynchronizationEnabled">true</bool>
+
     <bool name="config_isDesktopModeDevOptionSupported">true</bool>
     <bool name="config_supportDoubleTapWake">true</bool>
     <!-- Closing sleeps; opening wakes through PhoneWindowManager. -->
