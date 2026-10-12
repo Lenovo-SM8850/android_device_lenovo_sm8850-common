@@ -506,6 +506,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += libstagefright_bufferqueue_helper.vendor
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+
 # Pen and touch
 PRODUCT_PACKAGES += \
     LenovoPen \
