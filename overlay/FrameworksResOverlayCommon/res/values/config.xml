@@ -23,6 +23,10 @@
     <bool name="config_allowRotationResolver">false</bool>
     <!-- Center letterboxed apps vertically instead of pinning them to the top. -->
     <item name="config_letterboxVerticalPositionMultiplier" format="float" type="dimen">0.5</item>
+    <!-- Enable synchronization of the displays refresh rates by applying the default low refresh
+         rate. -->
+    <bool name="config_refreshRateSynchronizationEnabled">true</bool>
+
     <bool name="config_isDesktopModeDevOptionSupported">true</bool>
     <bool name="config_supportDoubleTapWake">true</bool>
     <!-- Closing sleeps; opening wakes through PhoneWindowManager. -->
