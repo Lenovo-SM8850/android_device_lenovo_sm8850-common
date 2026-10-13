@@ -55,3 +55,4 @@ genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/blo
 # Huaqin hardware information node (class alias and actual device kobject).
 genfscon sysfs /class/hardinfo/interface/hardware_info u:object_r:sysfs_hardware_info:s0
 genfscon sysfs /devices/virtual/hardinfo/interface/hardware_info u:object_r:sysfs_hardware_info:s0
+genfscon sysfs /devices/platform/soc/1ac0000.qcom,qupv3_4_geni_se/1a80000.spi/spi_master/spi19/spi19.0/wakeup u:object_r:sysfs_wakeup:s0
