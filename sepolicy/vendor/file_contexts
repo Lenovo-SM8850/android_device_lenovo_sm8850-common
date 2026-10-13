@@ -47,7 +47,6 @@
 
 # Lenovo fork uses the existing QTI USB HAL domain.
 /vendor/bin/hw/android\.hardware\.usb-service\.lenovo    u:object_r:vendor_hal_usb_qti_exec:s0
-/vendor/bin/lenovo-cover                                  u:object_r:lenovo_cover_exec:s0
 
 # Health
 /vendor/bin/hw/android\.hardware\.health-service\.lenovo    u:object_r:hal_health_default_exec:s0
