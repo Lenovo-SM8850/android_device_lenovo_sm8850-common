@@ -124,7 +124,74 @@ def write_face_manifest(ctx, packages_ctx):
     ctx.bp_out.write('\nprebuilt_etc {\n    name: "face-lenovo.xml",\n    src: "proprietary/vendor/etc/vintf/manifest/face-default.xml",\n    filename: "face-default.xml",\n    relative_install_path: "vintf/manifest",\n    vendor: true,\n}\n')
     ctx.product_mk_out.write('\nPRODUCT_PACKAGES += face-lenovo.xml\n')
 
-module = ExtractUtilsModule(
+class LenovoCommonModule(ExtractUtilsModule):
+    def process(self, source, kang, no_cleanup, extract_factory, section, allow_prohibited_files=False):
+        from extract_utils.source import DiskSource
+        from pathlib import Path
+        import hashlib
+        import tempfile
+
+        original = self.proprietary_files
+        groups = {}
+        for proprietary_file in original:
+            groups.setdefault(proprietary_file.vendor_rel_sub_path, []).append(proprietary_file)
+        with tempfile.TemporaryDirectory() as backup:
+            try:
+                for directory, files in groups.items():
+                    self.proprietary_files = files
+                    if not kang:
+                        super().backup_pinned_files(str(Path(backup) / directory))
+                self.proprietary_files = original
+                if section is None and not no_cleanup:
+                    self.cleanup()
+                copied = True
+                for directory, files in groups.items():
+                    self.proprietary_files = files
+                    copied = super().process_proprietary_files(source,
+                        DiskSource(str(Path(backup) / directory)), kang, extract_factory,
+                        allow_prohibited_files=allow_prohibited_files) and copied
+                    if not kang and directory.startswith('proprietary/abi-'):
+                        for proprietary_file in files:
+                            for file in proprietary_file.file_list.pinned_files:
+                                payload = Path(self.vendor_path) / directory / file.dst
+                                expected = file.fixup_hash or file.hash
+                                if not payload.is_file() or hashlib.sha1(payload.read_bytes()).hexdigest() != expected:
+                                    print(f'{file.dst}: shared ABI pin mismatch')
+                                    copied = False
+                return copied
+            finally:
+                self.proprietary_files = original
+
+    def write_shared_packages(self, ctx, packages_ctx, metadata_path, cohort):
+        from extract_utils.file import FileList
+        from extract_utils.makefiles import MakefilesCtx, ProductPackagesCtx, write_product_packages, write_product_copy_files
+        from io import StringIO
+        import hashlib
+        from pathlib import Path
+
+        lines = [line.strip() for line in Path(metadata_path).read_text().splitlines()
+                 if line.strip() and not line.startswith('#')]
+        if not lines:
+            return
+        files = FileList(check_elf=packages_ctx.check_elf)
+        files.add_from_lines(lines)
+        storage = f'proprietary/{cohort}'
+        shared_ctx = ProductPackagesCtx(packages_ctx.check_elf, packages_ctx.vendor,
+            f'{self.vendor_path}/{storage}', f'{self.vendor_rel_path}/{storage}',
+            storage, packages_ctx.lib_fixups)
+        generated = MakefilesCtx(ctx.legacy, StringIO(), StringIO(), StringIO(), StringIO())
+        write_product_copy_files(generated, shared_ctx, files.copy_files)
+        write_product_packages(generated, shared_ctx, files.package_files)
+        blueprint = generated.bp_out.getvalue()
+        for file in files.files:
+            group = 'LenovoShared_' + cohort.replace('-', '_') + '_' + hashlib.sha1(file.dst.encode()).hexdigest()[:16]
+            blueprint = blueprint.replace(f'"{storage}/{file.dst}"',
+                f'"//vendor/lenovo/sm8850-common:{group}"')
+        ctx.bp_out.write(blueprint)
+        ctx.product_mk_out.write(generated.product_mk_out.getvalue())
+
+
+module = LenovoCommonModule(
     'sm8850-common',
     'lenovo',
     blob_fixups=blob_fixups,
@@ -148,6 +215,8 @@ modem_files = module.add_proprietary_file('proprietary-files-modem.txt')
 modem_files.add_pre_makefile_generation_fn(begin_modem_packages)
 modem_files.add_post_makefile_generation_fn(end_modem_packages)
 
+
+module.add_proprietary_file('proprietary-files-shared-identical-abi-v2.txt', vendor_rel_sub_path='proprietary/abi-v2')
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
