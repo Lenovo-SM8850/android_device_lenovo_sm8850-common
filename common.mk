@@ -445,7 +445,7 @@ PRODUCT_PACKAGES += \
     init.qti.kernel.target.rc \
     init.qti.ufs.rc \
     init.target.rc \
-    ueventd.lenovo.rc \
+    ueventd.lenovo.common.rc \
     ueventd.qcom.rc
 
 # Input
