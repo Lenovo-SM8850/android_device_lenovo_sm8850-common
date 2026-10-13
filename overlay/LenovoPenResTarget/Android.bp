@@ -4,3 +4,8 @@ filegroup {
     name: "LenovoPenOverlayManifest",
     srcs: ["AndroidManifest.xml"],
 }
+
+java_defaults {
+    name: "LenovoPenOverlayDefaults",
+    manifest: "//device/lenovo/sm8850-common:LenovoPenOverlayManifest",
+}
