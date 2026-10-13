@@ -103,7 +103,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=1
 vendor.perf.qfps.enable=1
 ro.vendor.qtvm.auto.start=trustedvm
-sensor.barometer.high_quality.implemented=true
 persist.vendor.sensors.enable.mag_filter=true
 
 # USB
