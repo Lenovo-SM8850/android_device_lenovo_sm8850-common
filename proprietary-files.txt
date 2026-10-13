@@ -394,6 +394,7 @@ vendor/bin/trusteduilistener
 vendor/etc/android.hardware.security.onekeymint-service-qti.rc
 vendor/etc/avf/early_vms_trusted_vm.xml
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
+vendor/etc/init/android.hardware.gatekeeper-service-qti.rc
 vendor/etc/init/android.hardware.gatekeeper-service-spu-qti.rc
 vendor/etc/init/android.hardware.security.onekeymint-service-qti.rc
 vendor/etc/init/android.hardware.weaver-service-spu-qti.rc
