@@ -11,15 +11,11 @@
 /vendor/bin/hw/android\.hardware\.nfc-service-st                                           u:object_r:hal_nfc_default_exec:s0
 
 # Init shell scripts run by the vendor init services (vendor_qti_init_shell)
-/(vendor|system/vendor)/bin/init\.qcom\.svi\.sh        u:object_r:vendor_qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.cabl\.sh       u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/setwlansardsi0.sh          u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/setwlansardsi1.sh          u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/setwlansardsi2.sh          u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/setwlansardsi3.sh          u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/setwlansardsi4.sh          u:object_r:vendor_qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.svi\.off\.sh   u:object_r:vendor_qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.cabl\.off\.sh  u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/profile_config_service.sh  u:object_r:vendor_qti_init_shell_exec:s0
 
 # Data

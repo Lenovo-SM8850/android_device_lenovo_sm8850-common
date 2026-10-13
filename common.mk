@@ -432,45 +432,21 @@ PRODUCT_PACKAGES += \
     charger_fstab.qcom \
     fstab.qcom \
     fstab.qcom.vendor_ramdisk \
-    init.class_main.sh \
-    init.crda.sh \
-    init.kernel.post_boot-alor.sh \
     init.kernel.post_boot-alor_5_1.sh \
     init.kernel.post_boot-alor_5_2.sh \
     init.kernel.post_boot-alor_6_1.sh \
     init.kernel.post_boot-alor_default_6_2.sh \
-    init.kernel.post_boot-canoe.sh \
     init.kernel.post_boot.sh \
-    init.mdm.sh \
-    init.qcom.cabl.off.sh \
-    init.qcom.cabl.sh \
-    init.qcom.class_core.sh \
-    init.qcom.coex.sh \
     init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
     init.qcom.factory.rc \
-    init.qcom.post_boot.sh \
     init.qcom.rc \
-    init.qcom.sdio.sh \
-    init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qcom.svi.off.sh \
-    init.qcom.svi.sh \
-    init.qti.kernel.debug-alor.sh \
-    init.qti.kernel.debug-canoe.sh \
-    init.qti.kernel.debug.sh \
-    init.qti.kernel.early_debug-canoe.sh \
-    init.qti.kernel.early_debug.sh \
     init.qti.kernel.rc \
-    init.qti.kernel.sh \
     init.qti.kernel.target.rc \
     init.qti.ufs.rc \
-    init.qti.write.sh \
     init.target.rc \
-    system_dlkm_modprobe.sh \
     ueventd.lenovo.rc \
-    ueventd.qcom.rc \
-    vendor_modprobe.sh
+    ueventd.qcom.rc
 
 # Input
 PRODUCT_COPY_FILES += \
