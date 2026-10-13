@@ -1,8 +1,0 @@
-# SPDX-License-Identifier: Apache-2.0
-
-flag_value {
-    package: "com.android.systemui"
-    name: "enable_note_qs_tile"
-    state: ENABLED
-    permission: READ_ONLY
-}

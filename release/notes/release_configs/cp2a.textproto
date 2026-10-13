@@ -1,4 +1,0 @@
-# SPDX-License-Identifier: Apache-2.0
-
-name: "cp2a"
-aconfig_value_sets: "//device/lenovo/sm8850-common:aconfig_value_set-lenovo-notes-cp2a"

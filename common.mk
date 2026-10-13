@@ -11,9 +11,6 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 36
 
-# Release configuration
-PRODUCT_RELEASE_CONFIG_MAPS += $(LOCAL_PATH)/release/notes/release_config_map.textproto
-
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
