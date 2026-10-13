@@ -1793,3 +1793,26 @@ vendor/lib64/libwfduibcsrcinterface_vendor.so|92b553398c41e81d2daff9d9c6a9de6ed2
 vendor/lib64/libwfdutils_proprietary.so|c63bb2b17eddd4c0578461a7c4e5e209427f23b7
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so|345689ad1b4cb36d2302dc66a79b6e436ecce4e4
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|de01512650882a6a9bc4580bf592901003cb62cf
+
+# Init scripts
+vendor/bin/init.class_main.sh
+vendor/bin/init.kernel.post_boot-alor.sh
+vendor/bin/init.kernel.post_boot-canoe.sh
+vendor/bin/init.qcom.class_core.sh
+vendor/bin/init.qcom.coex.sh
+vendor/bin/init.qcom.efs.sync.sh
+vendor/bin/init.qcom.post_boot.sh
+vendor/bin/init.qcom.sdio.sh
+vendor/bin/init.qcom.sensors.sh
+vendor/bin/init.qti.kernel.debug-canoe.sh
+vendor/bin/init.qti.kernel.early_debug-canoe.sh
+vendor/bin/init.qti.kernel.sh
+vendor/bin/init.qti.write.sh
+vendor/bin/system_dlkm_modprobe.sh
+vendor/bin/vendor_modprobe.sh
+
+vendor/bin/init.qti.kernel.debug-alor.sh|31b925e760df928a5f1d08746097cea8c3de4b92
+
+vendor/bin/init.qti.kernel.debug.sh|3529df6804db8b18d8de8f905f38f3f139b9ce72
+
+vendor/bin/init.qti.kernel.early_debug.sh|8f6acf044d17f99e07d58f47df80103c2b810036

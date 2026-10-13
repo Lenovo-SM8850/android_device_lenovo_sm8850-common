@@ -37,6 +37,13 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
+        .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
+    'vendor/bin/init.qti.kernel.debug.sh': blob_fixup()
+        .regex_replace(r'\"660\"\|\"661\"\|\"704\"\|\"722\"\|\"723\"\)', '"660"|"661"|"704"|"722"|"723"|"743")'),
+    'vendor/bin/init.qti.kernel.early_debug.sh': blob_fixup()
+        .regex_replace(r'\"727\"\)', '"727"|"743")')
+        .regex_replace(r'Copyright \(c\) Qualcomm Technologies, Inc\. and/or its subsidiaries\.', 'Copyright (c) 2024-2025 Qualcomm Technologies, Inc.'),
     'system_ext/lib64/libwfdcommonutils.so': blob_fixup()
         .remove_needed('libheif.so'),
     'system_ext/priv-app/WfdService/WfdService.apk': blob_fixup()

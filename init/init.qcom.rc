@@ -481,46 +481,6 @@ service vendor.ss_ramdump /system/vendor/bin/subsystem_ramdump
     ioprio rt 4
     disabled
 
-service cabl-on /vendor/bin/init.qcom.cabl.sh
-    class main
-    user system
-    group root system
-    oneshot
-    disabled
-
-service cabl-off /vendor/bin/init.qcom.cabl.off.sh
-    class main
-    user system
-    group root system
-    disabled
-    oneshot
-
-on property:persist.sys.open.cabl=on
-    start cabl-on
-
-on property:persist.sys.open.cabl=off
-    start cabl-off
-
-service svi-on /vendor/bin/init.qcom.svi.sh
-    class main
-    user system
-    group root system
-    oneshot
-    disabled
-
-service svi-off /vendor/bin/init.qcom.svi.off.sh
-    class main
-    user system
-    group root system
-    oneshot
-    disabled
-
-on property:persist.sys.open.svi=on
-    start svi-on
-
-on property:persist.sys.open.svi=off
-    start svi-off
-
 on property:ro.vendor.iocgrp.config=1
     mkdir /dev/blkio
     mount cgroup none /dev/blkio blkio
@@ -578,7 +538,6 @@ on property:sys.boot_completed=1
     setprop lmkd.reinit 1
     chown media audio /sys/kernel/aud_dev/state
     write /sys/devices/virtual/cvp/cvp/boot 1
-    start cabl-on
 
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
@@ -724,12 +683,6 @@ service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh
     class late_start
     user wifi
     group wifi inet
-    disabled
-    oneshot
-
-service wifi-crda /vendor/bin/init.crda.sh
-    class late_start
-    user root
     disabled
     oneshot
 
