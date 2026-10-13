@@ -218,6 +218,10 @@ modem_files.add_post_makefile_generation_fn(end_modem_packages)
 
 module.add_proprietary_file('proprietary-files-shared-identical-abi-v2.txt', vendor_rel_sub_path='proprietary/abi-v2')
 
+module.add_proprietary_file('proprietary-files-shared-buildid-abi-v1.txt', vendor_rel_sub_path='proprietary/abi-v1')
+
+module.add_proprietary_file('proprietary-files-shared-buildid-abi-v2.txt', vendor_rel_sub_path='proprietary/abi-v2')
+
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
     utils.run()
