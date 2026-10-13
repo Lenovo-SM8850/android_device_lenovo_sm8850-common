@@ -724,10 +724,6 @@ $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
 
 # Direct compatibility and utility packages
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0.vendor \
-    android.hardware.health@2.0.vendor \
-    android.hardware.health@2.1.vendor \
-    libhidparser \
     cplay \
     sg_write_buffer \
     hostapd_cli \
