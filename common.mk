@@ -471,6 +471,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # Recovery
+$(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery
 
@@ -577,7 +579,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Vendor DLKM
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/modules.blocklist.system_dlkm:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
+    kernel/platform/kernel-6.12/vendor/lenovo/sm8850/modules-lists/modules.systemdlkm_blocklist.msm.canoe:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
 
 # Vendor mount points
 PRODUCT_PACKAGES += \
