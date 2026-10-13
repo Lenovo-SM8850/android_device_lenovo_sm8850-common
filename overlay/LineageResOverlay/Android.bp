@@ -1,6 +1,0 @@
-// SPDX-License-Identifier: Apache-2.0
-
-android_library {
-    name: "LineageLightCapabilityRes",
-    resource_dirs: ["res"],
-}
