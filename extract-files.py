@@ -31,8 +31,22 @@ def lib_fixup_system_suffix(lib: str, partition: str) -> str:
     return f'{lib}-system' if partition == 'system_ext' else lib
 
 
+def lib_fixup_framework_suffix(lib: str, partition: str) -> str:
+    return f'{lib}-system' if partition in ('system', 'system_ext') else lib
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    'vendor.qti.ImsRtpService-V2-ndk':
+        lib_fixup_system_suffix,
+    'vendor.qti.diaghal-V1-ndk':
+        lib_fixup_framework_suffix,
+    'vendor.qti.diaghal@1.0':
+        lib_fixup_system_suffix,
+    'vendor.qti.imsrtpservice@3.0':
+        lib_fixup_system_suffix,
+    'vendor.qti.imsrtpservice@3.1':
+        lib_fixup_system_suffix,
     'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
         lib_fixup_system_suffix,
 }
