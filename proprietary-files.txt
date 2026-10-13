@@ -1275,6 +1275,17 @@ vendor/bin/hw/vendor.qti.hardware.alarm-service
 vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore-service
 vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
+vendor/bin/init.class_main.sh
+vendor/bin/init.kernel.post_boot-alor.sh
+vendor/bin/init.kernel.post_boot-canoe.sh
+vendor/bin/init.qcom.class_core.sh
+vendor/bin/init.qcom.coex.sh
+vendor/bin/init.qcom.efs.sync.sh
+vendor/bin/init.qcom.sdio.sh
+vendor/bin/init.qti.kernel.debug-alor.sh
+vendor/bin/init.qti.kernel.early_debug-canoe.sh
+vendor/bin/init.qti.kernel.sh
+vendor/bin/init.qti.write.sh
 vendor/bin/ipacm-diag
 vendor/bin/ipp_key_gen
 vendor/bin/irsc_util
@@ -1524,6 +1535,7 @@ vendor/lib64/libarcsoft_face_mink.so
 
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate-service
+vendor/bin/init.qcom.sensors.sh
 vendor/bin/qsap_sensors
 vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/vendor.qsap.sensors.rc
