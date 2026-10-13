@@ -19,9 +19,9 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "ueventd.lenovo.rc",
-    filename: "ueventd.rc",
-    src: "ueventd.lenovo.rc",
+    name: "ueventd.lenovo.common.rc",
+    filename: "ueventd.lenovo.common.rc",
+    src: "ueventd.lenovo.common.rc",
     device_specific: true,
 }
 
