@@ -381,6 +381,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+
 PRODUCT_PACKAGES += \
     FrameworksResOverlayCanoe \
     SettingsOverlayCanoe \
@@ -436,6 +438,7 @@ PRODUCT_COPY_FILES += \
 # Pen and touch
 PRODUCT_PACKAGES += \
     LenovoPen \
+    LenovoPenResTarget \
     LenovoTouchscreenRotation \
     LineageParts \
     init.lenovo.touch.rc \
