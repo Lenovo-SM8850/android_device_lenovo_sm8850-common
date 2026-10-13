@@ -33,9 +33,6 @@
 # Base path for all VM's
 firmware_directories /vendor/vm-system/
 
-# Goodix capacitive fingerprint device, when present.
-/dev/goodix_fp 0660 system system
-
 # Rear RGB ring
 /sys/class/leds/aw22xxx_led reg 0660 system system
 /sys/class/leds/aw22xxx_led effect 0660 system system
