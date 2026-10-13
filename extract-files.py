@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-from pathlib import Path
-
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -19,28 +17,23 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
-from extract_utils.utils import import_module
-
-helpers = import_module(
-    'lenovo_extract_helpers',
-    str((Path(__file__).resolve().parent) / 'extract_helpers.py'),
-)
-
 namespace_imports = [
-    'device/lenovo/sm8850-common',
+    'hardware/lenovo',
     'hardware/qcom-caf/sm8850',
     'hardware/qcom-caf/wlan',
-    'hardware/qcom-caf/wlan/qcwcn',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
-    'vendor/qcom/opensource/dataservices',
 ]
+
+
+def lib_fixup_system_suffix(lib: str, partition: str) -> str:
+    return f'{lib}-system' if partition == 'system_ext' else lib
 
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
-        lambda lib, partition: f'{lib}-system' if partition == 'system_ext' else lib,
+        lib_fixup_system_suffix,
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -103,6 +96,11 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
 }  # fmt: skip
 
+
+def write_face_manifest(ctx, packages_ctx):
+    ctx.bp_out.write('\nprebuilt_etc {\n    name: "face-lenovo.xml",\n    src: "proprietary/vendor/etc/vintf/manifest/face-default.xml",\n    filename: "face-default.xml",\n    relative_install_path: "vintf/manifest",\n    vendor: true,\n}\n')
+    ctx.product_mk_out.write('\nPRODUCT_PACKAGES += face-lenovo.xml\n')
+
 module = ExtractUtilsModule(
     'sm8850-common',
     'lenovo',
@@ -112,9 +110,9 @@ module = ExtractUtilsModule(
 )
 
 
-# Keep the lineage OEM face manifest identity until it has a separate module.
+
 for proprietary_file in module.proprietary_files:
-    proprietary_file.add_pre_makefile_generation_fn(helpers.preserve_face_module_name)
+    proprietary_file.add_post_makefile_generation_fn(write_face_manifest)
 
 
 if __name__ == '__main__':
