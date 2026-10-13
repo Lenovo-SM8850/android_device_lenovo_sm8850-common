@@ -721,10 +721,3 @@ PRODUCT_PACKAGES += \
 
 # Include the proprietary files makefile.
 $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)
-
-# Direct compatibility and utility packages
-PRODUCT_PACKAGES += \
-    cplay \
-    sg_write_buffer \
-    hostapd_cli \
-    wpa_cli
