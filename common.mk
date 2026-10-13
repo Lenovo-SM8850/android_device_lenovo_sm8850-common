@@ -472,7 +472,7 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
+    $(LOCAL_PATH)/init/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
 
 # Runtime libraries
 PRODUCT_PACKAGES += \
@@ -614,6 +614,9 @@ PRODUCT_PACKAGES += \
     firmware_wlan_wcn7750_WCNSS_qcom_cfg.ini_symlink \
     firmware_wlan_wcn7750_mac.bin_symlink \
     firmware_wlanmdsp.otaupdate_symlink
+
+# VINTF
+DEVICE_MANIFEST_FILE += device/lenovo/sm8850-common/vintf/manifest_canoe.xml
 
 # Include the proprietary files makefile.
 $(call inherit-product, vendor/lenovo/sm8850-common/sm8850-common-vendor.mk)

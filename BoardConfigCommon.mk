@@ -130,9 +130,8 @@ BOARD_DTBOIMG_PARTITION_SIZE := 75497472
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 
 # Dynamic partitions
-BOARD_SUPER_PARTITION_SIZE := 21474836480
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 21470642176
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304)
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     odm product system system_dlkm system_ext vendor vendor_dlkm
 
@@ -151,7 +150,6 @@ TARGET_ODM_PROP += $(COMMON_PATH)/properties/odm.prop
 
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
@@ -201,8 +199,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     hardware/lenovo/vintf/device_framework_matrix.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/vintf/compatibility_matrix.xml
-DEVICE_MANIFEST_SKUS := canoe
-DEVICE_MANIFEST_CANOE_FILES := $(COMMON_PATH)/vintf/manifest_canoe.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
