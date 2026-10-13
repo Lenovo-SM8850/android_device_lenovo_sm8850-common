@@ -1,5 +1,3 @@
-# All blobs are from TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919 unless otherwise noted.
-# Per-file exceptions are identified by a preceding "From <release>" comment.
 
 # AI / QNN
 vendor/lib/rfsa/adsp/libQnnHtpV81.so
@@ -565,7 +563,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Face unlock
 vendor/etc/init/android.hardware.biometrics.face@4.0-service.face.rc
-vendor/etc/vintf/manifest/face-default.xml;MODULE=face-lenovo.xml
+vendor/etc/vintf/manifest/face-default.xml;EXTRACT_ONLY
 vendor/firmware/arcface_ta.b02
 vendor/lib64/libarcsoft_face_mink.so
 vendor/lib64/libbiometricsface_ca.arcsoft.so
@@ -1733,7 +1731,6 @@ vendor/etc/thermal-engine_gpu_5.conf
 vendor/etc/thermal-engine_sensor_0.conf
 
 # Wi-Fi Display
-# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 system/framework/WfdCommon.jar;BOOT_JAR|5c834d8af38bb6aca3cf6d68337261426c1977a8
 system_ext/bin/wfdservice64|589621520da356f6724dbe17c5f1209ef1fc7490
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
