@@ -2,7 +2,6 @@
 genfscon proc "/rkp_md5" u:object_r:proc_stat:s0
 
 # sysfs /kernel knobs
-genfscon sysfs "/kernel/extend_reclaim/reclaim" u:object_r:sysfs_zram:s0
 genfscon sysfs "/kernel/rkp_md5/rkp_md5" u:object_r:vendor_sysfs_kgsl_shell:s0
 
 # Sd card / sim tray status
