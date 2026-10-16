@@ -2,8 +2,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Lenovo Tab Pen Plus: report the top button clicks as standard stylus keys
-key usage 0x0c0600   STYLUS_BUTTON_TAIL
-key usage 0x0c0601   STYLUS_BUTTON_PRIMARY
-key usage 0x0c0602   STYLUS_BUTTON_SECONDARY
-key usage 0x0c0603   STYLUS_BUTTON_TERTIARY
+# Lenovo Tab Pen Plus
+# 0x0c0600 Single click: no system action yet.
+# 0x0c0601 Double click: no system action yet.
+# 0x0c0602 Triple click: no system action yet.
+# 0x0c0603 Long click: no system action yet.
+# Press-and-tap opens the default notes app.
+key usage 0x0c0604   STYLUS_BUTTON_TAIL
+# 0x0c0605 Bluetooth disconnect notice: no system action yet.

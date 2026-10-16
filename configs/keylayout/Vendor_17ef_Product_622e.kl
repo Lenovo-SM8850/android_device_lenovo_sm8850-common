@@ -1,0 +1,27 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Lenovo Tab Pen Pro 2
+# 0x0c0601 Double click: no system action yet.
+# 0x0c0610 Triple click: no system action yet.
+# 0x0c0611 Long press: no system action yet.
+key usage 0x0c0612   PASTE
+key usage 0x0c0613   COPY
+# 0x0c0614 Barrel double tap: no system action yet.
+# 0x0c0616 Squeeze: no system action yet.
+# 0x0c0617 Squeeze: no system action yet.
+# 0x0c0618 Squeeze: no system action yet.
+# 0x0c0619 Squeeze: no system action yet.
+# 0x0c061a Squeeze: no system action yet.
+# 0x0c061b Squeeze: no system action yet.
+# 0x0c061c Squeeze: no system action yet.
+# 0x0c061d Squeeze: no system action yet.
+# 0x0c061e Squeeze: no system action yet.
+# 0x0c061f Squeeze: no system action yet.
+# 0x0c0620 Squeeze: no system action yet.
+# 0x0c0621 Squeeze: no system action yet.
+# 0x0c0622 Squeeze: no system action yet.
+key usage 0x0c0623   STYLUS_BUTTON_TAIL
+# 0x0c0624 Tail released: no system action yet.
+# 0x0c0625 Swing: no system action yet.
