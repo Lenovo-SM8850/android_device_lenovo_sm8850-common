@@ -5,7 +5,8 @@
 # Lenovo Tab Pen Plus
 # Single click opens the default notes app.
 key usage 0x0c0600   STYLUS_BUTTON_TAIL
-# 0x0c0601 Double click: no system action yet.
+# Double click goes to the focused app.
+key usage 0x0c0601   MACRO_1
 # 0x0c0602 Triple click: no system action yet.
 # 0x0c0603 Long click: no system action yet.
 # Press-and-tap also opens the default notes app.
