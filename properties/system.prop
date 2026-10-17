@@ -1,6 +1,10 @@
 # Charger
 ro.charger.enable_suspend=1
 
+# Game Space bypass charging
+persist.sys.ax_chg_bypass=true
+persist.sys.battery_bypass_supported=true
+
 # Display: SurfaceFlinger idle timer
 ro.surface_flinger.display_update_imminent_timeout_ms=1000
 ro.surface_flinger.set_idle_timer_ms?=500
