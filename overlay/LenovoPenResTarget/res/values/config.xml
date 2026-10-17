@@ -2,4 +2,5 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 <resources>
     <string name="config_penSupportedRefreshRate" translatable="false">120</string>
+    <bool name="config_penSupportBridge">true</bool>
 </resources>
