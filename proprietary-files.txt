@@ -1558,6 +1558,9 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 
+# Power off alarm
+system_ext/app/PowerOffAlarm/PowerOffAlarm.apk
+
 # Security
 vendor/lib64/libarcsoft_face_mink.so
 
