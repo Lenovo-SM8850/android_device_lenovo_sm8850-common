@@ -123,6 +123,9 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib64/libsn300u_fw.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
+# Power-off alarm
+system_ext/app/PowerOffAlarm/PowerOffAlarm.apk|baf6fb4eefc2783ac1a0432867df979c16cee739
+
 # USB charging
 vendor/etc/res/images/WQHD_1600_2560/charger/Charging_0.png
 vendor/etc/res/images/WQHD_1600_2560/charger/Charging_10.png
