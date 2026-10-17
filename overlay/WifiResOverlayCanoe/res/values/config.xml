@@ -23,6 +23,8 @@
     <bool name="config_wifiSoftapOweSupported">true</bool>
     <bool name="config_wifiSoftapOweTransitionSupported">true</bool>
     <bool name="config_wifiStaDynamicCountryCodeUpdateSupported">true</bool>
+    <!-- Without telephony, take the country the access points around agree on -->
+    <bool name="config_wifiUpdateCountryCodeFromScanResultGeneric">true</bool>
     <bool name="config_wifi_background_scan_support">true</bool>
     <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
     <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
