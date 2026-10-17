@@ -195,3 +195,6 @@ vendor.power.pasr.enabled=true
 # Camera
 ro.camera.disableJpegR=true
 persist.vendor.camera.privapp.list=org.lineageos.aperture,org.codeaurora.snapcam
+
+# Sensors
+sensor.barometer.high_quality.implemented=true
