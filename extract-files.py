@@ -50,6 +50,35 @@ lib_fixups: lib_fixups_user_type = {
         lib_fixup_system_suffix,
 }
 
+
+def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
+    # Stock compose blocks and reports fake durations. Clear only CAP_COMPOSE_EFFECTS (0x20).
+    # Match instruction context, not file offsets: patchelf may move ELF sections.
+    if 'vibratorCL' in file_path:
+        pattern = bytes.fromhex(
+            'fd030091 f30308aa e8058052 a2ffffd0 42483a91 280000b9 a1ffffd0 21803991 60008052 e3058052 ba0e0094')
+        patches = ((8, bytes.fromhex('e8058052'), bytes.fromhex('e8018052')),
+                   (36, bytes.fromhex('e3058052'), bytes.fromhex('e3018052')))
+    else:
+        pattern = bytes.fromhex('08544139 1f050071 81000054 48048052 6300082a 230000b9 08584139')
+        patches = ((12, bytes.fromhex('48048052'), bytes.fromhex('48008052')),)
+    with open(file_path, 'r+b') as blob:
+        data = blob.read()
+        matches = data.count(pattern)
+        if matches != 1:
+            raise ValueError(
+                f'{file_path}: expected one vibrator getCapabilities pattern, found {matches}'
+            )
+        start = data.index(pattern)
+        for offset, original, replacement in patches:
+            if len(original) != len(replacement) or data[start + offset:start + offset + len(original)] != original:
+                raise ValueError(f'{file_path}: unexpected vibrator instruction at {start + offset:#x}')
+        # Validate every instruction before writing any changes.
+        for offset, original, replacement in patches:
+            blob.seek(start + offset)
+            blob.write(replacement)
+
+
 blob_fixups: blob_fixups_user_type = {
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
         .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
@@ -103,9 +132,12 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('vendor.qti.hardware.vibratorOL.impl.so', 'vendor.qti.hardware.vibratorOL.impl-lenovo.so')
         .replace_needed('vendor.qti.hardware.vibratorCL.impl.so', 'vendor.qti.hardware.vibratorCL.impl-lenovo.so')
         .replace_needed('vendor.qti.hardware.vibratorSel.impl.so', 'vendor.qti.hardware.vibratorSel.impl-lenovo.so'),
+    'vendor/lib64/vendor.qti.hardware.vibratorCL.impl-lenovo.so': blob_fixup()
+        .call(patch_vibrator_capabilities, need_tmp_dir=False),
     'vendor/lib64/vendor.qti.hardware.vibratorOL.impl-lenovo.so': blob_fixup()
         .replace_needed('libqtivibratoreffect.so', 'libqtivibratoreffect-lenovo.so')
-        .replace_needed('libqtivibratoreffectoffload.so', 'libqtivibratoreffectoffload-lenovo.so'),
+        .replace_needed('libqtivibratoreffectoffload.so', 'libqtivibratoreffectoffload-lenovo.so')
+        .call(patch_vibrator_capabilities, need_tmp_dir=False),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
