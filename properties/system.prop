@@ -5,7 +5,7 @@ ro.config.vc_call_vol_steps=15
 ro.charger.enable_suspend=1
 
 # Media
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.settings.xml=/vendor/etc/media_profiles_canoe_sku3.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # SurfaceFlinger
