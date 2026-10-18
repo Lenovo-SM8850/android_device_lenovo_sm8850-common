@@ -117,7 +117,7 @@ vendor/lib64/libsession_compress.so
 vendor/lib64/libsession_pcm.so
 vendor/lib64/libsession_pcm_config.so
 vendor/lib64/libsession_voice.so
-vendor/lib64/soundfx/libdlbvolaidl.so
+vendor/lib64/soundfx/libdlbvolaidl.so;DISABLE_DEPS
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V2-ndk.so
 
