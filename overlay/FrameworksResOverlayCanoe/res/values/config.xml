@@ -73,4 +73,7 @@
         <item name="config_screenBrightnessSettingMaximumFloat" format="float" type="dimen">1.0</item>
     <integer name="config_screenBrightnessSettingMinimum">1</integer>
     <integer name="config_screenBrightnessDoze">17</integer>
+
+    <!-- Evolution X -->
+    <bool name="config_powerOffAlarmEnabled">true</bool>
 </resources>
