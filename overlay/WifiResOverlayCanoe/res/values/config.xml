@@ -7,6 +7,7 @@
         <item>zh,GBK</item>
     </string-array>
     <bool name="config_wifi6ghzSupport">true</bool>
+    <bool name="config_wifiAllowInsecureEnterpriseConfigurationsForSettingsAndSUW">true</bool>
     <bool name="config_wifiAllowMultipleNetworksOnSameAwareNdi">true</bool>
     <bool name="config_wifiEnablePartialInitialScan">true</bool>
     <bool name="config_wifiForcedSoftApRestartWhenCountryCodeChanged">false</bool>
