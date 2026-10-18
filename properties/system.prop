@@ -6,7 +6,7 @@ ro.surface_flinger.display_update_imminent_timeout_ms=1000
 ro.surface_flinger.set_idle_timer_ms?=500
 
 # Media
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.settings.xml=/vendor/etc/media_profiles_canoe_sku3.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Audio: in-call volume steps
