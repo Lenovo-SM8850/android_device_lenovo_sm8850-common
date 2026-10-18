@@ -995,7 +995,6 @@ vendor/etc/init/hexlpservice.rc
 vendor/etc/init/hlosminkdaemon.rc
 vendor/etc/init/init.embmssl_server.rc
 vendor/etc/init/init.extend_reclaim.rc
-vendor/etc/init/init.qlm-service.rc
 vendor/etc/init/init.qt-service.rc
 vendor/etc/init/init.qti.qcv.rc
 vendor/etc/init/init.spdaemon.rc
@@ -1136,7 +1135,6 @@ vendor/bin/pm-service
 vendor/bin/ppd
 vendor/bin/qca6234-service.sh
 vendor/bin/qguard
-vendor/bin/qlm-service
 vendor/bin/qrtr-cfg
 vendor/bin/qrtr-lookup
 vendor/bin/qrtr-ns
