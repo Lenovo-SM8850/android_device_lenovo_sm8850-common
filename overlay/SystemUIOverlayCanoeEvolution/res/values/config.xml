@@ -8,4 +8,7 @@
 
     <!-- Thermal zone thermal_zone0 is cpullc-0-0 and reports millidegrees Celsius. -->
     <integer name="config_cpuTempDivider" translatable="false">1000</integer>
+
+    <!-- Up to four apps in split screen; the shell still requires a large screen. -->
+    <bool name="config_enableMultiAppSplit">true</bool>
 </resources>
