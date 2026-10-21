@@ -41,6 +41,12 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=erofs \
     POSTINSTALL_OPTIONAL_vendor=true
 
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_odm=true \
+    POSTINSTALL_PATH_odm=bin/xbl_config_arb_check \
+    FILESYSTEM_TYPE_odm=erofs \
+    POSTINSTALL_OPTIONAL_odm=false
+
 PRODUCT_PACKAGES += \
     otapreopt_script \
     update_engine \
@@ -48,7 +54,8 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 PRODUCT_PACKAGES += \
-    checkpoint_gc
+    checkpoint_gc \
+    xbl_config_arb_check
 
 # Audio
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8850/audio/primary-hal
