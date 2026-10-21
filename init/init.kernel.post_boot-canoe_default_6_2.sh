@@ -210,6 +210,7 @@ do
 	echo 250 > $llccbw/up_scale
 	echo 1600 > $llccbw/idle_mbps
 	echo 806000 > $llccbw/max_freq
+	echo 25000 > $llccbw/max_freq_max_mbps
 	echo 70 > $llccbw/ab_scale
 	echo 40 > $llccbw/window_ms
 done
@@ -219,6 +220,7 @@ do
 	echo 120 > $llccbw/io_percent
 	echo 180 > $llccbw/low_power_io_percent
 	echo "1017600 1017600" > $llccbw/max_low_power_cluster_freqs
+	echo 40000 > $llccbw/max_freq_max_mbps
 	echo 1350000 > $llccbw/sched_boost_freq
 	echo 1 > $llccbw/use_sched_boost
 done
