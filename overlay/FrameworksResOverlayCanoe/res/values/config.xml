@@ -6,6 +6,8 @@
     <bool name="config_enableDefaultNotes">true</bool>
     <bool name="config_isDesktopModeSupported">true</bool>
     <bool name="config_canInternalDisplayHostDesktops">true</bool>
+    <!-- Center letterboxed apps vertically instead of pinning them to the top. -->
+    <item name="config_letterboxVerticalPositionMultiplier" format="float" type="dimen">0.5</item>
     <!-- Enable synchronization of the displays refresh rates by applying the default low refresh
          rate. -->
     <bool name="config_refreshRateSynchronizationEnabled">true</bool>
