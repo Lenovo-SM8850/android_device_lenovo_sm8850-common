@@ -186,7 +186,7 @@ PRODUCT_PACKAGES += \
     sva_plugin
 
 $(call soong_config_set,qtiaudio,extra_device_virtuals,4)
-$(call soong_config_set,qtiaudio,extra_out_devices,1)
+# Stock PAL has no extra output devices, so its input devices start at 28.
 $(call soong_config_set,qtiaudio,extra_in_devices,1)
 # Wuji's PAL keeps Stream::isInitialized virtual.
 ifneq ($(LENOVO_HAS_MODEM),true)
