@@ -188,7 +188,10 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,qtiaudio,extra_device_virtuals,4)
 $(call soong_config_set,qtiaudio,extra_out_devices,1)
 $(call soong_config_set,qtiaudio,extra_in_devices,1)
+# Wuji's PAL keeps Stream::isInitialized virtual.
+ifneq ($(LENOVO_HAS_MODEM),true)
 $(call soong_config_set_bool,qtiaudio,nonvirtual_stream_isinitialized,true)
+endif
 $(call soong_config_set_bool,qtiaudio,no_stream_mixer_event_callback,true)
 
 PRODUCT_PACKAGES += libpaleventnotifier
