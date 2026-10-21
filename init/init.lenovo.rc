@@ -128,3 +128,11 @@ on post-fs
     chmod 666 /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
     chown system system /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
     chmod 666 /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+
+on property:vendor.lenovo.game_mode=1
+    write /sys/devices/system/cpu/cpu0/thermal/control 300
+    restart thermal-engine
+
+on property:vendor.lenovo.game_mode=0
+    write /sys/devices/system/cpu/cpu0/thermal/control 0
+    restart thermal-engine
