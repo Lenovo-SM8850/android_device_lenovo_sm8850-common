@@ -1,5 +1,17 @@
+# All blobs are from TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919 unless otherwise noted.
+# Per-file exceptions are identified by a preceding "From <release>" comment.
+
+# Display
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/lib64/libclstc_tm.so|3b4d06044cf5418d51668f40eeda8a5ffeb120a5
+vendor/lib64/libhdr_als_adapter.so|8141237958e3d6dadbc7fa19a8bf6ebf20f3054e
+vendor/lib64/libhdr_tm.so|d44de0576d7ea599358c7f586afcabe439a7fccf
+vendor/lib64/libsdm-color.so|c52281a3fcac6adc74475802def15fe1d1f3d14b
+vendor/lib64/libsdm-colormgr-algo.so|233873fb98e1ac97ebdb6e8ab2eac4342f6c111b
+vendor/lib64/libsdmextension.so|c41c7bf5ec70944955479c058d6244aea6f23e5a
 
 # AI / QNN
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/lib/rfsa/adsp/libQnnHtpV81.so
 vendor/lib/rfsa/adsp/libQnnHtpV81Skel.so
 vendor/lib/rfsa/adsp/libarc_htp_driver_skel.so
@@ -7,10 +19,13 @@ vendor/lib64/libQnnGpu.so
 vendor/lib64/libQnnHtp.so
 vendor/lib64/libQnnHtpNetRunExtensions.so
 vendor/lib64/libQnnHtpPrepare.so
+vendor/lib64/libQnnHtpV81Stub.so|d27f7a1b699764e72448a5cfc2e60c3de112d6db
 vendor/lib64/libQnnNetRunDirectV81Skel.so
 vendor/lib64/rfs/dsp/libnspextensiongenericqnnprovider.so
 
 # Bluetooth
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti|bfca0194a701d08c035ac3d32d998280bc92f66f
 vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc
 vendor/etc/vintf/manifest/bluetooth-finder.xml
 vendor/etc/vintf/manifest/bluetooth_hci.xml
@@ -18,13 +33,22 @@ vendor/etc/vintf/manifest/bluetooth_sar.xml
 vendor/etc/vintf/manifest/bt_lmp_event-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.bluetooth.btavsprovider.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.bluetooth.xpanprovider.xml
+vendor/lib64/hw/android.hardware.bluetooth.lmp_event-impl-qti.so|2952eb97e985f463c95f7f99a93c19a634a265ba
+vendor/lib64/hw/android.hardware.bluetooth.ranging@aidl-impl-qti.so|eff15c66cbf71759da07ec62b2fd44b2f43dda04
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|7474f272ef8e8d525374e9e5dd4c3fc7c59e0de0
+vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so|9b4a9605ddda449b09aa2fd5996b59bec918adbe
 vendor/lib64/hw/vendor.qti.hardware.bluetooth.btavsprovider-impl-qti.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth.finder-impl-qti.so|2e1b44b63b85ebb61b35055554c08239ae7e5962
 vendor/lib64/hw/vendor.qti.hardware.bluetooth.xpanprovider-impl-qti.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so|024282c11a6cf8265134718965d17518f0afb87b
 vendor/lib64/vendor.qti.hardware.bluetooth.btavsprovider-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.bluetooth.xpanprovider-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar-V1-ndk.so
 
 # DSP / FastRPC
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/bin/adsprpcd
+vendor/bin/cdsprpcd
 vendor/bin/dspservice
 vendor/etc/acdbdata/ffv_models/hk01b_relu_eAI_5.6_eNPU_V6_adsp_i.pmd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
@@ -34,6 +58,10 @@ vendor/lib/rfsa/adsp/libadsp_jpege_skel.so
 vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
 vendor/lib/rfsa/adsp/libhme_dsp_skel.so
 vendor/lib/rfsa/adsp/libmctfengine_skel.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libcdsp_default_listener.so
+vendor/lib64/libcdsprpc.so
 vendor/lib64/libsysmon_cdsp_skel.so
 vendor/lib64/rfs/dsp/libDLDPP_skel.so
 vendor/lib64/rfs/dsp/libHexlpQnnHtp.so
@@ -45,14 +73,20 @@ vendor/lib64/rfs/dsp/libdspCV_skel.so
 vendor/lib64/rfs/dsp/libfastcvadsp.so
 vendor/lib64/rfs/dsp/libfastcvdsp_skel.so
 vendor/lib64/rfs/dsp/libhdr_skel.so
+vendor/lib64/rfs/dsp/libnsp_ipc_cdsp_skel.so
+vendor/lib64/rfs/dsp/libnspextensioncopyprovider.so
+vendor/lib64/rfs/dsp/libnspextensionsuperresolutionprovider.so
 vendor/lib64/rfs/dsp/libqsegnetengine_dsp_skel.so
 vendor/lib64/rfs/dsp/libscveT2T_skel.so
 vendor/lib64/rfs/dsp/libsvDescMatchImpl_dsp_skel.so
 vendor/lib64/rfs/dsp/libsvDescMatch_dsp.so
+vendor/lib64/rfs/dsp/libsvdsp.so
 vendor/lib64/rfs/dsp/libsvswdsp.so
 vendor/lib64/rfs/dsp/libsvswdsp_skel.so
+vendor/lib64/rfs/dsp/libvpp_svc_skel.so
 
 # GNSS location
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/edgnss-daemon
 vendor/bin/hw/android.hardware.gnss-aidl-service-qti
 vendor/bin/loc_launcher
@@ -75,7 +109,9 @@ vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_api_wds.so
 vendor/lib64/libloc_base_util.so
 vendor/lib64/libloc_core.so
+vendor/lib64/libloc_eng_hub.so|a99d1b943ab5c4b1f3731c3d8f40d0eb1a99fc45
 vendor/lib64/libloc_mq_client.so
+vendor/lib64/libloc_qwes_iface.so|2c0cdceeeea1439c78ebaeb3d366ee6fafe4aa6a
 vendor/lib64/libloc_socket.so
 vendor/lib64/libloc_util.so
 vendor/lib64/liblocation_api.so
@@ -86,13 +122,17 @@ vendor/lib64/vendor.qti.gnss-V8-ndk.so
 vendor/lib64/vendor.qti.gnss-service.so
 
 # GPU
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|ef89c1b09f7c7fd61714e1d3b394008d0a59fffc
+vendor/lib64/hw/vulkan.adreno.so|91932afcf0fd7602e0acae95b2e70acb8add7d5a
 vendor/lib64/libOpenCL.so
 vendor/lib64/libOpenCL_adreno.so
 vendor/lib64/libgpudataproducer.so
 
 # LED aw22xxx
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/firmware/11_earthquake_light_synchronization.bin
 vendor/firmware/1_rainbow_spiral.bin
 vendor/firmware/2_color_change.bin
@@ -112,8 +152,10 @@ vendor/firmware/factory_all_on_red.bin
 vendor/firmware/factory_all_on_white.bin
 
 # NFC / UCE / QAPE / WFD native dependencies
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/app/TimeService/TimeService.apk
 vendor/bin/coresight_reset_source_sink.sh
+vendor/bin/qsap_qapeservice|5b04d51b6e23d7ba66f8771551d897f9434cd23a
 vendor/etc/init/vendor.qsap.qapeservice.rc
 vendor/etc/seccomp_policy/qsap_qapeservice.policy
 vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
@@ -121,12 +163,15 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib64/libsn300u_fw.so
+vendor/lib64/libwfdsourcesession_proprietary.so|d8c00254f2867dad66b7a99b5061f7efd6526976
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
-# Power-off alarm
+# Power off alarm
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 system_ext/app/PowerOffAlarm/PowerOffAlarm.apk|baf6fb4eefc2783ac1a0432867df979c16cee739
 
 # USB charging
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/res/images/WQHD_1600_2560/charger/Charging_0.png
 vendor/etc/res/images/WQHD_1600_2560/charger/Charging_10.png
 vendor/etc/res/images/WQHD_1600_2560/charger/Charging_100.png
@@ -243,7 +288,9 @@ vendor/etc/res/images/WQHD_1840_2944/charger/Fast_charging_90.png
 vendor/etc/res/images/WQHD_1840_2944/charger/Fast_charging_95.png
 
 # WLAN
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/cnss-daemon
+vendor/bin/wifi_qos_daemon|6c273b1a23de721952b02b8407da2213a4799b35
 vendor/bin/xtwifi-client
 vendor/etc/hostapd/hostapd.accept
 vendor/etc/hostapd/hostapd.deny
@@ -281,6 +328,7 @@ vendor/lib64/libwifiobserver.so
 vendor/lib64/libxpan_wifi_hal.so
 
 # Audio
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service;DISABLE_DEPS
 vendor/etc/FIT_V24_3_audio.cfg
 vendor/etc/MM_audio_playback_capture_v2.0.cfg
@@ -354,21 +402,57 @@ vendor/etc/media_codecs_google_c2_audio.xml
 vendor/etc/vintf/manifest/Manifest_IListenSoundModel.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
 vendor/etc/vintf/manifest/manifest_btaudiocoreservices_qti.xml
+vendor/lib64/btaudio_offload_if.so
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_DEPS
+vendor/lib64/hw/audio.bluetooth_qti.default.so|916dd1a47f2dd73a7c233465333e8dbfcf25faf2
+vendor/lib64/hw/libaudiocorehal.default.so;DISABLE_DEPS;REQUIRED=manifest_audiocorehal_default.xml
+vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
+vendor/lib64/libagmmixer.so
+vendor/lib64/libar-pal.so
 vendor/lib64/libaudio_log_utils.so
+vendor/lib64/libaudiofeaturestats.so|eb8b38e894269a940b20694f1ec3eb9739d30bf0
+vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
 vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
+vendor/lib64/libbluetooth_audio_session_aidl_qti.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
+vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libdev_bt.so
+vendor/lib64/libdev_speaker.so
+vendor/lib64/libgsl.so
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/liblistensoundmodelaidl.so|4f2d453f6a08bd2a7795e7db2e3e757d0b175542
+vendor/lib64/libmcs.so
 vendor/lib64/libpal_net_if.so
+vendor/lib64/libqape_oem_ext.so
+vendor/lib64/libqc2audio_base.so
+vendor/lib64/libqc2audio_basecodec.so|17af8e694273120535fad41fac6936c20471d7f6
+vendor/lib64/libqc2audio_core.so|16517bfac07c9ddaeb5245c3a2921d4e7c709b87
+vendor/lib64/libqc2audio_hooks.so|54698c6e22413337f2ce8ff82c97902c772b3fc3
+vendor/lib64/libqc2audio_hwaudiocodec.so
+vendor/lib64/libqc2audio_platform.so|cd1e21c77d8a67ce273f323ab1857fa95c1f3efa
+vendor/lib64/libqc2audio_swaudiocodec.so|bc79e02f5c7e87881cb3ddc1dd9ba15e032977b0
+vendor/lib64/libqc2audio_utils.so|22d258a365ab9d8c3aebf6569f71dbf532925ccd
+vendor/lib64/libsession_ar.so
+vendor/lib64/libsession_compress.so
+vendor/lib64/libsession_compress_config.so
+vendor/lib64/libsession_pcm.so
+vendor/lib64/libsession_pcm_config.so
+vendor/lib64/libsession_voice.so
+vendor/lib64/libsession_voice_config.so
+vendor/lib64/libstream_compress.so
+vendor/lib64/libstream_pcm.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V2-ndk.so
 
 # Camera
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/hw/vendor.qti.camera.provider-service_64
 vendor/etc/camera/camxoverridesettings.txt
 vendor/etc/init/vendor.qti.camera.provider-service_64.rc
@@ -436,10 +520,74 @@ vendor/lib64/camx.provider-impl.so
 vendor/lib64/libchilog.so
 vendor/lib64/libqshcamera_sensinghubapi.so
 
+# Camera tuning
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+# Graphics / Adreno
+vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/lib-rtpcore.so
+vendor/lib64/libCB.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libTUITAVMInterface.so
+vendor/lib64/libadm.so
+vendor/lib64/libadreno_app_profiles.so
+vendor/lib64/libadreno_compiler_cl.so
+vendor/lib64/libadreno_utils.so
+vendor/lib64/libarcsoft_video_superportrait.so;DISABLE_CHECKELF
+vendor/lib64/libcneapiclient.so
+vendor/lib64/libconfigdb.so
+vendor/lib64/libdiag.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/libdisplayqos.so
+vendor/lib64/libdisplayskuutils.so
+vendor/lib64/libdpps.so|53f348e8e0e27548beecaec4a7f0888df8a119c5
+vendor/lib64/libdsutils.so
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
+vendor/lib64/libfastcvdsp_stub.so
+vendor/lib64/libfastcvopt.so
+vendor/lib64/libfeutils.so
+vendor/lib64/libkcl.so
+vendor/lib64/libkernelmanager.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/libllvm-qgl.so
+vendor/lib64/liblocdiagiface.so
+vendor/lib64/libmdsprpc.so
+vendor/lib64/libminkdescriptor.so
+vendor/lib64/libminksocket_vendor.so
+vendor/lib64/libpowercore.so
+vendor/lib64/libqcc_file_agent.so
+vendor/lib64/libqcc_sdk.so
+vendor/lib64/libqdi.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqtigefar.so;DISABLE_DEPS
+vendor/lib64/librpmb.so
+vendor/lib64/libsdsprpc.so
+vendor/lib64/libsensinghubapi-prop.so
+vendor/lib64/libshsc.so
+vendor/lib64/libsnapdragoncolor-manager.so|212591668fb41b69d9a33875d50a043c2b3d3c61
+vendor/lib64/libspcom.so
+vendor/lib64/libsuidlookup.so
+
+# Display (HDR)
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/lib64/libhdrdynamic.so|2042d823bc76c244a7a35290463e5a36214adb37
+vendor/lib64/libhdrdynamicootf.so|f3522ade93c714691b7db1e610c22f2835855967
+
 # Display
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+system_ext/lib64/libwfddisplayconfig.so|6d5ed77a65d765e48a23f3519c6c7a5005945086
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|ab8766f017f49bce0ee765fdab7241703084426f
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE=vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk-system|862439ea491b4b88c812bcc6b240076e309c0f9b
 vendor/bin/hw/vendor.lenovo.hardware.display-service
 vendor/bin/hw/vendor.qti.hardware.display.color-service
 vendor/bin/qdcmss
+vendor/bin/wifidisplayhalservice|c26dbeccbd4f1f021faf2c1d7d42cfa0fffa21b5
 vendor/etc/display/DPU1010.xml
 vendor/etc/display/DPU10__.xml
 vendor/etc/display/DPU11__.xml
@@ -454,17 +602,28 @@ vendor/etc/display/DPU980.xml
 vendor/etc/display/DPU9__.xml
 vendor/etc/display/pipe_config_DPU11__.xml
 vendor/etc/display/thermallevel_to_fps.xml
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|1b27c2a2ccdad6d74fdb53457c0237d49115307a
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/vendor.lenovo.hardware.display-service.rc
 vendor/etc/init/vendor.qti.hardware.display.color-service.rc
+vendor/etc/seccomp_policy/wifidisplayhalservice.policy|0faebc4c4641f9d29661fcc1b70413d54238b4b5
 vendor/etc/vintf/manifest/vendor.lenovo.hardware.display-service.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml|d9bce16f45874f66ebeebe4a4269685a5fc2cb6d
+vendor/lib64/libclstc_algorithm_adapter.so|a6fdfc6edac7b5fca63b32bdabb879991635dcd9
 vendor/lib64/libclstc_gcp_adapter.so
+vendor/lib64/libcolor-default.so|a6f038f25d7af5d5a1923d288a72fd2a0cd0141a
 vendor/lib64/libfastcrc.so
 vendor/lib64/libhdr_backlight_adapter.so
+vendor/lib64/libhdr_stub.so|d37e8a64b40c74046f5e4029c31ea8fcba9b6d94
 vendor/lib64/libpdmapper.so
+vendor/lib64/libqdcm-algo.so|f0d885a31e167b1bb91c7681968933fe386642f3
+vendor/lib64/libqdcm-json-mode-parser.so|36946fa9200891095a8171a58c6a5549cc95ad16
+vendor/lib64/libqdcm-mode-parser.so|fb01d17b8a45d0d17382260284088c6b136236b1
 vendor/lib64/libsdm-brightnessaware-parser.so
 vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libsnapdragoncolor-qdcm.so|faa84fbb0474c2d66c1bf05940a53926c912b04e
 vendor/lib64/libstcMotoColor.so
+vendor/lib64/libwfddisplayconfig_vendor.so|122960679b996aa5c2196f32b47529aa4e8f0e42
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
@@ -474,19 +633,24 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.lenovo.hardware.display-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so|345689ad1b4cb36d2302dc66a79b6e436ecce4e4
+vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|de01512650882a6a9bc4580bf592901003cb62cf
 
 # Face unlock
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/init/android.hardware.biometrics.face@4.0-service.face.rc
 vendor/etc/vintf/manifest/face-default.xml;EXTRACT_ONLY
 vendor/firmware/arcface_ta.b02
 
 # Fingerprint
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/lib64/libqfp-service.so
 vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # Haptic HAL
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/hw/vendor.lenovo.hardware.vibrator_dual-service
 vendor/bin/hw/vendor.qti.hardware.vibrator.service:vendor/bin/hw/vendor.qti.hardware.vibrator.service-lenovo
 vendor/etc/init/vendor.lenovo.hardware.vibrator_dual-service.rc
@@ -504,6 +668,7 @@ vendor/lib64/vendor.qti.hardware.vibratorOL.impl.so:vendor/lib64/vendor.qti.hard
 vendor/lib64/vendor.qti.hardware.vibratorSel.impl.so:vendor/lib64/vendor.qti.hardware.vibratorSel.impl-lenovo.so;FIX_SONAME
 
 # Haptic waveforms
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 odm/etc/aac_richtap_l.config
 odm/etc/aac_richtap_r.config
 vendor/etc/acdbdata/haptics_data/click.pcm
@@ -670,8 +835,16 @@ vendor/firmware/haptic_rtp_lighthouse.bin
 vendor/firmware/haptic_rtp_osc_24K_5s.bin
 vendor/firmware/haptic_rtp_silk.bin
 
+# Media SV DSP
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/lib64/libsv.so
+vendor/lib64/libsvswcpu.so
+
 # Media / Video
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/bin/hw/vendor.qti.media.c2@1.0-service;DISABLE_DEPS
+vendor/bin/init.qti.media.sh
+vendor/bin/vppservice
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vppservice.rc
@@ -695,9 +868,27 @@ vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libOmxCore.so
 vendor/lib64/libQcelp13SwCodec.so
 vendor/lib64/libmm-omxcore.so
+vendor/lib64/libqc2vppfilter.so
+vendor/lib64/libqcodec2_base.so
+vendor/lib64/libqcodec2_basecodec.so
+vendor/lib64/libqcodec2_core.so;DISABLE_DEPS
+vendor/lib64/libqcodec2_cvpfilter.so
+vendor/lib64/libqcodec2_filterbase.so
+vendor/lib64/libqcodec2_hooks.so|d47a07227bb2180db259504a1938226adcb8ee98
+vendor/lib64/libqcodec2_imgtxrfilter.so
+vendor/lib64/libqcodec2_mockfilter.so
+vendor/lib64/libqcodec2_platform.so
+vendor/lib64/libqcodec2_streaminteg_filter.so
+vendor/lib64/libqcodec2_utils.so
+vendor/lib64/libqcodec2_v4l2codec.so|5c7af0bce13b23c6c60a9036f3f69ff1ff690b55|157a7bc00e3abebe2d740dcf7432e0ac55be7152
+vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvideotxr.so
 vendor/lib64/libvideoutils.so
+vendor/lib64/libvppclient.so|bbe3098aeec6f1fc9cc9c40a8681e814544cfe69
 vendor/lib64/libvppcommon.so
+vendor/lib64/libvpphvx.so
+vendor/lib64/libvpplibrary.so
+vendor/lib64/libwfdcodecv4l2_proprietary.so|e19b42a685156c224b9ca9dcd81bae914db6411d
 vendor/lib64/qsn3_video.bin
 vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/lib64/vendor.qti.hardware.vpp-V1-ndk.so
@@ -706,7 +897,10 @@ vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # Modem / Radio / QMI
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/bin/nicmd
 vendor/bin/pd-mapper
+vendor/bin/qmipriod|5218435180c411ef8d2c559995ceadb0c2ad1902
 vendor/bin/ssgqmigd
 vendor/bin/ssgqmigd64
 vendor/etc/data/dsi_config.xml
@@ -721,15 +915,42 @@ vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so
+vendor/lib64/lib-imscommon.so
+vendor/lib64/lib-imsdpl.so
+vendor/lib64/lib-imsqimf.so|e9c64b7ce2ad157c0f093b7c5d05981e5e736767
+vendor/lib64/lib-imsservice.so
+vendor/lib64/lib-imsvtcore.so
+vendor/lib64/lib-imsxml.so|ef3761418e62c6a747c02547b13e8fa38f14c108
+vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libmodem_device_ids.so
+vendor/lib64/libnicm.so|3eb7e497e263cd6ab1c8e89ef9725f97407f43f6
+vendor/lib64/libnicm_dsi.so
+vendor/lib64/libnicm_interface.so|2f52579243c32dda234e6c3d10f04090a6870728
+vendor/lib64/libnicm_internal.so
+vendor/lib64/libnicm_modemproxy.so
+vendor/lib64/libnicm_netlink.so
+vendor/lib64/libnicm_recovery.so|59e800b16b616a912f74326881c6777745baaf35
+vendor/lib64/libnicm_utils.so
+vendor/lib64/libnicm_vh.so
+vendor/lib64/libqcrilNrFramework.so
+vendor/lib64/libqcrilNrLogger.so
 vendor/lib64/libqcrilNrQtiMutex.so
+vendor/lib64/libqcrildataaidl.so
 vendor/lib64/libqcrildatactl.so
+vendor/lib64/libqdp.so|2616714c05697501039044ebabbeb3246282cc43
+vendor/lib64/libqdpr.so
+vendor/lib64/libqmi.so|faa4945df82cefc715a6e554ec978e82bd046167
 vendor/lib64/libqmi_cci.so
+vendor/lib64/libqmi_client_helper.so
+vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
+vendor/lib64/libqmi_csvt_srvc.so|fd258708c38daf0bc11f4375b87beacab40316c7
 vendor/lib64/libqmi_encdec.so
+vendor/lib64/libqmi_legacy.so|07a93262040b9e75641e35aaf319985de1e7a1fb
 vendor/lib64/libqmiservices.so
 vendor/lib64/vendor.qti.ImsRtpService-V2-ndk.so
+vendor/lib64/vendor.qti.ImsRtpService-aidl-Impl.so
 vendor/lib64/vendor.qti.hardware.data.qmiaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
@@ -775,6 +996,7 @@ vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
 
 # Display calibration
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/display/backlight_calib_Sharp_qhd_cmd_mode_dsi_panel.xml
 vendor/etc/display/backlight_calib_Sharp_qhd_video_mode_dsi_panel.xml
 vendor/etc/display/backlight_calib_nt37801_amoled_cmd_mode_dsi_csot_panel_with_DSC.xml
@@ -794,6 +1016,8 @@ vendor/etc/display/nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.json
 vendor/etc/display/vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json
 
 # Platform HAL interfaces
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/bin/hw/vendor.qti.hardware.minkipcbinder@1.0-service|e683f4b73ae4d9981207b119c9e7576a6f2e4075
 vendor/etc/seccomp_policy/qwesd@2.0.policy
 vendor/lib64/vendor.lenovo.hardware.touchscreen-V5-ndk.so
 vendor/lib64/vendor.lenovo.hardware.ufs-V1-ndk.so
@@ -856,6 +1080,7 @@ vendor/lib64/vendor.qti.snapdragonServices-V2-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
 # Platform VINTF
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/vintf/manifest/android.hardware.security.secretkeeper-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service-qti.xml
 vendor/etc/vintf/manifest/avf_qcvm_manager.xml
@@ -881,6 +1106,9 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 
 # Platform configuration
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+system_ext/etc/seccomp_policy/wfdservice64.policy|1e331272649395423b11c575892e0bdc9433b820
+system_ext/etc/wfdconfigsink.xml|c829bce6c01358615ae9021a201d2ef445269fe1
 vendor/etc/5GNR_LTE_CN_V9.cfg
 vendor/etc/CHGPD.cfg
 vendor/etc/CHGPD_Baldur.cfg
@@ -975,13 +1203,18 @@ vendor/etc/seccomp_policy/qsap_dcfd.policy
 vendor/etc/seccomp_policy/qspm.policy
 vendor/etc/seccomp_policy/qti-systemd.policy
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/etc/seccomp_policy/wfdhdcphalservice.policy|9f9b5bcaf19ae7f4ee576187257fcaa0f1159240
+vendor/etc/seccomp_policy/wfdvndservice.policy|9a586523a28481d384ce3cf9037be9bdd5662ee8
 vendor/etc/ssg/c2pa_enroll_config.json
 vendor/etc/ssg/c2pa_network_config.json
 vendor/etc/ssg/ta_config.json
 vendor/etc/ssg/tz_whitelist.json
 vendor/etc/sv/mldfs/mldfs_dyn.dat
+vendor/etc/wfdconfig.xml|7e6e27db065b2ff83508a5e8f3c4367cf5a3f048
 
 # Init
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
 vendor/etc/init/android.hardware.security.secretkeeper-service-qti.rc
 vendor/etc/init/avf_qcvm_manager.rc
 vendor/etc/init/c2painternetservice.rc
@@ -1023,10 +1256,13 @@ vendor/etc/init/vendor.qti.qspmhal-service.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.smp2p.rc
 vendor/etc/init/vendor.qti.tftp.rc
+vendor/etc/init/wfdvndservice.rc|e7491c03c180cbaf9979a603dca0846f36f089b0
 vendor/etc/init/xtra-daemon.rc
 vendor/etc/init/yepdiag.rc
 
 # Platform permissions
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|6669d5ee462c981663b8ac573d84d334e4eed96c
 vendor/etc/permissions/android.hardware.keystore.app_attest_key.xml
 vendor/etc/permissions/android.software.device_id_attestation.xml
 vendor/etc/permissions/privapp-permissions-qti-vendor.xml
@@ -1034,6 +1270,7 @@ vendor/etc/permissions/sku_canoe/android.hardware.strongbox_keystore.xml
 vendor/etc/permissions/vendor.qti.dcf.xml
 
 # Platform runtime
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 odm/lib64/bm6a81v04s14n00.sm8845.bin
 odm/lib64/bm6a81v04s14n01.sm8845.bin
 odm/lib64/bm6a81v04s14n02.bin
@@ -1115,50 +1352,135 @@ odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
 odm/lib64/outconvfiltcoeffqpd4x4.bin
+system/framework/WfdCommon.jar;BOOT_JAR|5c834d8af38bb6aca3cf6d68337261426c1977a8
+system_ext/bin/wfdservice64|589621520da356f6724dbe17c5f1209ef1fc7490
 system_ext/lib64/extractors/libmmparserextractor.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
+system_ext/lib64/libmmrtpdecoder.so|124b031b69015cf0993d8f223edfed4b5f68dc2b
+system_ext/lib64/libmmrtpencoder.so|4653d181f1808c1ca67675f55a81ec2cdb1b27c3
+system_ext/lib64/libwfdavenhancements.so|dad0add27e5082e2f9ad6aea06294d3851818178
+system_ext/lib64/libwfdclient.so|161fc77fa284befe5ca109c5e7cc7cc66f77a454
+system_ext/lib64/libwfdcommonutils.so|c4b22b8dddb7e898f072d514a1287ebab43d7fb3|40022a85798d0d742320e2c5af5987a1c556f5fc
+system_ext/lib64/libwfdconfigutils.so|7b205c5c653f3fd175ec873116549e56003b074f
+system_ext/lib64/libwfdmminterface.so|cc61087a298aff53c32832cac5256606e202ce29
+system_ext/lib64/libwfdmmsink.so|a1fab6dbf095a967f4a0949e1a4113ab7e623d5c
+system_ext/lib64/libwfdmmsrc_system.so|3df06e9b841d8c6bd21f63d04c65c28fbe528acd|b731c33397939220a02931636a2b93a758691d0b
+system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so|9a2c2bc1b9b64c9b0e3a838e0b186eb47201be0a|df7f81d7c2eef4d77ef279c8ec93588cf7172ad3
+system_ext/lib64/libwfdrtsp.so|337d830acb59644c91a84dea4a5e5e2e33b8242d
+system_ext/lib64/libwfdservice.so|718c813d142cf0e74980f5b7da5a1773f53a9448|1132a9317f1419a91a8536f8780ed4ad222d8060
+system_ext/lib64/libwfdsinksm.so|0ad7086e7231b43db55bed59a44bd9dab5385b51
+system_ext/lib64/libwfduibcinterface.so|de8ae1660abbd14a6df278ae3e0e56296cefea19
+system_ext/lib64/libwfduibcsink.so|2f6debd17ed86e0fc73502b6318f5704dec8c4fa
+system_ext/lib64/libwfduibcsinkinterface.so|70fa6a4228df4a849220c6f375078d689dedcd76
+system_ext/lib64/libwfduibcsrc.so|d4c86e85be9622eca5cb5e095c6ec935e5c7d86a
+system_ext/lib64/libwfduibcsrcinterface.so|587457b2a5f33f996966f2d35ec4af421a6ea6df
+system_ext/priv-app/WfdService/WfdService.apk|4040fc410abd97117b27849b8be8f4858e9ceb0c|8b46f50e0941557584af802b215aea72858d9e65
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
+vendor/bin/C2PAInternetService|fb162a05aef07b0e5882900da72c2cbcf27ff26e
+vendor/bin/adpl|540b14b2c54241592eca842f993473cff310aa97
+vendor/bin/avf_qcvm_manager|c655f0abdd896bdefe9bb1c29711b36ad4d6a699
 vendor/bin/diag-router
+vendor/bin/dlsc|53c9820cb475876849fc971c0c3d40f1e2b89eec
 vendor/bin/dppdaemon
+vendor/bin/embmsslServer|6110e0e411f587abfbb96da1b13874a8bcc299cb
+vendor/bin/engine-service|9fbf061bc15f157768685d019ffc32d0c6859141
+vendor/bin/hdcp1prov|43dec5caec00b1cb09ebe1507931a6e9c2229667
+vendor/bin/hdcp2p2prov|49ba05988aff23ddb5312a6e71565f41f5f10b70
+vendor/bin/hexlpservice|94c4bad2f969d3431a0735e31e76aad20d9848ed
+vendor/bin/hlosminkdaemon|808180fd5f92b7ae0e44c23307920272baf9f06e
+vendor/bin/hw/android.hardware.security.secretkeeper-service-qti|26faeb6f469563c2218ac0c7a4a56bffd738f945
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/vendor.lenovo.hardware.ufs-service
+vendor/bin/hw/vendor.qti.MemHal-service|bd49689a716ee8c5995e75ad2dbd6f2b9d1c0d8d
 vendor/bin/hw/vendor.qti.hardware.alarm-service
+vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti|b3257777981f765d2baab6dab2a91c8253b3f780
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore-service
 vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
+vendor/bin/init.class_main.sh
+vendor/bin/init.kernel.post_boot-alor.sh
+vendor/bin/init.kernel.post_boot-canoe.sh
+vendor/bin/init.qcom.class_core.sh
+vendor/bin/init.qcom.coex.sh
+vendor/bin/init.qcom.efs.sync.sh
+vendor/bin/init.qcom.post_boot.sh
+vendor/bin/init.qcom.sdio.sh
+vendor/bin/init.qti.kernel.debug-alor.sh|31b925e760df928a5f1d08746097cea8c3de4b92
+vendor/bin/init.qti.kernel.debug-canoe.sh
+vendor/bin/init.qti.kernel.debug.sh|3529df6804db8b18d8de8f905f38f3f139b9ce72
+vendor/bin/init.qti.kernel.early_debug-canoe.sh
+vendor/bin/init.qti.kernel.early_debug.sh|8f6acf044d17f99e07d58f47df80103c2b810036
+vendor/bin/init.qti.kernel.sh
 vendor/bin/init.qti.qcv.sh
+vendor/bin/init.qti.write.sh
+vendor/bin/ipacm-diag|f20e8b5c3ddf2ed83d30501e05a2f8a8ffa17081
+vendor/bin/ipp_key_gen|940c54d944245ec71b94d83b7139d8deb79c0f47
 vendor/bin/irsc_util
+vendor/bin/loadalgo|be5bb2e6e1db654a62536f900476778b68e71878
+vendor/bin/lowi-server|ebc5c42eb3a7f8caf90becdaec82929f975ee5bb
+vendor/bin/mlid|cd9b52c74b94f493e0feeddfd8b445bca5efb1c8
+vendor/bin/nvram_cc|b4916ea47382a2372e876beea9ae514bbaba7266
 vendor/bin/pm-proxy
 vendor/bin/pm-service
+vendor/bin/port-bridge|c20083197797645b6307ef6d048efe8e14fd40f8
 vendor/bin/ppd
 vendor/bin/qca6234-service.sh
+vendor/bin/qesdk-manager|d016a649e79c3a61d17247fbcd32e3af05a6ab46
+vendor/bin/qesdk-secmanager|cddbb4e8dd7b2a6e8e9e70691d007114ae16bfce
 vendor/bin/qguard
 vendor/bin/qrtr-cfg
 vendor/bin/qrtr-lookup
 vendor/bin/qrtr-ns
+vendor/bin/qsap_dcfd|76a1127e1a88f3003b786259fdcefeb809baf412
+vendor/bin/qt-service|c7887808eb5524b65c391026a2dcc9ec8aa1b339
+vendor/bin/qti|9abea176364a2bcd7a38bee56143735bf8f0f9b4
+vendor/bin/qwes_cli|1457bf6e4a117dca3513c3d0f1eaa6f87a55e5b2
+vendor/bin/qwesd|cc87b29fbdf201171eb54a0af88cc1ffb44aaf56
 vendor/bin/rmt_storage
+vendor/bin/rpmbClient|39bbca9d9ada51877b645dbff9145c9ad6f1e36c
+vendor/bin/sec_nvm|6489195ee93374bf2b3f5c0264deacc35a8a810c
+vendor/bin/shsusrd|b302068f4c51dfe6792b9defc9ef359b15839208
+vendor/bin/slim_daemon|e56c87331157fa3506d02b7254e8ea5b7a55aacb
 vendor/bin/snapdragon_services
+vendor/bin/spdaemon|20694862588ff389ea0e2da3655b93d8bee9fe8b
 vendor/bin/sscrpcd
+vendor/bin/ssr_diag|795ef244cdbb13b5dc9d73584b1df033be493605
 vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
+vendor/bin/system_dlkm_modprobe.sh
 vendor/bin/tftp_server
 vendor/bin/time_daemon
+vendor/bin/tlpd|b0870ca997f979ed0f2d3cda6b3308b0245c00a1
 vendor/bin/vendor.qti.qspmhal-service
 vendor/bin/vendor_cmd_tool
+vendor/bin/vendor_modprobe.sh
+vendor/bin/wdsdaemon|1039e069cffcb7b2ac7b296e233ea90f0cee09dc
+vendor/bin/wfdhdcphalservice|939d14fdbc0cd7cf29900d6bba4670ba077e8ae1
+vendor/bin/wfdvndservice|ce2d4e63a150b0d5dfd651c64811b0351c2b5d62
+vendor/bin/xtra-daemon|47d53fae07d1dba2839c0f1b8b9e4839adfdb2c9
 vendor/lib64/com.qualcomm.qti.cslcustomhw.so
 vendor/lib64/ftm_fm_lib.so
 vendor/lib64/hw/mbedtls_qti.so
+vendor/lib64/hw/qc_bcs_lib.so|5122592fcff3a24d102f480f9e2f04bec3bd39cc
 vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so|380591d2429cba4c81aee9a45d9bf70b6a41df26
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore-impl.so
+vendor/lib64/hw/vendor.qti.hardware.fm-impl.so|0c4a170fed33b205e0201f5fd5672502ed0a0cfe
 vendor/lib64/hw/vendor.qti.hardware.servicetrackeraidl-impl.so
+vendor/lib64/lib-rtpcommon.so|d75b50ef67dae8c6d43b0e8f1fe49bcd5ca60f62
+vendor/lib64/lib-rtpsl.so|20b978d264eda221310d9c7d520074e8522b3013
 vendor/lib64/libAVFVirtClientInterface.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libCsecClient.so
+vendor/lib64/libDcfHalFramework.so|ec3bc6373a5184a529619eba0a94ad84157298d5
+vendor/lib64/libDcfHalLogger.so|3e9227959b5f7b9d6ed7375613c4da1adc0737ab
 vendor/lib64/libFileMux_proprietary.so
 vendor/lib64/libFlacSwDec.so
+vendor/lib64/libGPreqcancel.so|3f31c963080a697061bc5c801b7095af64f1d588
 vendor/lib64/libLenovoNvram.so
 vendor/lib64/libVirtClientInterface.so
+vendor/lib64/libarcsoft_qnnhtp.so|742fbb68632158e00b41e02b16ba8d8e28957db4
 vendor/lib64/libarmemlog.so
 vendor/lib64/libbacklight-calib.so
 vendor/lib64/libbase64.so
@@ -1172,29 +1494,50 @@ vendor/lib64/libcenterface.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdepthcomputation.so
+vendor/lib64/libdiagjni.so|b7b4ca310872d61e31f0b5be4ff0b41aa0aa5c1c
 vendor/lib64/libdigital-dimming.so
+vendor/lib64/libdmap_consent_sdk.so|d3d8496fbe66c25c5c75ca74ccf15006133b0d32
 vendor/lib64/libdpp_manager.so
 vendor/lib64/libdsd2pcm.so
 vendor/lib64/libeepromcutter.so
+vendor/lib64/libembmsservice.so|d4b786423e3127be65cc9387b0cf1158a643efd9
+vendor/lib64/libengineplugin.so|5bb7ed42888bede518943fa6e581d73bbdfc3ea8
+vendor/lib64/libgame_enhance.so|f9b767da40f6d64a3841a8f8913e4a7bb1f9d599
 vendor/lib64/libgeofencing.so
+vendor/lib64/libgpt.so|e0afb95cfca544326764952db1f96f9117d19e4a
+vendor/lib64/libgptStaticHelper.so|fbd00afa777b3078aea7a96dd9f0913031fbfab4
+vendor/lib64/libhdcp1prov.so|ac61662604e26a5f5cdc3300f75aa3142e1df4db
+vendor/lib64/libhdcp2p2prov.so|0ea1dec103cf5552d4d8d4fc608c070c137da3b4
+vendor/lib64/libhdcpsrm.so|538106fc0c1950fd058754916121422dfc7a7f7e
 vendor/lib64/libhwfenceclient.so
 vendor/lib64/libiccprofile.so
 vendor/lib64/libidl.so
+vendor/lib64/libidv.so|5928c102939745fdb44dd45fc1a9fd4bc767b550
 vendor/lib64/libintervmipc.so
 vendor/lib64/liblbs_core.so
+vendor/lib64/liblmutils-ns.so|504ee4b823781c3506f5eec5816256cc30629220
+vendor/lib64/libloadalgo_stub.so|e0b5f71d4fd52961b72abe72efe4afdfcfa79fc0
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_common.so
 vendor/lib64/libmdmdetect.so
+vendor/lib64/libmemgen.so|43cf07745c18f07057ec8e689d83191019e111b0
 vendor/lib64/libmemhalutils.so
 vendor/lib64/libmemutils.so
+vendor/lib64/libmeters-ns.so|0afbfdb002c21a90471c5d603b0ac34f11a860ec
+vendor/lib64/libmeters.so|c45c06d0a9c37b3157af3154a77bd55b080d404a
 vendor/lib64/libmfGhostDetection.so
+vendor/lib64/libminkipcbinder_vendor.so|0112fde7261d6170ae9e6c7765531981104c2559
 vendor/lib64/libmiracast.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmmosal_vendor.so
+vendor/lib64/libmmrtpdecoder_vendor.so|e89d7dc816d87186f12b1739bc3db191196005c5
+vendor/lib64/libmmrtpencoder_vendor.so|94e5a44f81fb03823a6d1a01cbaab7054e3b154c
 vendor/lib64/libmpbase.so
+vendor/lib64/libnative-api.so|53b73cf62e9396cc70859e397bae818825e13e87
 vendor/lib64/libnspextensioncopyservice.so
 vendor/lib64/libnspextensiongenericqnnservice.so
 vendor/lib64/libnspextensionsuperresolutionservice.so
+vendor/lib64/libnspframework.so|34b2e76ca72c69ad6e79d9c28d7bbac560e01b51
 vendor/lib64/liboem_specific.so
 vendor/lib64/liboischannel.so
 vendor/lib64/libopencv.so
@@ -1202,36 +1545,71 @@ vendor/lib64/libopencv3a.so
 vendor/lib64/libopencv_core.so
 vendor/lib64/libopencv_imgproc.so
 vendor/lib64/libopencv_leai.so
+vendor/lib64/libops.so|38ce6b7f3be04f847ead72474476afa36327c0c3
 vendor/lib64/libos.so
 vendor/lib64/libpat_uint8.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libperipheral_client.so
+vendor/lib64/libpinner.so|384c07b3b7c580e90caa13dbf60d3314adb074a3
 vendor/lib64/libplatformconfig.so
+vendor/lib64/libprefapps.so|516a236c23be757d1849722897276acf0d5ed2a9
+vendor/lib64/libprekill.so|e5f174b052184f093c1418dae6f5ae1c6e969b5c
+vendor/lib64/libprocomp.so|49a0a86c318edba13eaa1e0dbe9afe97174cc7d1
 vendor/lib64/libptq_uint8.so
+vendor/lib64/libqasr.so|3ae6c69dc4e0eaba6cf0b3de07b25b0bbe3775ca
 vendor/lib64/libqcbor.so
+vendor/lib64/libqcmaputils.so|a628d47e1432be4837a1a65fad96cfb1841fe233
 vendor/lib64/libqconfigclient.so
 vendor/lib64/libqesdk2_0.so
+vendor/lib64/libqesdk_manager.so|5a45e31ecf2b281cbacff604f3347c63c1258362
 vendor/lib64/libqesdoem_query_sys.so
+vendor/lib64/libqisl.so|9a7dac64edbc3cc5c3b0f639bd63f45ebe300d29
 vendor/lib64/libqlmclient_dyn.so
 vendor/lib64/libqpt.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqrtrclient.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libqspm-mem-utils-vendor.so
+vendor/lib64/libqtbase.so|d35f50f910acff48f162ec8d3bfc495bfc4f9447
 vendor/lib64/libqti-MemHal-client.so
+vendor/lib64/libqti-appclassifier.so|81c4a7c004b379512a2457d6a9c6c399a53cae7d
+vendor/lib64/libqti-engine-loader.so|1235da3a1d55a107e6a64885733d91601f5b2334
+vendor/lib64/libqti-jankrescue.so|e8c330d5bb1d1ca8ca4c08951945ecf8b05f1d29
+vendor/lib64/libqti-lllite.so|1fad66d2d9c0f1df76d45625889c6a516f09887a
+vendor/lib64/libqti-qape-engine.so|017ac8680bba5eff799adb4723b67e5ad6b54039
+vendor/lib64/libqti-s3tf.so|33f705aae66c87c706abf6951c3a6ea5ca7ebc6c
+vendor/lib64/libqti-scenariod.so|6c13844ffbbaea1e7160c2f6e34f2d375b4d6a14
+vendor/lib64/libqti-sslite.so|c784ca78a18aa181d00d23ff0fbaeb83bb222438
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
+vendor/lib64/libqtiidentitycredential.so|af5171c0f136cd9ba107039200efc710b69c22f2
+vendor/lib64/libqtjsonhelper.so|3ca69447f779cb8ab0d5c91501963d758295d29e
+vendor/lib64/libqtnodes.so|bb21dbd59a7087dd043e52120a0c3a891d50fa5f
+vendor/lib64/libqwes.so|b33bf7bbe8560d39d6eb532f6cef3a369b54d07c
+vendor/lib64/librcc.so|deca885074829cbcf661ea13826e6854a069c18a
 vendor/lib64/librcmask.so
+vendor/lib64/librpmbStaticHelper.so|cea92d7c58cd60ba90ce3e115689eb14a1454d15
+vendor/lib64/libscveCommon.so|c9230a3d8df3ed42c9d91f2624a5bb926a160d93
+vendor/lib64/libscveCommon_stub.so|6cc00e1efc97d29a8886b99fe72a8962814003b5
+vendor/lib64/libscveObjectSegmentation.so|9fa7c853bd30951e384edf4987de508e40550707
+vendor/lib64/libscveObjectTracker.so|2e6a61593e5bfc17bed4c400c5e4f7266e6d0dab
+vendor/lib64/libscveObjectTracker_stub.so|94609863649671acf168c7700b562f4307632671
 vendor/lib64/libseclog.so
 vendor/lib64/libsensinghubapi.so
 vendor/lib64/libsensinghubsession.so
+vendor/lib64/libsfeShiftExtrapolation.so|c3f0ec6924d0f380206dbdaebec1710c85b85244
+vendor/lib64/libsi.so|ee74b255834b480aeb5aa9589c4b41687e546f46
 vendor/lib64/libskewknob.so
+vendor/lib64/libslimclient.so|9baea931da016c13c91c0fabcd3a4724a2c59072
 vendor/lib64/libsmemlog.so
 vendor/lib64/libsn100u_fw.so
 vendor/lib64/libsn220u_fw.so
 vendor/lib64/libsoc_helper.so
 vendor/lib64/libsoc_helper_jni.so
 vendor/lib64/libspectre.so
+vendor/lib64/libspl.so|2d2065249b54f472f1c744b7bd02a50f09756c36
+vendor/lib64/libssc_default_listener.so|99f45df345174742ddedd261aff2fffcb25dfb44
+vendor/lib64/libssdStaticHelper.so|3bbd7d89eaa55c4040e8e5902b7178f1f07a81b1
 vendor/lib64/libstagefrighthw.so
 vendor/lib64/libstreamparser.so
 vendor/lib64/libstreamprocessor.so
@@ -1239,12 +1617,36 @@ vendor/lib64/libsubsystem_control.so
 vendor/lib64/libsv_common.so
 vendor/lib64/libsynx.so
 vendor/lib64/libsys_info_cache.so
+vendor/lib64/libtaautoload.so|e8745b8af19616c4cda8ff9ead1820d87e3c6e23
 vendor/lib64/libtensorflowlite_c_qcom.so
 vendor/lib64/libtestutils.so
+vendor/lib64/libtflite_fd.so
 vendor/lib64/libthreadutils.so
 vendor/lib64/libtime_genoff.so
 vendor/lib64/libtinyxml2_1.so
+vendor/lib64/libtlpd.so|34a9dea275465fe99a62469d670adccf8c28b3bc
+vendor/lib64/libtlpd_configmgr.so|2183eef1e7431fc711b306d2112888d02528c4ac
+vendor/lib64/libtlpd_internal.so|80cd7a7d3cfd5650f1aa6c05182ea773ac591f30
+vendor/lib64/libtlpd_logger.so|6bf645622cc2e227a58ea0bba81c4fc1051a9a69
 vendor/lib64/libvmfilexfer.so
+vendor/lib64/libwfdcommonutils_proprietary.so|3c32ad298c3774d5242e53e272c781b7d31cd031
+vendor/lib64/libwfdconfigutils_proprietary.so|66a3a23c520f42ed4de09b8c7578e9273ff5d364
+vendor/lib64/libwfdhdcpcp.so|70c8158db71e1683a79de99b3c1cabe35b285ef3
+vendor/lib64/libwfdhdcpservice_proprietary.so|d7398703afb77c0896021b2667a7435459ecc0d5
+vendor/lib64/libwfdmminterface_proprietary.so|b6db3a7c03d6b2267c24278cd719b160571f6611
+vendor/lib64/libwfdmmservice_proprietary.so|c60a13b278825a88bfe56d1bbf067832e08434a9
+vendor/lib64/libwfdmmsrc_proprietary.so;DISABLE_DEPS|b27d9b6cdfccb666971b21218e989aafc72bd8ac|ec17401a460d0ddf2edd054c085a5cdb3876313e
+vendor/lib64/libwfdmodulehdcpsession.so|c6849b5846550419888f512e4c2ebb9fb81a2a8c
+vendor/lib64/libwfdrtsp_vendor.so|65edbd60d14cd6899d2a1ff577f8e4757a4aed90
+vendor/lib64/libwfdsessionmodule.so|d1bd1025a28b64204074ed77d4179c1f60db1d19
+vendor/lib64/libwfdsourcesm_proprietary.so|096e72ec2868927928c9fb0c2a1adfeeb1cba2d7
+vendor/lib64/libwfduibcinterface_vendor.so|e79d2ddc86cdbe04654312f1cce8a79bb56ad9fb
+vendor/lib64/libwfduibcsink_vendor.so|b67267a3e367cc39a9bf9f0779241f2a11abb3f6
+vendor/lib64/libwfduibcsinkinterface_vendor.so|0ca2e0d15bedd4b6053ec4c98671bb051e6f7e80
+vendor/lib64/libwfduibcsrc_vendor.so|c4f7dd540c6efb8a9630fff153a24c22e80cbfe4
+vendor/lib64/libwfduibcsrcinterface_vendor.so|92b553398c41e81d2daff9d9c6a9de6ed28507bc
+vendor/lib64/libwfdutils_proprietary.so|c63bb2b17eddd4c0578461a7c4e5e209427f23b7
+vendor/lib64/libxml.so|8a31029067d78999150815c78be6ebbda49284f5
 vendor/lib64/libxtadapter.so
 vendor/lib64/qsn1nrt430.bin
 vendor/lib64/qsn1nrt43270.bin
@@ -1259,9 +1661,13 @@ vendor/lib64/vendor.qti.qspmhal-impl.so
 vendor/rfs/rfs_symlinks
 
 # Performance
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/bin/feature_enabler_client|d129d5e998c6149fdf5463ccbf2ab1dfa442630a
 vendor/bin/hw/android.hardware.powerstats-service.qti
 vendor/bin/hw/vendor.lenovo.hardware.battery-service
+vendor/bin/hw/vendor.qti.hardware.perf2-hal-service|eab411c6d24ad33542e5c69f2eb6bb9340c248ef
 vendor/bin/power_off_alarm
+vendor/bin/poweropt-service|5b35696ca4625eca14c557a74bdf60975ab7d71e
 vendor/bin/qsap_mpamsvc
 vendor/bin/vendor.qti.syshealthmon-service
 vendor/etc/init/android.hardware.powerstats-service.rc
@@ -1291,10 +1697,23 @@ vendor/etc/vintf/manifest/vendor.lenovo.hardware.battery-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
 vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
+vendor/lib64/libaodoptfeature.so|673f1cc3a2e202e4f1689ccf4552d7455fecc57c
+vendor/lib64/libgamepoweroptfeature.so|1dd45306ea6bd3d8a9e25fa7920bcd63dd1688a5
+vendor/lib64/liblearningmodule.so|b4ba1a7e51aa1836a921e1ede39a28e1931bdb52
+vendor/lib64/libmemperfd.so|b6d737aaa5c52f5c676988508c6de137bcc451ff
+vendor/lib64/liboffscreenpoweroptfeature.so|d1b7948e093f3b8bb3c069b446cb30217782f64c
 vendor/lib64/libperf-thermalprovider.so
 vendor/lib64/libperfconfig.so
+vendor/lib64/libperfdb.so|e8e1c3d92de1c09e8947329d2a6b8ca40e692ea7
 vendor/lib64/libperfioctl.so
+vendor/lib64/libpowercallback.so|42fb4bc448f84686dff88a558b00398570b2b2db
+vendor/lib64/libpsmoptfeature.so|435143517974fb363862be12220f2ecb335122f8
 vendor/lib64/libq-perflog.so
+vendor/lib64/libqcci_legacy.so|fa3340c5dbc488ef5ed4236cec4291ad51c2f8bb
+vendor/lib64/libqti-perfd.so|9055a34cd20c8bae6d5bd0932d00339b5b886205
+vendor/lib64/libqti-perfextn-intf.so|c820b9353d8ff6e8d0dc090061d75e2078d76711
+vendor/lib64/libreffeature.so|8d55458baba691ad3d9943637b2860d938f3ca1d
+vendor/lib64/libstandbyfeature.so|c2f89edd759d55139da34d2c03f35b89d733808a
 vendor/lib64/vendor.lenovo.hardware.battery-V5-ndk.so
 vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.power.powermodule-V1-ndk.so
@@ -1304,8 +1723,15 @@ vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.syshealthmon-V1-ndk.so
 
 # Firmware / Security
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/apex/com.google.android.widevine-13130248.apex
+vendor/bin/hw/android.hardware.gatekeeper-service-spu-qti|85167922dd436b61ad96424559445f1b531b1989
 vendor/bin/hw/android.hardware.security.keymint-service-spu-qti;DISABLE_DEPS
+vendor/bin/hw/android.hardware.security.onekeymint-service-qti|b88d46a45a95b548596c107a0793ad85ac7d3f02
+vendor/bin/hw/vendor.qti.hardware.secureprocessor
+vendor/bin/hw/vendor.qti.hardware.trustedui-aidl-service-qti|51c6031c9fac0b5fdba288c4903b9c76660bf761
+vendor/bin/qseecomd
+vendor/bin/trusteduilistener
 vendor/etc/android.hardware.security.onekeymint-service-qti.rc
 vendor/etc/avf/early_vms_trusted_vm.xml
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
@@ -1341,10 +1767,30 @@ vendor/firmware/gen80900_aqe.fw
 vendor/firmware/gen80900_gmu.bin
 vendor/firmware/gen80900_sqe.fw
 vendor/firmware/wigig.ini
+vendor/lib64/hw/libqtigatekeeper.so|e677bb94c36de28f206df29709842ab429605b05
+vendor/lib64/hw/libspuqtigatekeeper.so
+vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 vendor/lib64/libTrustedInputAIDL.so
 vendor/lib64/libTrustedInputUtils.so
+vendor/lib64/libTrustedUIAIDL.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so|da234428387e194672a9b22e005c0cd8605da614
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so|9da9eac2fbff398f233f59f37ac37d73fc48bab6
+vendor/lib64/libkeymasterutils.so|3f43b078b648ca191c061007f631b1e4c6833953
+vendor/lib64/libloadtrusteduiapp.so
 vendor/lib64/libqseed3.so
+vendor/lib64/libqti-qesdk-secure.so
+vendor/lib64/libqtikeymaster4.so|e7d5fb2831f3261bc8a175796435fd3b44296375
+vendor/lib64/libspukeymint.so;DISABLE_DEPS
+vendor/lib64/libspukeymintdeviceutils.so
+vendor/lib64/libspukeymintprovision.so;DISABLE_DEPS
+vendor/lib64/libspukeymintutils.so
+vendor/lib64/libspuprovisionids.so|cfd5fcf5a3c0aedc521feb461667ac5b83c32215
+vendor/lib64/libtee_provisioner_qti.so|07e4137cac2ab7d8a430d82699e887755ebb201b
 vendor/lib64/libtlpd_crypto.so
+vendor/lib64/libtrustedapploader.so
+vendor/lib64/libtzdrmgenprov.so|ae4c4afa3d31b410c32fa7e7d54747e391d4e719
 vendor/lib64/mediadrm/libpseudocryptoplugin.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
@@ -1357,6 +1803,7 @@ vendor/lib64/vendor.qti.hardware.spu-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.trustedui-V1-ndk.so
 
 # Sensors config
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/sensors/config/kaanapali_ccd_base.json
 vendor/etc/sensors/config/kaanapali_ccd_v6_0_amd.json
 vendor/etc/sensors/config/kaanapali_ccd_v6_0_regs.json
@@ -1436,6 +1883,9 @@ vendor/etc/sensors/config/sns_transport_ppe.json
 vendor/etc/sensors/sns_reg_config
 
 # Sensors
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+vendor/bin/init.qcom.sensors.sh
+vendor/bin/qsap_sensors|f853e0833e75f632b5096c06b60f14b259bc0844
 vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/vendor.qsap.sensors.rc
 vendor/etc/init/vendor.qti.hardware.sensorscalibrate-service.rc
@@ -1444,13 +1894,27 @@ vendor/etc/seccomp_policy/qsap_sensors.policy
 vendor/etc/sensors_diag.cfg
 vendor/etc/vintf/manifest/vendor.qti.hardware.sensorscalibrate.xml
 vendor/lib64/libDcfClientSensor.so
+vendor/lib64/libqesdk_qshsession.so
+vendor/lib64/libqsh.so|703f88a48137c8d57c47659aa206939846149203
 vendor/lib64/libqsh_ble_pb.so
+vendor/lib64/libqshutils.so
+vendor/lib64/libsensorcal.so
+vendor/lib64/libsns_device_mode_stub.so|5e3a9664fb4afbf8d27224592bb2ff76aeaf04e6
+vendor/lib64/libsns_direct_channel_stub.so|9bda0bcf6d08af308bd0d6c8203b267c2117ac94
+vendor/lib64/libsns_dynamic_loader_stub.so|c4377aae98cd7d2d7de2c2015c28ec9feee88502
+vendor/lib64/libsns_remote_proc_state_stub.so|91b26d4d3d691b5513b1da399c42dc34b24bacc2
+vendor/lib64/libsnsapi.so
+vendor/lib64/libsnsdiaglog.so
+vendor/lib64/libsnsutils.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate-V1-ndk.so
 
 # Thermal engine
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/init/init_thermal-engine-v2.rc
+vendor/lib64/libthermalclient.so
 
 # Thermal power tuning
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/etc/perf/avcsysnodesconfigs.xml
 vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/factorsconfig.xml
@@ -1468,90 +1932,3 @@ vendor/etc/thermal-engine_gpu_1.conf
 vendor/etc/thermal-engine_gpu_2.conf
 vendor/etc/thermal-engine_gpu_5.conf
 vendor/etc/thermal-engine_sensor_0.conf
-
-# Wi-Fi Display
-system/framework/WfdCommon.jar;BOOT_JAR|5c834d8af38bb6aca3cf6d68337261426c1977a8
-system_ext/bin/wfdservice64|589621520da356f6724dbe17c5f1209ef1fc7490
-system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
-system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|6669d5ee462c981663b8ac573d84d334e4eed96c
-system_ext/etc/seccomp_policy/wfdservice64.policy|1e331272649395423b11c575892e0bdc9433b820
-system_ext/etc/wfdconfigsink.xml|c829bce6c01358615ae9021a201d2ef445269fe1
-system_ext/lib64/libmmrtpdecoder.so|124b031b69015cf0993d8f223edfed4b5f68dc2b
-system_ext/lib64/libmmrtpencoder.so|4653d181f1808c1ca67675f55a81ec2cdb1b27c3
-system_ext/lib64/libwfdavenhancements.so|dad0add27e5082e2f9ad6aea06294d3851818178
-system_ext/lib64/libwfdclient.so|161fc77fa284befe5ca109c5e7cc7cc66f77a454
-system_ext/lib64/libwfdcommonutils.so|c4b22b8dddb7e898f072d514a1287ebab43d7fb3|40022a85798d0d742320e2c5af5987a1c556f5fc
-system_ext/lib64/libwfdconfigutils.so|7b205c5c653f3fd175ec873116549e56003b074f
-system_ext/lib64/libwfddisplayconfig.so|6d5ed77a65d765e48a23f3519c6c7a5005945086
-system_ext/lib64/libwfdmminterface.so|cc61087a298aff53c32832cac5256606e202ce29
-system_ext/lib64/libwfdmmsink.so|a1fab6dbf095a967f4a0949e1a4113ab7e623d5c
-system_ext/lib64/libwfdmmsrc_system.so|3df06e9b841d8c6bd21f63d04c65c28fbe528acd|539eeebd8e49f6c42aca1b669d03660ea3de0b20
-system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so|9a2c2bc1b9b64c9b0e3a838e0b186eb47201be0a|df7f81d7c2eef4d77ef279c8ec93588cf7172ad3
-system_ext/lib64/libwfdrtsp.so|337d830acb59644c91a84dea4a5e5e2e33b8242d
-system_ext/lib64/libwfdservice.so|718c813d142cf0e74980f5b7da5a1773f53a9448|4b1b77f06d0d7d67b7ffa79221628ee0d2e16b5f
-system_ext/lib64/libwfdsinksm.so|0ad7086e7231b43db55bed59a44bd9dab5385b51
-system_ext/lib64/libwfduibcinterface.so|de8ae1660abbd14a6df278ae3e0e56296cefea19
-system_ext/lib64/libwfduibcsink.so|2f6debd17ed86e0fc73502b6318f5704dec8c4fa
-system_ext/lib64/libwfduibcsinkinterface.so|70fa6a4228df4a849220c6f375078d689dedcd76
-system_ext/lib64/libwfduibcsrc.so|d4c86e85be9622eca5cb5e095c6ec935e5c7d86a
-system_ext/lib64/libwfduibcsrcinterface.so|587457b2a5f33f996966f2d35ec4af421a6ea6df
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|ab8766f017f49bce0ee765fdab7241703084426f
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE=vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk-system|862439ea491b4b88c812bcc6b240076e309c0f9b
-system_ext/priv-app/WfdService/WfdService.apk|4040fc410abd97117b27849b8be8f4858e9ceb0c|8b46f50e0941557584af802b215aea72858d9e65
-vendor/bin/wfdhdcphalservice|939d14fdbc0cd7cf29900d6bba4670ba077e8ae1
-vendor/bin/wfdvndservice|ce2d4e63a150b0d5dfd651c64811b0351c2b5d62
-vendor/bin/wifidisplayhalservice|c26dbeccbd4f1f021faf2c1d7d42cfa0fffa21b5
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|1b27c2a2ccdad6d74fdb53457c0237d49115307a
-vendor/etc/init/wfdvndservice.rc|e7491c03c180cbaf9979a603dca0846f36f089b0
-vendor/etc/seccomp_policy/wfdhdcphalservice.policy|9f9b5bcaf19ae7f4ee576187257fcaa0f1159240
-vendor/etc/seccomp_policy/wfdvndservice.policy|9a586523a28481d384ce3cf9037be9bdd5662ee8
-vendor/etc/seccomp_policy/wifidisplayhalservice.policy|0faebc4c4641f9d29661fcc1b70413d54238b4b5
-vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml|d9bce16f45874f66ebeebe4a4269685a5fc2cb6d
-vendor/etc/wfdconfig.xml|7e6e27db065b2ff83508a5e8f3c4367cf5a3f048
-vendor/lib64/libmmrtpdecoder_vendor.so|e89d7dc816d87186f12b1739bc3db191196005c5
-vendor/lib64/libmmrtpencoder_vendor.so|94e5a44f81fb03823a6d1a01cbaab7054e3b154c
-vendor/lib64/libwfdcodecv4l2_proprietary.so|e19b42a685156c224b9ca9dcd81bae914db6411d
-vendor/lib64/libwfdcommonutils_proprietary.so|3c32ad298c3774d5242e53e272c781b7d31cd031
-vendor/lib64/libwfdconfigutils_proprietary.so|66a3a23c520f42ed4de09b8c7578e9273ff5d364
-vendor/lib64/libwfddisplayconfig_vendor.so|122960679b996aa5c2196f32b47529aa4e8f0e42
-vendor/lib64/libwfdhdcpcp.so|70c8158db71e1683a79de99b3c1cabe35b285ef3
-vendor/lib64/libwfdhdcpservice_proprietary.so|d7398703afb77c0896021b2667a7435459ecc0d5
-vendor/lib64/libwfdmminterface_proprietary.so|b6db3a7c03d6b2267c24278cd719b160571f6611
-vendor/lib64/libwfdmmservice_proprietary.so|c60a13b278825a88bfe56d1bbf067832e08434a9
-vendor/lib64/libwfdmmsrc_proprietary.so;DISABLE_DEPS|b27d9b6cdfccb666971b21218e989aafc72bd8ac|ec17401a460d0ddf2edd054c085a5cdb3876313e
-vendor/lib64/libwfdmodulehdcpsession.so|c6849b5846550419888f512e4c2ebb9fb81a2a8c
-vendor/lib64/libwfdrtsp_vendor.so|65edbd60d14cd6899d2a1ff577f8e4757a4aed90
-vendor/lib64/libwfdsessionmodule.so|d1bd1025a28b64204074ed77d4179c1f60db1d19
-vendor/lib64/libwfdsourcesession_proprietary.so|d8c00254f2867dad66b7a99b5061f7efd6526976
-vendor/lib64/libwfdsourcesm_proprietary.so|096e72ec2868927928c9fb0c2a1adfeeb1cba2d7
-vendor/lib64/libwfduibcinterface_vendor.so|e79d2ddc86cdbe04654312f1cce8a79bb56ad9fb
-vendor/lib64/libwfduibcsink_vendor.so|b67267a3e367cc39a9bf9f0779241f2a11abb3f6
-vendor/lib64/libwfduibcsinkinterface_vendor.so|0ca2e0d15bedd4b6053ec4c98671bb051e6f7e80
-vendor/lib64/libwfduibcsrc_vendor.so|c4f7dd540c6efb8a9630fff153a24c22e80cbfe4
-vendor/lib64/libwfduibcsrcinterface_vendor.so|92b553398c41e81d2daff9d9c6a9de6ed28507bc
-vendor/lib64/libwfdutils_proprietary.so|c63bb2b17eddd4c0578461a7c4e5e209427f23b7
-vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so|345689ad1b4cb36d2302dc66a79b6e436ecce4e4
-vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|de01512650882a6a9bc4580bf592901003cb62cf
-
-# Init scripts
-vendor/bin/init.class_main.sh
-vendor/bin/init.kernel.post_boot-alor.sh
-vendor/bin/init.kernel.post_boot-canoe.sh
-vendor/bin/init.qcom.class_core.sh
-vendor/bin/init.qcom.coex.sh
-vendor/bin/init.qcom.efs.sync.sh
-vendor/bin/init.qcom.post_boot.sh
-vendor/bin/init.qcom.sdio.sh
-vendor/bin/init.qcom.sensors.sh
-vendor/bin/init.qti.kernel.debug-canoe.sh
-vendor/bin/init.qti.kernel.early_debug-canoe.sh
-vendor/bin/init.qti.kernel.sh
-vendor/bin/init.qti.write.sh
-vendor/bin/system_dlkm_modprobe.sh
-vendor/bin/vendor_modprobe.sh
-
-vendor/bin/init.qti.kernel.debug-alor.sh|31b925e760df928a5f1d08746097cea8c3de4b92
-
-vendor/bin/init.qti.kernel.debug.sh|3529df6804db8b18d8de8f905f38f3f139b9ce72
-
-vendor/bin/init.qti.kernel.early_debug.sh|8f6acf044d17f99e07d58f47df80103c2b810036

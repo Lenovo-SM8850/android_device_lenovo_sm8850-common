@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from pathlib import Path
+import hashlib
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -23,6 +26,7 @@ namespace_imports = [
     'hardware/qcom-caf/wlan',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
+    'vendor/qcom/opensource/dataservices',
 ]
 
 
@@ -49,6 +53,24 @@ lib_fixups: lib_fixups_user_type = {
     'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
         lib_fixup_system_suffix,
 }
+
+
+def keep_qti_decoder_output_retries(ctx, file, file_path, **kwargs):
+    path = Path(file_path)
+    data = bytearray(path.read_bytes())
+    expected = '87f54f332136968a44bdb7e43d651e53fec3c1a6a56798af8bb24dd8af9695fd'
+    actual = hashlib.sha256(data).hexdigest()
+    if actual != expected:
+        raise ValueError(f'{file.dst}: unexpected QTI decoder SHA256 {actual}; expected {expected}')
+
+    # Keep delayed output retries after the QTI decoder timeout.
+    offset = 0x1b0a3c
+    data[offset:offset + 4] = bytes.fromhex('4b 00 00 14')
+    expected = '97823e087e3d34cbf53ca9334e8c5f0002cd265237b9c75600fbe7afa8c6fc97'
+    actual = hashlib.sha256(data).hexdigest()
+    if actual != expected:
+        raise ValueError(f'{file.dst}: unexpected patched QTI decoder SHA256 {actual}; expected {expected}')
+    path.write_bytes(data)
 
 
 def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
@@ -138,6 +160,14 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libqtivibratoreffect.so', 'libqtivibratoreffect-lenovo.so')
         .replace_needed('libqtivibratoreffectoffload.so', 'libqtivibratoreffectoffload-lenovo.so')
         .call(patch_vibrator_capabilities, need_tmp_dir=False),
+    'vendor/lib64/libqcodec2_core.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libqcodec2_v4l2codec.so': blob_fixup()
+        .call(keep_qti_decoder_output_retries, need_tmp_dir=False),
+    'vendor/lib64/libvideooptfeature.so': blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
+    'vendor/lib64/libpowercore.so': blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
