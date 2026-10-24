@@ -92,4 +92,10 @@
 
     <!-- Evolution X -->
     <bool name="config_powerOffAlarmEnabled">true</bool>
+
+    <!-- Hub mode starts only after the user turns it on; the other defaults suit
+         cable charging without a wireless charger or dock. -->
+    <integer name="config_whenToStartHubModeDefault">0</integer>
+    <bool name="config_onlyShowGlanceableHubWhenWirelessChargingDefault">false</bool>
+    <bool name="config_supportDreamWirelessChargingRestriction">false</bool>
 </resources>
