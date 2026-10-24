@@ -20,6 +20,7 @@
     <bool name="config_letterboxIsSplitScreenAspectRatioForUnresizableAppsEnabled">true</bool>
     <item name="config_fixedOrientationLetterboxAspectRatio" format="float" type="dimen">1.333</item>
     <integer name="config_letterboxActivityCornersRadius">-1</integer>
+    <bool name="config_allowRotationResolver">false</bool>
     <!-- Center letterboxed apps vertically instead of pinning them to the top. -->
     <item name="config_letterboxVerticalPositionMultiplier" format="float" type="dimen">0.5</item>
     <!-- Enable synchronization of the displays refresh rates by applying the default low refresh
