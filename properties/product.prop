@@ -33,3 +33,6 @@ bluetooth.profile.mcp.server.enabled=true
 bluetooth.profile.opp.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.vcp.controller.enabled=true
+
+# Setup wizard
+ro.setupwizard.rotation_locked=false
