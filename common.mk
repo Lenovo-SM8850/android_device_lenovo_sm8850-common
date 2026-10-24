@@ -734,6 +734,11 @@ TARGET_BOOT_ANIMATION_RES := 1440
 TARGET_ENABLE_FP_OVERRIDE := false
 TARGET_SUPPORTS_QUICK_TAP := false
 WITH_GMS := true
+
+# Disable the Google launcher's gesture sandbox tutorial.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig/lenovo-component-overrides.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/lenovo-component-overrides.xml
+
 $(call inherit-product-if-exists, vendor/translations/translations.mk)
 
 # Shared clone-profile policy
