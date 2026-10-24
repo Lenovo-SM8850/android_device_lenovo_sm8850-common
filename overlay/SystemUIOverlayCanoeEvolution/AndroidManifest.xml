@@ -3,5 +3,5 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.miner7222.overlay.systemui.evolution">
-    <overlay android:targetPackage="com.android.systemui" android:isStatic="true" android:priority="0" />
+    <overlay android:targetPackage="com.android.systemui" android:isStatic="true" android:priority="10" />
 </manifest>

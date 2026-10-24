@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <!-- These tablets charge by cable and have no wireless charger or supported dock. -->
+    <integer name="config_whenToStartHubModeDefault">1</integer>
+    <bool name="config_onlyShowGlanceableHubWhenWirelessChargingDefault">false</bool>
+    <bool name="config_supportDreamWirelessChargingRestriction">false</bool>
+    <bool name="config_dreamsEnabledByDefault">false</bool>
+</resources>
