@@ -36,3 +36,6 @@ bluetooth.profile.asha.central.enabled=true
 remote_provisioning.hostname?=remoteprovisioning.googleapis.com
 remote_provisioning.strongbox.rkp_only?=true
 remote_provisioning.tee.rkp_only?=true
+
+# Setup wizard
+ro.setupwizard.rotation_locked=false
