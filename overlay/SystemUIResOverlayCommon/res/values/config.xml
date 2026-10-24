@@ -3,6 +3,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <!-- Start with an empty hub and let the user choose from every widget category. -->
+    <string-array name="config_communalWidgetAllowlist" translatable="false" />
+    <bool name="config_communalWidgetPickerFilterByCategory">false</bool>
+
     <!-- SDE completed-frame rate, formatted as fps: N.N by the driver. -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/card0-sde-crtc-0/measured_fps</string>
 
