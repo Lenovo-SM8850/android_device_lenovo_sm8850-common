@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<config>
+    <component-override package="com.google.android.apps.nexuslauncher">
+        <component class="com.android.quickstep.interaction.GestureSandboxActivity" enabled="false" />
+    </component-override>
+</config>
