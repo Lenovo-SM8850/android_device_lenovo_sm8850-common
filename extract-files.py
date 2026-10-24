@@ -6,6 +6,7 @@
 
 from pathlib import Path
 import hashlib
+import re
 
 from extract_utils.fixups_blob import (
     blob_fixup,
@@ -73,6 +74,19 @@ def keep_qti_decoder_output_retries(ctx, file, file_path, **kwargs):
     path.write_bytes(data)
 
 
+def enable_ull_scan_requests(ctx, file, file_path, **kwargs):
+    path = Path(file_path)
+    data = path.read_bytes()
+    lines = data.splitlines(keepends=True)
+    ends = [i for i, line in enumerate(lines) if line.rstrip(b'\r\n') == b'END']
+    if len(ends) != 1 or re.search(rb'(?m)^\s*wlm_latency_flags_ultralow\s*=', data):
+        raise ValueError(f'{file.dst}: expected one END and no ULL latency assignment')
+
+    newline = b'\r\n' if lines[ends[0]].endswith(b'\r\n') else b'\n'
+    lines.insert(ends[0], b'wlm_latency_flags_ultralow=0x180c82' + newline)
+    path.write_bytes(b''.join(lines))
+
+
 def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
     # Stock compose blocks and reports fake durations. Clear only CAP_COMPOSE_EFFECTS (0x20).
     # Match instruction context, not file offsets: patchelf may move ELF sections.
@@ -102,6 +116,12 @@ def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
 
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini',
+        'vendor/etc/wifi/peach_v2/WCNSS_qcom_cfg.ini',
+        'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini',
+    ): blob_fixup()
+        .call(enable_ull_scan_requests, need_tmp_dir=False),
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
         .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
     'vendor/bin/init.qti.kernel.debug.sh': blob_fixup()
