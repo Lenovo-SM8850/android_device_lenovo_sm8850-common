@@ -673,6 +673,11 @@ PRODUCT_SOONG_NAMESPACES += \
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Sysconfig
+# Disable the Google launcher's gesture sandbox tutorial.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig/lenovo-component-overrides.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/lenovo-component-overrides.xml
+
 # Thermal
 PRODUCT_PACKAGES += android.hardware.thermal-service.qti
 
