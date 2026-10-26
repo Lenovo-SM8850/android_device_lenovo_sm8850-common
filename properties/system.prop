@@ -12,6 +12,7 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.mm.enable.qcom_parser=16563967
 
 # SurfaceFlinger
+ro.surface_flinger.bypass_composer_luts=true
 ro.surface_flinger.display_update_imminent_timeout_ms=1000
 ro.surface_flinger.set_idle_timer_ms?=500
 
