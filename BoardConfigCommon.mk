@@ -239,3 +239,6 @@ $(call soong_config_set,lenovousb,port0,port0)
 $(call soong_config_set,lenovousb,port1,port1)
 $(call soong_config_set,lenovousb,typec_path,/sys/class/typec/)
 $(call soong_config_set,lenovousb,gadget_config_path,/config/usb_gadget/g1/configs/b.1/)
+
+# Playback capability
+$(call soong_config_set_bool,renderengine,dvs_adapter,true)
