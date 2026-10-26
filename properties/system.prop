@@ -22,3 +22,6 @@ ro.config.vc_call_vol_steps=15
 # Wi-Fi Display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
+
+# Composer LUT policy
+ro.surface_flinger.bypass_composer_luts=true

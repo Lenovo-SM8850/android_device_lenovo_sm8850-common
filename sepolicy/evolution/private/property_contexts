@@ -1,1 +1,2 @@
 sys.lenovo.memc. u:object_r:lenovo_memc_prop:s0 prefix bool
+ro.surface_flinger.bypass_composer_luts u:object_r:surfaceflinger_prop:s0 exact bool
