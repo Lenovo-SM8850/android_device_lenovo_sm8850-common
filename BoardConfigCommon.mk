@@ -242,3 +242,6 @@ $(call soong_config_set,lenovousb,gadget_config_path,/config/usb_gadget/g1/confi
 
 # Playback capability
 $(call soong_config_set_bool,renderengine,dvs_adapter,true)
+
+# Playback capability
+$(call soong_config_set,media_codec_policy,memc,qti_2x)
