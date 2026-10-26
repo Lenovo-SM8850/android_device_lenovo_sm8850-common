@@ -138,6 +138,8 @@ BOARD_USES_QCOM_HARDWARE := true
 # Playback capability
 $(call soong_config_set_bool,renderengine,dvs_adapter,true)
 
+$(call soong_config_set,media_codec_policy,memc,qti_2x)
+
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/properties/system.prop
 TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/properties/system_ext.prop
