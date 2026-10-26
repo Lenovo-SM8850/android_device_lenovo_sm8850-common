@@ -245,3 +245,6 @@ $(call soong_config_set_bool,renderengine,dvs_adapter,true)
 
 # Playback capability
 $(call soong_config_set,media_codec_policy,memc,qti_2x)
+
+# Playback capability
+$(call soong_config_set,media_codec_policy,started_joc,dolby_eac3)
