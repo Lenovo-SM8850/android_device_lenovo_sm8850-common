@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<config>
+    <!-- The Now Playing sysconfig makes the open-source PCS component an association target that only
+         allows Now Playing, so packages already allowed to bind to it from their side are refused.
+         Allow PCS the reverse side of those existing grants. -->
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.as" />
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.odad" />
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.apps.pixel.psi" />
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.glasses.secure" />
+</config>
