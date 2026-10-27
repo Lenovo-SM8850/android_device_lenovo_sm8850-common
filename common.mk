@@ -741,6 +741,10 @@ WITH_GMS := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig/lenovo-component-overrides.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/lenovo-component-overrides.xml
 
+# Let ASI, Play Protect and PSI bind to PCS despite the Now Playing association list.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig/pcs-associations.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pcs-associations.xml
+
 $(call inherit-product-if-exists, vendor/translations/translations.mk)
 
 # Shared clone-profile policy
