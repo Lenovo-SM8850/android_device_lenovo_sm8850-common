@@ -1257,7 +1257,7 @@ system_ext/lib64/extractors/libmmparserextractor.so
 system_ext/lib64/libSurfaceUtil_jni.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
-system_ext/lib64/vendor.qti.hardware.cacertaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.hardware.cacertaidlservice-V1-ndk.so;MODULE_SUFFIX=-system
 vendor/app/CACertService/CACertService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
 vendor/bin/C2PAInternetService
