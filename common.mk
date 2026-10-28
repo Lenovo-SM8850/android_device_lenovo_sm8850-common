@@ -756,3 +756,6 @@ PRODUCT_COPY_FILES += \
 
 # Playback color configuration
 PRODUCT_PACKAGES += DolbyVisionServiceTarget
+
+# Per-game thermal and frequency policy executor
+PRODUCT_PACKAGES += vendor.lenovo.game-policy

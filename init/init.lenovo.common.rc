@@ -135,10 +135,22 @@ on boot
     chown system /sys/devices/platform/soc/990000.spi/spi_master/spi0/spi0.0/trusted_touch_enable
     chmod 0660 /sys/devices/platform/soc/990000.spi/spi_master/spi0/spi0.0/trusted_touch_enable
 
-on property:vendor.lenovo.game_mode=1
+on property:vendor.lenovo.game_thermal_case=0
+    write /sys/devices/system/cpu/cpu0/thermal/control 0
+    restart thermal-engine
+
+on property:vendor.lenovo.game_thermal_case=100
+    write /sys/devices/system/cpu/cpu0/thermal/control 100
+    restart thermal-engine
+
+on property:vendor.lenovo.game_thermal_case=200
+    write /sys/devices/system/cpu/cpu0/thermal/control 200
+    restart thermal-engine
+
+on property:vendor.lenovo.game_thermal_case=300
     write /sys/devices/system/cpu/cpu0/thermal/control 300
     restart thermal-engine
 
-on property:vendor.lenovo.game_mode=0
-    write /sys/devices/system/cpu/cpu0/thermal/control 0
+on property:vendor.lenovo.game_thermal_case=400
+    write /sys/devices/system/cpu/cpu0/thermal/control 400
     restart thermal-engine
