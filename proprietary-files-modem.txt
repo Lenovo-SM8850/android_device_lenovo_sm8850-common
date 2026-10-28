@@ -29,7 +29,6 @@ system_ext/lib64/vendor.qti.diaghal@1.0.so;MODULE=vendor.qti.diaghal@1.0-system
 vendor/lib64/vendor.qti.data.mwqem@1.0.so
 vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk.so
-vendor/etc/vintf/manifest/cacert-saidl.xml
 vendor/etc/vintf/manifest/datafactoryservice-saidl.xml
 vendor/etc/vintf/manifest/dpm-saidl.xml
 vendor/etc/vintf/manifest/mwqem-saidl.xml
@@ -77,7 +76,6 @@ vendor/etc/default-permissions/vendor.qti.data.txpwradmin.xml
 vendor/etc/dpm_vndr/vendor.dpm.conf
 vendor/etc/init.qti.fm.sh
 vendor/etc/seccomp_policy/qms.policy
-vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/init/cnd.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/qms.rc

@@ -1086,6 +1086,7 @@ vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service-qti.xml
 vendor/etc/vintf/manifest/avf_qcvm_manager.xml
 vendor/etc/vintf/manifest/bcs-ranging.xml
 vendor/etc/vintf/manifest/bttpi-saidl.xml
+vendor/etc/vintf/manifest/cacert-saidl.xml
 vendor/etc/vintf/manifest/fm_hci.xml
 vendor/etc/vintf/manifest/qasr_vintf.xml
 vendor/etc/vintf/manifest/qesdk-manager.xml
@@ -1210,6 +1211,7 @@ vendor/etc/ssg/c2pa_network_config.json
 vendor/etc/ssg/ta_config.json
 vendor/etc/ssg/tz_whitelist.json
 vendor/etc/sv/mldfs/mldfs_dyn.dat
+vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/wfdconfig.xml|7e6e27db065b2ff83508a5e8f3c4367cf5a3f048
 
 # Init
@@ -1376,6 +1378,7 @@ system_ext/lib64/libwfduibcsinkinterface.so|70fa6a4228df4a849220c6f375078d689ded
 system_ext/lib64/libwfduibcsrc.so|d4c86e85be9622eca5cb5e095c6ec935e5c7d86a
 system_ext/lib64/libwfduibcsrcinterface.so|587457b2a5f33f996966f2d35ec4af421a6ea6df
 system_ext/priv-app/WfdService/WfdService.apk|4040fc410abd97117b27849b8be8f4858e9ceb0c|8b46f50e0941557584af802b215aea72858d9e65
+vendor/app/CACertService/CACertService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
 vendor/bin/C2PAInternetService|fb162a05aef07b0e5882900da72c2cbcf27ff26e
 vendor/bin/adpl|540b14b2c54241592eca842f993473cff310aa97
