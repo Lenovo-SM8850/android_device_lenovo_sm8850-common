@@ -168,6 +168,11 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
     'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so': blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
+    (
+        'vendor/etc/vintf/manifest/c2_manifest_vendor.xml',
+        'vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml',
+    ): blob_fixup()
+        .regex_replace(r'(\s*)(<name>android.hardware.media.c2</name>)(?:\s*<version>\d+</version>)?', r'\1\2\1<version>2</version>'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('clock_gettime: 1')
         .add_line_if_missing('lseek: 1'),
