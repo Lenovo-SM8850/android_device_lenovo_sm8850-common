@@ -360,6 +360,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.m
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
+# Game performance
+PRODUCT_PACKAGES += vendor.lenovo.game-policy
+
 # Generic ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
