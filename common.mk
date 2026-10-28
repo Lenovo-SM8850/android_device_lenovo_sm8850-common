@@ -699,6 +699,7 @@ PRODUCT_PACKAGES += \
 
 # VINTF
 DEVICE_MANIFEST_FILE += device/lenovo/sm8850-common/vintf/manifest_canoe.xml
+ODM_MANIFEST_FILES += device/lenovo/sm8850-common/vintf/bluetooth_audio.xml
 
 # WiFi
 PRODUCT_COPY_FILES += \
