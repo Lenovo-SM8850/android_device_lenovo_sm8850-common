@@ -169,6 +169,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so': blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
+        .add_line_if_missing('clock_gettime: 1')
         .add_line_if_missing('lseek: 1'),
     'vendor/lib64/libcamxdumpinforecorder.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
