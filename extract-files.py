@@ -41,6 +41,8 @@ def lib_fixup_framework_suffix(lib: str, partition: str) -> str:
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    'vendor.qti.hardware.cacertaidlservice-V1-ndk':
+        lib_fixup_system_suffix,
     'vendor.qti.ImsRtpService-V2-ndk':
         lib_fixup_system_suffix,
     'vendor.qti.diaghal-V1-ndk':
