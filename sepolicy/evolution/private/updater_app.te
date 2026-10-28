@@ -1,0 +1,2 @@
+# The Updater publishes the pending update state through SystemUpdateManager.
+allow updater_app system_update_service:service_manager find;
