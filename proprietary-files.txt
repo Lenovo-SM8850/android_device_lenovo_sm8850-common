@@ -1098,6 +1098,7 @@ vendor/etc/ssg/c2pa_enroll_config.json
 vendor/etc/ssg/c2pa_network_config.json
 vendor/etc/ssg/tz_whitelist.json
 vendor/etc/sv/mldfs/mldfs_dyn.dat
+vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/wfdconfig.xml
 
 # Platform HAL interfaces
@@ -1114,6 +1115,7 @@ vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.automotive.vehicle@1.0.so
 vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
 vendor/lib64/vendor.qti.hardware.c2pa-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.cacertaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.capabilityconfigstore-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk.so
@@ -1250,10 +1252,13 @@ odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
 odm/lib64/outconvfiltcoeffqpd4x4.bin
+system_ext/framework/vendor.qti.hardware.cacertaidlservice-V1-java.jar
 system_ext/lib64/extractors/libmmparserextractor.so
 system_ext/lib64/libSurfaceUtil_jni.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
+system_ext/lib64/vendor.qti.hardware.cacertaidlservice-V1-ndk.so
+vendor/app/CACertService/CACertService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
 vendor/bin/C2PAInternetService
 vendor/bin/dppdaemon
@@ -1333,6 +1338,7 @@ vendor/lib64/libbase64.so
 vendor/lib64/libbatching.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
+vendor/lib64/libcacertclient.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
 vendor/lib64/libcpion.so
@@ -1491,6 +1497,7 @@ vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service-qti.xml
 vendor/etc/vintf/manifest/avf_qcvm_manager.xml
 vendor/etc/vintf/manifest/bcs-ranging.xml
 vendor/etc/vintf/manifest/bttpi-saidl.xml
+vendor/etc/vintf/manifest/cacert-saidl.xml
 vendor/etc/vintf/manifest/fm_hci.xml
 vendor/etc/vintf/manifest/qasr_vintf.xml
 vendor/etc/vintf/manifest/qesdk-manager.xml
