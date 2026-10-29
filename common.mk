@@ -361,6 +361,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Game performance
+PRODUCT_PACKAGES += GameScene
+
 PRODUCT_PACKAGES += vendor.lenovo.game-policy
 
 # Generic ramdisk
