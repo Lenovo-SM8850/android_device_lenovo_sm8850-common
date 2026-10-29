@@ -488,6 +488,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += rkp_factory_extraction_tool
 
+# Game scene reports
+PRODUCT_PACKAGES += GameScene
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lenovo \
