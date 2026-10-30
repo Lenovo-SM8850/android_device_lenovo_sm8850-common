@@ -441,7 +441,6 @@ PRODUCT_PACKAGES += android.hidl.token@1.0.vendor
 PRODUCT_PACKAGES += \
     charger_fstab.qcom \
     fstab.qcom \
-    fstab.qcom.vendor_ramdisk \
     init.kernel.post_boot-alor_5_1.sh \
     init.kernel.post_boot-alor_5_2.sh \
     init.kernel.post_boot-alor_6_1.sh \
@@ -461,6 +460,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 # Input
 PRODUCT_COPY_FILES += \
