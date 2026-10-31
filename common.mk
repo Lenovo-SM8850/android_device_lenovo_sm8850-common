@@ -488,6 +488,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += rkp_factory_extraction_tool
 
+# Game performance
+PRODUCT_PACKAGES += GameTuning
+
 # Game scene reports
 PRODUCT_PACKAGES += GameScene
 
@@ -628,7 +631,8 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepdet
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/lenovo \
-    hardware/qcom-caf/bootctrl
+    hardware/qcom-caf/bootctrl \
+    packages/apps/GameTuning
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
