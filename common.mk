@@ -361,6 +361,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Game performance
+PRODUCT_PACKAGES += GameTuning
+
 PRODUCT_PACKAGES += GameScene
 
 PRODUCT_PACKAGES += vendor.lenovo.game-policy
@@ -673,7 +675,8 @@ PRODUCT_SHIPPING_API_LEVEL := 36
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/lenovo \
-    hardware/qcom-caf/bootctrl
+    hardware/qcom-caf/bootctrl \
+    packages/apps/GameTuning
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
