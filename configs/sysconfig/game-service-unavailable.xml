@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<config>
+    <!-- Disable the system game service and its dashboard. -->
+    <unavailable-feature name="android.software.game_service" />
+    <unavailable-feature name="com.google.android.feature.GMS_GAME_SERVICE" />
+</config>
