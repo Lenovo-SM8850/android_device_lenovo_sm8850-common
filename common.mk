@@ -752,6 +752,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig/pcs-associations.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pcs-associations.xml
 
+# Disable the system game service dashboard.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig/game-service-unavailable.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game-service-unavailable.xml
+
 $(call inherit-product-if-exists, vendor/translations/translations.mk)
 
 # Shared clone-profile policy
