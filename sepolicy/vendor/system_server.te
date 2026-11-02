@@ -8,3 +8,6 @@ dontaudit system_server vendor_hal_unsignedhexlp_service:service_manager find;
 
 # Suppress vibrator LED probe denials.
 dontaudit system_server vendor_sysfs_vibrator:file { getattr open read };
+
+# Suppress Snapdragon services HAL lookup denials.
+dontaudit system_server vendor_hal_snapx_service:service_manager find;

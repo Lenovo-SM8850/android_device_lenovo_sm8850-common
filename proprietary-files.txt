@@ -579,6 +579,12 @@ vendor/lib64/libsnapdragoncolor-manager.so
 vendor/lib64/libspcom.so
 vendor/lib64/libsuidlookup.so
 
+# Graphics profile registration
+system_ext/lib64/libtrigger-handler.so
+system_ext/lib64/vendor.qti.qspmhal-V1-ndk.so
+system_ext/lib64/vendor.qti.qspmhal@1.0.so
+system_ext/lib64/vendor.qti.snapdragonServices-V2-ndk.so
+
 # Haptic HAL
 vendor/etc/init/vendor.lenovo.hardware.vibrator_dual-service.rc
 vendor/etc/vintf/manifest/vendor.lenovo.hardware.vibrator_dual-service.xml
