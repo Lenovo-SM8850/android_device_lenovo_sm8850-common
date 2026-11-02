@@ -41,6 +41,8 @@ def lib_fixup_framework_suffix(lib: str, partition: str) -> str:
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    'vendor.qti.snapdragonServices-V2-ndk':
+        lib_fixup_framework_suffix,
     'vendor.qti.hardware.perf2-V1-ndk':
         lib_fixup_framework_suffix,
     'vendor.qti.hardware.cacertaidlservice-V1-ndk':
@@ -60,6 +62,8 @@ lib_fixups: lib_fixups_user_type = {
     'libdolbyproxyandroid':
         lambda lib, partition: f'{lib}-system' if partition == 'system' else lib,
     'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk':
+        lib_fixup_system_suffix,
+    'vendor.qti.qspmhal-V1-ndk':
         lib_fixup_system_suffix,
 }
 
