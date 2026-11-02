@@ -603,6 +603,12 @@ vendor/lib64/libsnapdragoncolor-manager.so|212591668fb41b69d9a33875d50a043c2b3d3
 vendor/lib64/libspcom.so
 vendor/lib64/libsuidlookup.so
 
+# Graphics profile registration
+# From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
+system_ext/lib64/libtrigger-handler.so|09b347e9d7e94801690cee48b7a7ca7ca1b82c24
+system_ext/lib64/vendor.qti.qspmhal-V1-ndk.so;MODULE=vendor.qti.qspmhal-V1-ndk-system|1df5324ff0a68ecc05bfd32070ea51daa10fe9e6
+system_ext/lib64/vendor.qti.qspmhal@1.0.so|932b7841889e0e8e3f7af444550b03af395a8c34
+
 # Display (HDR)
 # From TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919
 vendor/lib64/libhdrdynamic.so|2042d823bc76c244a7a35290463e5a36214adb37
