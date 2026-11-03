@@ -98,4 +98,5 @@
     <integer name="config_whenToStartHubModeDefault">0</integer>
     <bool name="config_onlyShowGlanceableHubWhenWirelessChargingDefault">false</bool>
     <bool name="config_supportDreamWirelessChargingRestriction">false</bool>
+    <bool name="config_defaultTrickyStoreEnabled">false</bool>
 </resources>
