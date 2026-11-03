@@ -6,4 +6,5 @@
     <bool name="config_onlyShowGlanceableHubWhenWirelessChargingDefault">false</bool>
     <bool name="config_supportDreamWirelessChargingRestriction">false</bool>
     <bool name="config_dreamsEnabledByDefault">false</bool>
+    <bool name="config_defaultTrickyStoreEnabled">false</bool>
 </resources>
