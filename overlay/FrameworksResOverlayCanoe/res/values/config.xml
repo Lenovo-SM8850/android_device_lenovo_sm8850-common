@@ -79,6 +79,8 @@
     <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">3000</integer>
     <bool name="config_automatic_brightness_available">true</bool>
+    <!-- Use linear ramps for fast changes and automatic brightening. -->
+    <bool name="config_brightnessRampLinearSpace">true</bool>
     <string name="config_displayLightSensorType" translatable="false">defaultlightsensor</string>
     <integer-array name="config_availableColorModes">
         <item>257</item>
