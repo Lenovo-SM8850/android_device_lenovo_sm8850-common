@@ -47,11 +47,6 @@ function configure_zram_parameters() {
 		let zRamSizeMB=6144
 	fi
 
-	if [ $RamSizeGB -ge 11 ]; then
-		# 12GB, 16GB
-		let zRamSizeMB=12288
-	fi
-
 	# And enable lz4 zram compression for Go targets.
 	if [ "$low_ram" == "true" ]; then
 		echo lz4 > /sys/block/zram0/comp_algorithm
@@ -165,7 +160,7 @@ function configure_vm_params() {
 function configure_memory_parameters() {
 	# Set Memory parameters.
 
-	#configure_zram_parameters
+	configure_zram_parameters
 	configure_read_ahead_kb_values
 	configure_thp
 	# Enabling or disabling thp will reset the value of min_free_kbytes
