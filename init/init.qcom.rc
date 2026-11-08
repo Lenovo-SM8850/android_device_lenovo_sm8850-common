@@ -653,18 +653,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
     group root system radio
     oneshot
 
-service profile_config_service /vendor/bin/profile_config_service.sh
-    user root
-    group root
-    disabled
-    oneshot
-
-# Remove since is deprecated but throws AVC denial.
-# service crashdata-sh /vendor/bin/init.qcom.crashdata.sh
-#    class late_start
-#    user root
-#    oneshot
-
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
@@ -850,31 +838,20 @@ on property:vendor.opengles.version=*
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
 
+# Request MTE asymm mode if properties are supported
+on property:arm64.memtag.bootctl=* && property:ro.arm64.memtag.bootctl_supported=1
+    wait_for_prop arm64.memtag.bootctl_loaded 1
+    write /sys/devices/system/cpu/cpu0/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu1/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu2/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu3/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu4/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu5/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu6/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu7/mte_tcf_preferred asymm
+    export MEMTAG_OPTIONS async
+
 on property:vendor.debug.camera.3Adebug=1
     write /data/vendor/camera/Capture3AData.dat 0
     chown system system /data/vendor/camera/Capture3AData.dat
     chmod 0777 /data/vendor/camera/Capture3AData.dat
-
-# use minidump for user build by default
-on early-init && property:ro.build.type=user
-    write /sys/kernel/dload/dload_mode mini
-    write /sys/module/qcom_ramdump/parameters/enable_dump_collection 1
-    write /sys/kernel/dload/emmc_dload 1
-
-# use fulldump for userdebug build by default
-on early-init && property:ro.build.type=userdebug
-    write /sys/kernel/dload/dload_mode full
-    write /sys/module/qcom_ramdump/parameters/enable_dump_collection 1
-    write /sys/kernel/dload/emmc_dload 0
-
-# if persist.vendor.force_fulldump not null then force to do full dump
-on boot && property:persist.vendor.force_full_dump=*
-    write /sys/kernel/dload/dload_mode full
-    write /sys/kernel/dload/emmc_dload 0
-# ssr config is controlled by ####3333#
-
-#enable modem ssr
-on property:ro.build.type=user
-    setprop persist.sys.ssr.enable_debug 1
-    setprop persist.vendor.ssr.enable_ramdumps 0
-    setprop persist.vendor.ssr.restart_level ALL_ENABLE

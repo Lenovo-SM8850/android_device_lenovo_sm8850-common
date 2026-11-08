@@ -50,10 +50,38 @@ if [ -d /proc/sys/walt ]; then
 	echo 2147483647 > /proc/sys/walt/sched_max_freq_partial_halt
 
 	# Core control parameters for gold
-	echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
+	echo 4 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
+	echo 60 > /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres
+	echo 30 > /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres
+	echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
+	echo 6 > /sys/devices/system/cpu/cpu0/core_ctl/task_thres
+	echo 0 0 1 1 0 0 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
+	echo 0x7F > /sys/devices/system/cpu/cpu0/core_ctl/nrrun_cpu_mask
+	echo 0x00 > /sys/devices/system/cpu/cpu0/core_ctl/nrrun_cpu_misfit_mask
+	echo 0x00 > /sys/devices/system/cpu/cpu0/core_ctl/assist_cpu_mask
+	echo 0x00 > /sys/devices/system/cpu/cpu0/core_ctl/assist_cpu_misfit_mask
 
 	# Core control parameters for gold+
-	echo 0 > /sys/devices/system/cpu/cpu6/core_ctl/enable
+	echo 0 > /sys/devices/system/cpu/cpu6/core_ctl/min_cpus
+	echo 60 > /sys/devices/system/cpu/cpu6/core_ctl/busy_up_thres
+	echo 30 > /sys/devices/system/cpu/cpu6/core_ctl/busy_down_thres
+	echo 100 > /sys/devices/system/cpu/cpu6/core_ctl/offline_delay_ms
+	echo 1 > /sys/devices/system/cpu/cpu6/core_ctl/task_thres
+	echo 0 > /sys/devices/system/cpu/cpu6/core_ctl/not_preferred
+	echo 0x40 > /sys/devices/system/cpu/cpu6/core_ctl/nrrun_cpu_mask
+	echo 0x3F > /sys/devices/system/cpu/cpu6/core_ctl/nrrun_cpu_misfit_mask
+	echo 0x00 > /sys/devices/system/cpu/cpu6/core_ctl/assist_cpu_mask
+	echo 0x3F > /sys/devices/system/cpu/cpu6/core_ctl/assist_cpu_misfit_mask
+
+
+	#Core control for gold
+	echo 1 > /sys/devices/system/cpu/cpu0/core_ctl/enable
+
+	#Core control for gold+
+	echo 1 > /sys/devices/system/cpu/cpu6/core_ctl/enable
+
+	#Disable big task rotation
+	echo 0 > /proc/sys/walt/sched_walt_rotate_big_tasks
 
 	# Configure Single Boost Thread
 	echo 0 > /proc/sys/walt/sched_sbt_delay_windows
@@ -68,7 +96,7 @@ if [ -d /proc/sys/walt ]; then
 	# By setting group upmigrate/downmigrate to 0, colocation is disabled.
 	echo 0 > /proc/sys/walt/sched_group_downmigrate
 	echo 0 > /proc/sys/walt/sched_group_upmigrate
-	echo 1 > /proc/sys/walt/sched_walt_rotate_big_tasks
+
 	echo 400000000 > /proc/sys/walt/sched_coloc_downmigrate_ns
 	echo 8500000 1000000 1000000 1000000 1000000 1000000 2000000 > /proc/sys/walt/sched_coloc_busy_hyst_cpu_ns
 	echo 127 > /proc/sys/walt/sched_coloc_busy_hysteresis_enable_cpus
@@ -91,11 +119,15 @@ if [ -d /proc/sys/walt ]; then
 	echo $gold_early_upmigrate > /proc/sys/walt/sched_early_upmigrate
 
 	# Enable 2 Gold CPUs and 1 Prime CPU for pipeline
-	echo 56 > /proc/sys/walt/sched_pipeline_cpus
+	echo 112 > /proc/sys/walt/sched_pipeline_cpus
+	# Enable config 1 by default for pipeline
+	echo 1 > /proc/sys/walt/sched_pipeline_force_config
 
 	# set the threshold for low latency task boost feature which prioritize
 	# binder activity tasks
 	echo 325 > /proc/sys/walt/walt_low_latency_task_threshold
+
+	echo 105 > /proc/sys/walt/sched_topapp_weight_pct
 
 	# configure maximum frequency of large and medium cluster for
 	# different smart freq ipc reasons
@@ -124,18 +156,27 @@ if [ -d /proc/sys/walt ]; then
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/walt/pl
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy6/walt/pl
 
-	if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
-		echo 787200 > /sys/devices/system/cpu/cpufreq/policy0/walt/rtg_boost_freq
+	echo 2611200 90 > /sys/devices/system/cpu/cpufreq/policy0/walt/zone_max_util_pct
+
+	if [ $platformid == "722" ] || [ $platformid == "723" ]; then # Alana settings
+		echo 720000 > /sys/devices/system/cpu/cpufreq/policy0/walt/rtg_boost_freq
 		echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/walt/rtg_boost_freq
 		echo 1286400 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
 		echo 2438400 > /sys/devices/system/cpu/cpufreq/policy6/walt/hispeed_freq
-		echo 8500000 8500000 8500000 8500000 8500000 8500000 8500000 > /proc/sys/walt/sched_util_busy_hyst_cpu_ns
-		echo 0 0 0 0 0 0 0 > /proc/sys/walt/sched_util_busy_hyst_cpu_util
 	else
-		echo 787200 > /sys/devices/system/cpu/cpufreq/policy0/walt/rtg_boost_freq
-		echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/walt/rtg_boost_freq
-		echo 1286400 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
-		echo 2438400 > /sys/devices/system/cpu/cpufreq/policy6/walt/hispeed_freq
+		if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
+			echo 787200 > /sys/devices/system/cpu/cpufreq/policy0/walt/rtg_boost_freq
+			echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/walt/rtg_boost_freq
+			echo 1286400 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
+			echo 2438400 > /sys/devices/system/cpu/cpufreq/policy6/walt/hispeed_freq
+			echo 8500000 8500000 8500000 8500000 8500000 8500000 8500000 8500000 > /proc/sys/walt/sched_util_busy_hyst_cpu_ns
+			echo 0 0 0 0 0 0 0 0 > /proc/sys/walt/sched_util_busy_hyst_cpu_util
+		else
+			echo 787200 > /sys/devices/system/cpu/cpufreq/policy0/walt/rtg_boost_freq
+			echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/walt/rtg_boost_freq
+			echo 1286400 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
+			echo 2438400 > /sys/devices/system/cpu/cpufreq/policy6/walt/hispeed_freq
+		fi
 	fi
 else
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
@@ -143,14 +184,20 @@ else
 	echo 1 > /proc/sys/kernel/sched_pelt_multiplier
 fi
 
-if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
-	echo 614400 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-	echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
-	echo "0:614400 6:864000" > /data/vendor/perfd/default_scaling_min_freq
+if [ $platformid == "722" ] || [ $platformid == "723" ]; then # Alana settings
+		echo 720000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+		echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
+		echo "0:720000 6:864000" > /data/vendor/perfd/default_scaling_min_freq
 else
-	echo 614400 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-	echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
-	echo "0:614400 6:864000" > /data/vendor/perfd/default_scaling_min_freq
+	if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
+		echo 614400 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+		echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
+		echo "0:614400 6:864000" > /data/vendor/perfd/default_scaling_min_freq
+	else
+		echo 787200 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+		echo 864000 > /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
+		echo "0:787200 6:864000" > /data/vendor/perfd/default_scaling_min_freq
+	fi
 fi
 
 # Reset the RT boost, which is 1024 (max) by default.

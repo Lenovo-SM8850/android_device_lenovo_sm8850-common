@@ -271,7 +271,6 @@ PRODUCT_COPY_FILES += \
 TARGET_USES_VULKAN := true
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/display/clstc_config_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/clstc_config_library.xml \
     $(LOCAL_PATH)/configs/display/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
@@ -450,7 +449,6 @@ PRODUCT_PACKAGES += \
     init.kernel.post_boot-canoe_5_1.sh \
     init.kernel.post_boot-canoe_5_2.sh \
     init.kernel.post_boot-canoe_6_1.sh \
-    init.kernel.post_boot-canoe_default_6_2.sh \
     init.kernel.post_boot-memory.sh \
     init.kernel.post_boot.sh \
     init.qcom.early_boot.sh \
