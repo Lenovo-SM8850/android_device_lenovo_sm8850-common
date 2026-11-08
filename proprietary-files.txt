@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from wuji (TB324ZC_CN_OPEN_USER_Q00029.0_A16_ZUXOS_2.0.10.262_ST_260919).
+## are from wuji (TB324ZC_CN_OPEN_USER_Q00029.0_A17_ZUXOS_2.5.10.068_ST_261031).
 
 # Audio
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service;DISABLE_DEPS
@@ -255,9 +255,6 @@ vendor/lib64/libqshcamera_sensinghubapi.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so;DISABLE_DEPS
 
 # Display
-system_ext/lib64/libwfddisplayconfig.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE=vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk-system
 vendor/bin/hw/vendor.lenovo.hardware.display-service
 vendor/bin/hw/vendor.qti.hardware.display.color-service
 vendor/bin/qdcmss
@@ -313,7 +310,6 @@ vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.lenovo.hardware.display-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
 # Display (HDR)
 vendor/lib64/libhdrdynamic.so
@@ -384,6 +380,7 @@ vendor/lib64/libfaceid_ca_proxy.arcsoft.so
 vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
 # Firmware / Security
 vendor/apex/com.google.android.widevine-13130248.apex
@@ -435,7 +432,6 @@ vendor/firmware/gen80900_aqe.fw
 vendor/firmware/gen80900_gmu.bin
 vendor/firmware/gen80900_sqe.fw
 vendor/firmware/wigig.ini
-vendor/lib64/hw/libqtigatekeeper.so
 vendor/lib64/hw/libspuqtigatekeeper.so
 vendor/lib64/libTrustedInputAIDL.so
 vendor/lib64/libTrustedInputUtils.so
@@ -736,7 +732,6 @@ vendor/firmware/haptic_rtp_osc_24K_5s.bin
 vendor/firmware/haptic_rtp_silk.bin
 
 # Init
-system_ext/etc/init/wfdservice.rc
 vendor/etc/init/android.hardware.security.secretkeeper-service-qti.rc
 vendor/etc/init/avf_qcvm_manager.rc
 vendor/etc/init/c2painternetservice.rc
@@ -787,8 +782,6 @@ vendor/firmware/5_circulation.bin
 vendor/firmware/6_on.bin
 vendor/firmware/7_aduio.bin
 vendor/firmware/8_strobe.bin
-vendor/firmware/9_flicker_blue.bin
-vendor/firmware/9_flicker_whilte.bin
 vendor/firmware/aw22xxx_cfg_led_off.bin
 vendor/firmware/aw22xxx_fw.bin
 vendor/firmware/factory_all_on_blue.bin
@@ -887,7 +880,6 @@ vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so
 vendor/lib64/lib-imscommon.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsservice.so
 vendor/lib64/lib-imsvtcore.so
 vendor/lib64/lib-imsxml.so
 vendor/lib64/libQshQmiIDL.so
@@ -1009,18 +1001,14 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
 vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
 vendor/lib64/libaodoptfeature.so
 vendor/lib64/libgamepoweroptfeature.so
-vendor/lib64/liblearningmodule.so
 vendor/lib64/libmemperfd.so
 vendor/lib64/libperf-thermalprovider.so
 vendor/lib64/libperfconfig.so
-vendor/lib64/libperfdb.so
 vendor/lib64/libperfioctl.so
 vendor/lib64/libpowercallback.so
 vendor/lib64/libq-perflog.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-perfextn-intf.so
-vendor/lib64/libreffeature.so
 vendor/lib64/libstandbyfeature.so
 vendor/lib64/vendor.lenovo.hardware.battery-V5-ndk.so
 vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
@@ -1031,8 +1019,6 @@ vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.syshealthmon-V1-ndk.so
 
 # Platform configuration
-system_ext/etc/seccomp_policy/wfdservice64.policy
-system_ext/etc/wfdconfigsink.xml
 vendor/etc/5GNR_LTE_CN_V9.cfg
 vendor/etc/FIT_V24_2_volte_full_ip.cfg
 vendor/etc/Record_playback.cfg
@@ -1189,7 +1175,6 @@ vendor/lib64/vendor.qti.snapdragonServices-V2-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
 # Platform permissions
-system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 vendor/etc/permissions/android.hardware.keystore.app_attest_key.xml
 vendor/etc/permissions/android.software.device_id_attestation.xml
 vendor/etc/permissions/privapp-permissions-qti-vendor.xml
@@ -1278,33 +1263,12 @@ odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
 odm/lib64/outconvfiltcoeffqpd4x4.bin
-system/framework/WfdCommon.jar;BOOT_JAR
-system_ext/bin/wfdservice64
 system_ext/lib64/extractors/libmmparserextractor.so
+system_ext/lib64/libSurfaceUtil_jni.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
-system_ext/lib64/libmmrtpdecoder.so
-system_ext/lib64/libmmrtpencoder.so
-system_ext/lib64/libwfdavenhancements.so
-system_ext/lib64/libwfdclient.so
-system_ext/lib64/libwfdcommonutils.so
-system_ext/lib64/libwfdconfigutils.so
-system_ext/lib64/libwfdmminterface.so
-system_ext/lib64/libwfdmmsink.so
-system_ext/lib64/libwfdmmsrc_system.so
-system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
-system_ext/lib64/libwfdrtsp.so
-system_ext/lib64/libwfdservice.so
-system_ext/lib64/libwfdsinksm.so
-system_ext/lib64/libwfduibcinterface.so
-system_ext/lib64/libwfduibcsink.so
-system_ext/lib64/libwfduibcsinkinterface.so
-system_ext/lib64/libwfduibcsrc.so
-system_ext/lib64/libwfduibcsrcinterface.so
-system_ext/priv-app/WfdService/WfdService.apk
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk;PRESIGNED
 vendor/bin/C2PAInternetService
-vendor/bin/dlsc
 vendor/bin/dppdaemon
 vendor/bin/embmsslServer
 vendor/bin/engine-service
@@ -1354,9 +1318,7 @@ vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
 vendor/bin/tftp_server
 vendor/bin/time_daemon
-vendor/bin/tlpd
 vendor/bin/vendor.qti.qspmhal-service
-vendor/bin/wdsdaemon
 vendor/bin/wfdvndservice
 vendor/bin/xtra-daemon
 vendor/lib64/com.qualcomm.qti.cslcustomhw.so
@@ -1386,7 +1348,6 @@ vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
-vendor/lib64/libcenterface.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdepthcomputation.so
@@ -1411,7 +1372,6 @@ vendor/lib64/libidl.so
 vendor/lib64/libidv.so
 vendor/lib64/libintervmipc.so
 vendor/lib64/liblbs_core.so
-vendor/lib64/liblmutils-ns.so
 vendor/lib64/libloadalgo_stub.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_common.so
@@ -1420,7 +1380,6 @@ vendor/lib64/libmemgen.so
 vendor/lib64/libmemhalutils.so
 vendor/lib64/libmemutils.so
 vendor/lib64/libmeters-ns.so
-vendor/lib64/libmeters.so
 vendor/lib64/libminkipcbinder_vendor.so
 vendor/lib64/libmiracast.so
 vendor/lib64/libmm-hdcpmgr.so
@@ -1442,14 +1401,9 @@ vendor/lib64/libopencv_imgproc.so
 vendor/lib64/libopencv_leai.so
 vendor/lib64/libops.so
 vendor/lib64/libos.so
-vendor/lib64/libpat_uint8.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libpinner.so
 vendor/lib64/libplatformconfig.so
-vendor/lib64/libprefapps.so
-vendor/lib64/libprocomp.so
-vendor/lib64/libptq_uint8.so
 vendor/lib64/libqasr.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqcmaputils.so
@@ -1465,14 +1419,11 @@ vendor/lib64/libqsocket.so
 vendor/lib64/libqspm-mem-utils-vendor.so
 vendor/lib64/libqtbase.so
 vendor/lib64/libqti-MemHal-client.so
-vendor/lib64/libqti-appclassifier.so
 vendor/lib64/libqti-engine-loader.so
 vendor/lib64/libqti-jankrescue.so
-vendor/lib64/libqti-lllite.so
 vendor/lib64/libqti-qape-engine.so
 vendor/lib64/libqti-s3tf.so
 vendor/lib64/libqti-scenariod.so
-vendor/lib64/libqti-sslite.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libqtiidentitycredential.so
@@ -1514,7 +1465,6 @@ vendor/lib64/libthreadutils.so
 vendor/lib64/libtime_genoff.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libtlpd.so
-vendor/lib64/libtlpd_configmgr.so
 vendor/lib64/libtlpd_internal.so
 vendor/lib64/libtlpd_logger.so
 vendor/lib64/libwfdcommonutils_proprietary.so
@@ -1573,10 +1523,15 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
 vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 
+# Power and perf
+vendor/lib64/libperfdb.so
+vendor/lib64/libqti-perfextn-intf.so
+
 # Power off alarm
 system_ext/app/PowerOffAlarm/PowerOffAlarm.apk
 
 # Security
+vendor/lib64/hw/libqtigatekeeper.so
 vendor/lib64/libarcsoft_face_mink.so
 
 # Sensors
@@ -1683,6 +1638,9 @@ vendor/etc/sensors/config/sns_tilt.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/config/sns_transport_ppe.json
 vendor/etc/sensors/sns_reg_config
+
+# Telephony
+vendor/lib64/lib-imsservice.so
 
 # Thermal engine
 vendor/etc/init/init_thermal-engine-v2.rc
@@ -1824,6 +1782,9 @@ vendor/etc/res/images/WQHD_1840_2944/charger/Fast_charging_90.png
 vendor/etc/res/images/WQHD_1840_2944/charger/Fast_charging_95.png
 
 # Vendor
+vendor/bin/dlsc
+vendor/bin/tlpd
+vendor/bin/wdsdaemon
 vendor/lib64/com.qualcomm.mcx.distortionmapper.so;DISABLE_DEPS
 vendor/lib64/libaidenoiser.so;DISABLE_DEPS
 vendor/lib64/libaidenoiserv2.so;DISABLE_DEPS
@@ -1834,14 +1795,55 @@ vendor/lib64/libdscaalgo.so;DISABLE_DEPS
 vendor/lib64/libhwlispcffdump.so;DISABLE_DEPS
 vendor/lib64/libjnihelper.so
 vendor/lib64/libjpege.so;DISABLE_DEPS
+vendor/lib64/liblearningmodule.so
+vendor/lib64/liblmutils-ns.so
 vendor/lib64/libmctfengine_stub.so;DISABLE_DEPS
+vendor/lib64/libmeters.so
 vendor/lib64/libmfec.so;DISABLE_DEPS
 vendor/lib64/libmlremosaicengine.so;DISABLE_DEPS
 vendor/lib64/libois_channel_stub.so;DISABLE_DEPS
+vendor/lib64/libpinner.so
+vendor/lib64/libprefapps.so
+vendor/lib64/libprocomp.so
 vendor/lib64/libproj_qmot_tracker.so;DISABLE_DEPS
 vendor/lib64/libproj_sot.so;DISABLE_DEPS
+vendor/lib64/libqti-appclassifier.so
+vendor/lib64/libqti-lllite.so
+vendor/lib64/libqti-sslite.so
+vendor/lib64/libreffeature.so
 vendor/lib64/libtfestriping.so;DISABLE_DEPS
+vendor/lib64/libtlpd_configmgr.so
 vendor/lib64/libubifocus.so;DISABLE_DEPS
+
+# WiFi Display (system)
+system/framework/WfdCommon.jar;BOOT_JAR
+system_ext/bin/wfdservice64
+system_ext/etc/init/wfdservice.rc
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
+system_ext/etc/seccomp_policy/wfdservice64.policy
+system_ext/etc/wfdconfigsink.xml
+system_ext/lib64/libmmrtpdecoder.so
+system_ext/lib64/libmmrtpencoder.so
+system_ext/lib64/libwfdavenhancements.so
+system_ext/lib64/libwfdclient.so
+system_ext/lib64/libwfdcommonutils.so
+system_ext/lib64/libwfdconfigutils.so
+system_ext/lib64/libwfddisplayconfig.so
+system_ext/lib64/libwfdmminterface.so
+system_ext/lib64/libwfdmmsink.so
+system_ext/lib64/libwfdmmsrc_system.so
+system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
+system_ext/lib64/libwfdrtsp.so
+system_ext/lib64/libwfdservice.so
+system_ext/lib64/libwfdsinksm.so
+system_ext/lib64/libwfduibcinterface.so
+system_ext/lib64/libwfduibcsink.so
+system_ext/lib64/libwfduibcsinkinterface.so
+system_ext/lib64/libwfduibcsrc.so
+system_ext/lib64/libwfduibcsrcinterface.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk.so
+system_ext/priv-app/WfdService/WfdService.apk
 
 # WLAN
 vendor/etc/hostapd/hostapd.accept

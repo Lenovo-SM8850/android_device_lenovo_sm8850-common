@@ -1,10 +1,12 @@
 diff --git a/AndroidManifest.xml b/AndroidManifest.xml
+index 4c5ea95..a72e25d 100644
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
-@@ -26,6 +26,5 @@
+@@ -27,7 +27,6 @@
                  <action android:name="com.qualcomm.wfd.service.WfdService"/>
              </intent-filter>
          </service>
 -        <uses-native-library android:name=".WfdService" android:required="true"/>
+         <activity android:exported="true" android:name=".WfdService$PermissionRequestActivity" android:permission="com.qualcomm.permission.wfd.QC_WFD" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
      </application>
  </manifest>

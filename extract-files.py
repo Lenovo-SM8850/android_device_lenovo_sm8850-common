@@ -59,18 +59,17 @@ lib_fixups: lib_fixups_user_type = {
 def keep_qti_decoder_output_retries(ctx, file, file_path, **kwargs):
     path = Path(file_path)
     data = bytearray(path.read_bytes())
-    expected = '87f54f332136968a44bdb7e43d651e53fec3c1a6a56798af8bb24dd8af9695fd'
+    cases = {'87f54f332136968a44bdb7e43d651e53fec3c1a6a56798af8bb24dd8af9695fd': (1772092, '69090054', '97823e087e3d34cbf53ca9334e8c5f0002cd265237b9c75600fbe7afa8c6fc97'), '8b95c98941fe03657c6d0c41d9892f380603a25a6642017fdc7e5703cadef3e8': (1780816, '69090054', 'e778f61c4ea31af061ea6b986dfe2f94cd0b46971a2230fda2db2b599cb145a3')}
     actual = hashlib.sha256(data).hexdigest()
-    if actual != expected:
-        raise ValueError(f'{file.dst}: unexpected QTI decoder SHA256 {actual}; expected {expected}')
-
-    # Keep delayed output retries after the QTI decoder timeout.
-    offset = 0x1b0a3c
-    data[offset:offset + 4] = bytes.fromhex('4b 00 00 14')
-    expected = '97823e087e3d34cbf53ca9334e8c5f0002cd265237b9c75600fbe7afa8c6fc97'
-    actual = hashlib.sha256(data).hexdigest()
-    if actual != expected:
-        raise ValueError(f'{file.dst}: unexpected patched QTI decoder SHA256 {actual}; expected {expected}')
+    if actual not in cases:
+        raise ValueError(f"{file.dst}: unexpected QTI decoder SHA256 {actual}")
+    offset, original, expected = cases[actual]
+    if data[offset:offset + 4] != bytes.fromhex(original):
+        raise ValueError("Unexpected output-allocation retry branch")
+    # DecoderOutputAllocator::handleOutputBufferAllocation: keep retries.
+    data[offset:offset + 4] = bytes.fromhex("4b 00 00 14")
+    if hashlib.sha256(data).hexdigest() != expected:
+        raise ValueError("Unexpected patched QTI decoder SHA256")
     path.write_bytes(data)
 
 
@@ -119,43 +118,23 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/media_codecs_canoe_sku1_vendor.xml': blob_fixup()
         .regex_replace('\\s*<Include href="media_codecs_dolby_audio\\.xml"\\s*/>', '')
         .regex_replace('\\s*<MediaCodec\\b[^>]*(?:name="[^"]*(?:dolby|\\.dv\\.)[^"]*"|type="video/dolby-vision")[^>]*>[\\s\\S]*?</MediaCodec>', ''),
-    (
-        'vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini',
-        'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini',
-    ): blob_fixup()
+    ('vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini', 'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini'): blob_fixup()
         .call(enable_ull_scan_requests, need_tmp_dir=False),
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
         .regex_replace(r'echo 4 > \$DCC_PATH/curr_list', 'echo 6 > $DCC_PATH/curr_list'),
     'system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml': blob_fixup()
         .regex_replace('<privapp-permissions package="(?:org.codeaurora.dialer|com.android.mms)">[\\s\\S]*?</privapp-permissions>', ''),
-    'system_ext/lib64/libwfdcommonutils.so': blob_fixup()
-        .remove_needed('libheif.so'),
     'system_ext/priv-app/WfdService/WfdService.apk': blob_fixup()
         .apktool_patch('blob-patches/WfdService'),
     'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
-        .replace_needed('libaudioclient.so', 'libaudiobase.so')
         .add_needed('libgui_shim.so'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
-        .add_needed('libaudiobase.so')
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     'vendor/etc/seccomp_policy/qsap_qapeservice.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
-    (
-        'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service',
-        'vendor/bin/hw/vendor.qti.media.c2@1.0-service',
-    ): blob_fixup()
+    'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service': blob_fixup()
         .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
-    (
-        'vendor/bin/poweropt-service',
-        'vendor/bin/qsap_mpamsvc',
-        'vendor/lib64/libaodoptfeature.so',
-        'vendor/lib64/libgamepoweroptfeature.so',
-        'vendor/lib64/liblearningmodule.so',
-        'vendor/lib64/libpowercallback.so',
-        'vendor/lib64/libstandbyfeature.so',
-    ): blob_fixup()
+    ('vendor/bin/poweropt-service', 'vendor/bin/qsap_mpamsvc', 'vendor/lib64/libaodoptfeature.so', 'vendor/lib64/libgamepoweroptfeature.so', 'vendor/lib64/liblearningmodule.so', 'vendor/lib64/libpowercallback.so', 'vendor/lib64/libstandbyfeature.so'): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
         .add_needed('libaudioutils_shim.so')
@@ -164,8 +143,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('vendor.qti.hardware.vibrator.impl.so', 'vendor.qti.hardware.vibrator.impl-lenovo.so'),
     'vendor/etc/init/vendor.qti.hardware.vibrator.service-lenovo.rc': blob_fixup()
         .regex_replace('/vendor/bin/hw/vendor\\.qti\\.hardware\\.vibrator\\.service(?![\\w-])', '/vendor/bin/hw/vendor.qti.hardware.vibrator.service-lenovo'),
-    'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so': blob_fixup()
-        .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
     'vendor/lib64/vendor.qti.hardware.vibrator.impl-lenovo.so': blob_fixup()
         .replace_needed('libqtivibratoreffect.so', 'libqtivibratoreffect-lenovo.so')
         .replace_needed('vendor.qti.hardware.vibratorOL.impl.so', 'vendor.qti.hardware.vibratorOL.impl-lenovo.so')
@@ -185,8 +162,14 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
         .replace_needed('libwfdaac_vendor.so', 'libwfdaac.lenovo.so'),
+    'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
     'vendor/etc/seccomp_policy/syshealthmon.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
+    'vendor/lib64/libcamxdumpinforecorder.so': blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
+    'vendor/bin/hw/vendor.qti.media.c2@1.0-service': blob_fixup()
+        .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
 }  # fmt: skip
 
 

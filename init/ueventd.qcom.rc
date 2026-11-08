@@ -58,10 +58,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 #Import rc file
 import /vendor/etc/ueventd.qcom.userdebug.rc
-
 
 # Firmware directory Path
 # Below macro will be read by uevent and path will
@@ -449,6 +447,7 @@ subsystem mem_buf_vm
 /dev/block/platform/soc/4744000.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
 /dev/block/platform/soc/1bf8000.pcie/by-name/frp        0600   system     system
+/dev/block/platform/soc/b24000.sdhci/by-name/frp        0600   system     system
 
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
@@ -479,6 +478,7 @@ subsystem mem_buf_vm
 #Haptics class devices
 /sys/class/qcom-haptics    visense_enabled     0400    system    system
 /sys/class/qcom-haptics    primitive_duration  0600    system    system
+/sys/class/qcom-haptics    swr_play            0640    system    system
 /sys/class/qcom-haptics    v_gain_error        0440    system    audio
 /sys/class/qcom-haptics    i_gain_error        0440    system    audio
 /sys/class/qcom-haptics    lra_frequency_hz    0440    system    audio
@@ -614,17 +614,10 @@ subsystem mem_buf_vm
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   scan_elements/in_anglvel_z_type  0664    system  system
 
 
-# standard iio temp attributes
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_offset                  0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_raw                     0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
-
-# add oemowninfo to storage nv data
-/dev/block/platform/soc/1d84000.ufshc/by-name/oemowninfo 0660   system     system
-
-#lenovoraw
-/dev/block/platform/soc/1d84000.ufshc/by-name/lenovoraw 0600   system     system
 
 # devcoredump data attributes
 /sys/class/devcoredump/devcd*                           data                            0600    system  system
@@ -673,7 +666,6 @@ subsystem mem_buf_vm
 /sys/devices/virtual/powercap/qpt/qpt\:*/*    name                  0440    root system
 /sys/devices/virtual/powercap/qpt/qpt\:*/*    energy_uj             0440    root system
 /sys/devices/virtual/powercap/qpt/qpt\:*/*    power_uw              0440    root system
-
 
 # Add olympia keyboard LED BT support.
 /sys/devices/virtual/misc/uhid/*/input/*/* brightness  0666  system system

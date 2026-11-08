@@ -55,7 +55,7 @@ if [ -d /proc/sys/walt ]; then
 	echo 30 > /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres
 	echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
 	echo 6 > /sys/devices/system/cpu/cpu0/core_ctl/task_thres
-	echo 0 0 1 1 0 0 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
+	echo 0 0 0 0 1 1 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
 	echo 0xFF > /sys/devices/system/cpu/cpu0/core_ctl/nrrun_cpu_mask
 	echo 0x00 > /sys/devices/system/cpu/cpu0/core_ctl/nrrun_cpu_misfit_mask
 	echo 0x00 > /sys/devices/system/cpu/cpu0/core_ctl/assist_cpu_mask
@@ -117,7 +117,7 @@ if [ -d /proc/sys/walt ]; then
 	echo $gold_early_upmigrate > /proc/sys/walt/sched_early_upmigrate
 
 	# Enable Gold CPUs for pipeline
-	echo 176 > /proc/sys/walt/sched_pipeline_cpus
+	echo 76 > /proc/sys/walt/sched_pipeline_cpus
 	echo 1 > /proc/sys/walt/sched_pipeline_force_config
 
 	# set the threshold for low latency task boost feature which prioritize
@@ -198,6 +198,7 @@ do
 	echo 250 > $llccbw/up_scale
 	echo 1600 > $llccbw/idle_mbps
 	echo 806000 > $llccbw/max_freq
+	echo 25000 > $llccbw/max_freq_max_mbps
 	echo 70 > $llccbw/ab_scale
 	echo 40 > $llccbw/window_ms
 done
@@ -207,6 +208,7 @@ do
 	echo 120 > $llccbw/io_percent
 	echo 180 > $llccbw/low_power_io_percent
 	echo "1017600 1017600" > $llccbw/max_low_power_cluster_freqs
+	echo 40000 > $llccbw/max_freq_max_mbps
 	echo 1350000 > $llccbw/sched_boost_freq
 	echo 1 > $llccbw/use_sched_boost
 done
