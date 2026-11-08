@@ -578,7 +578,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
 
 # Runtime libraries
-PRODUCT_PACKAGES += vendor.qti.hardware.paleventnotifier-V2-ndk.vendor
+PRODUCT_PACKAGES += vendor.qti.hardware.paleventnotifier-V3-ndk.vendor
 
 # Sensors
 PRODUCT_COPY_FILES += \
