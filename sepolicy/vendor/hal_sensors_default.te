@@ -1,2 +1,6 @@
 allow hal_sensors_default ion_device:chr_file { ioctl read getattr lock map open watch watch_reads };
 allow hal_sensors_default sysfs:file { read write open };
+# sensors.qsh.so reads the hardinfo per-sensor nodes (sar, hall, gsensor,
+# gyro, alsps, msensor); the directory itself is labelled by our Motorola panel
+# identity genfscon, so it needs traverse access to those sysfs files.
+allow hal_sensors_default sysfs_hardware_info:dir search;
