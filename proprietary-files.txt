@@ -959,17 +959,6 @@ vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-V2-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-halimpl.so
 
-# NFC / UCE / QAPE / WFD native dependencies
-vendor/bin/coresight_reset_source_sink.sh
-vendor/bin/qsap_qapeservice
-vendor/etc/init/vendor.qsap.qapeservice.rc
-vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
-vendor/lib64/libwfdsourcesession_proprietary.so
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
-
 # Performance
 vendor/bin/feature_enabler_client
 vendor/bin/hw/vendor.lenovo.hardware.battery-service
@@ -1664,6 +1653,17 @@ vendor/etc/thermal-engine_gpu_0.conf
 vendor/etc/thermal-engine_gpu_1.conf
 vendor/etc/thermal-engine_gpu_5.conf
 vendor/etc/thermal-engine_sensor_0.conf
+
+# UCE / QAPE / WFD native dependencies
+vendor/bin/coresight_reset_source_sink.sh
+vendor/bin/qsap_qapeservice
+vendor/etc/init/vendor.qsap.qapeservice.rc
+vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
+vendor/lib64/libwfdsourcesession_proprietary.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
 # USB charging
 vendor/etc/res/images/WQHD_1600_2560/charger/Charging_0.png
