@@ -101,4 +101,8 @@
     <bool name="config_onlyShowGlanceableHubWhenWirelessChargingDefault">false</bool>
     <bool name="config_supportDreamWirelessChargingRestriction">false</bool>
     <bool name="config_defaultTrickyStoreEnabled">false</bool>
+    <!-- The Dolby app follows the playing app through notifications for per-app profiles.
+         This replaces the Pixel config overlays' list, so it keeps their packages too: the
+         launcher needs its listener for notification dots. -->
+    <string name="config_defaultListenerAccessPackages" translatable="false">com.google.android.apps.nexuslauncher:com.google.android.setupwizard:com.google.android.apps.pixelmigrate:com.google.android.as:com.google.android.projection.gearhead:com.google.pixel.exo:com.google.android.odad:com.google.ambient.streaming:org.lunaris.dolby</string>
 </resources>
