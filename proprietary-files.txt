@@ -767,6 +767,7 @@ vendor/firmware/haptic_rtp_osc_24K_5s.bin
 vendor/firmware/haptic_rtp_silk.bin
 
 # Init
+system/etc/init/gppservice.rc
 vendor/etc/init/android.hardware.security.secretkeeper-service-qti.rc
 vendor/etc/init/avf_qcvm_manager.rc
 vendor/etc/init/c2painternetservice.rc
@@ -828,6 +829,8 @@ vendor/firmware/factory_all_on_white.bin
 vendor/lib64/libvideoml.so;DISABLE_DEPS
 
 # Media / Video
+system/lib64/libgppvppgfrcplussession.so
+system_ext/lib64/vendor.qti.hardware.vpp-V1-ndk.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service;DISABLE_DEPS
 vendor/bin/vppservice
 vendor/etc/init/init.qti.media.rc
@@ -1040,6 +1043,8 @@ vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.syshealthmon-V1-ndk.so
 
 # Platform configuration
+system/etc/gpp_app_list
+system/etc/seccomp_policy/gppservice.policy
 vendor/etc/5GNR_LTE_CN_V9.cfg
 vendor/etc/FIT_V24_2_volte_full_ip.cfg
 vendor/etc/Record_playback.cfg
@@ -1137,6 +1142,7 @@ vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/wfdconfig.xml
 
 # Platform HAL interfaces
+system/lib64/vendor.qti.hardware.hexlp-V3-ndk.so
 vendor/bin/hw/vendor.qti.hardware.minkipcbinder@1.0-service
 vendor/lib64/vendor.lenovo.hardware.touchscreen-V5-ndk.so
 vendor/lib64/vendor.lenovo.hardware.ufs-V1-ndk.so
@@ -1287,6 +1293,12 @@ odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
 odm/lib64/outconvfiltcoeffqpd4x4.bin
+system/bin/gppservice
+system/lib64/libgppclient.so
+system/lib64/libgppextension.so
+system/lib64/libgpphexlpsession.so
+system/lib64/libgpppreprocessing.so
+system/lib64/libgpptxr.so
 system_ext/framework/vendor.qti.hardware.cacertaidlservice-V1-java.jar
 system_ext/lib64/extractors/libmmparserextractor.so
 system_ext/lib64/libSurfaceUtil_jni.so
