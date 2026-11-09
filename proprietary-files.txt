@@ -830,7 +830,7 @@ vendor/lib64/libvideoml.so;DISABLE_DEPS
 
 # Media / Video
 system/lib64/libgppvppgfrcplussession.so
-system_ext/lib64/vendor.qti.hardware.vpp-V1-ndk.so
+system_ext/lib64/vendor.qti.hardware.vpp-V1-ndk.so;MODULE=vendor.qti.hardware.vpp-V1-ndk-system
 vendor/bin/hw/vendor.qti.media.c2@1.0-service;DISABLE_DEPS
 vendor/bin/vppservice
 vendor/etc/init/init.qti.media.rc
