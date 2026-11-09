@@ -65,6 +65,8 @@ lib_fixups: lib_fixups_user_type = {
         lib_fixup_system_suffix,
     'vendor.qti.qspmhal-V1-ndk':
         lib_fixup_system_suffix,
+    'vendor.qti.hardware.vpp-V1-ndk':
+        lib_fixup_framework_suffix,
 }
 
 
