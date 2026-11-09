@@ -1,2 +1,4 @@
 /dev/block/by-name/dataext_[ab]                             u:object_r:dataext_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/dataext_[ab] u:object_r:dataext_block_device:s0
+
+/data/misc/lenovo-gpp(/.*)?    u:object_r:lenovo_gpp_data_file:s0

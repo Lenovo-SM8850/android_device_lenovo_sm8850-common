@@ -127,12 +127,38 @@ def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
             blob.seek(start + offset)
             blob.write(replacement)
 
+def patch_gppservice_rc(ctx, file, file_path, **kwargs):
+    path = Path(file_path)
+    data = path.read_bytes()
+    expected = 'd9fe1cbd0f0e29fbf6146ad1cbeece02554ba28a88d022f4b4373b702b1c93e3'
+    if hashlib.sha256(data).hexdigest() != expected:
+        raise ValueError(f'{file.dst}: unexpected gppservice.rc source')
+    if not data.endswith(b'\n'):
+        data += b'\n'
+    data += (b'\non property:vendor.gpp.reload=1\n'
+             b'    restart vendor.gppservice\n'
+             b'    setprop vendor.gpp.reload 0\n'
+             b'\non post-fs-data\n'
+             b'    mkdir /data/misc/lenovo-gpp 0770 system system\n'
+             b'    copy /system/etc/gpp_app_list /data/misc/lenovo-gpp/list\n'
+             b'    chown system system /data/misc/lenovo-gpp/list\n'
+             b'    chmod 0660 /data/misc/lenovo-gpp/list\n'
+             b'    restorecon /data/misc/lenovo-gpp\n'
+             b'    restorecon /data/misc/lenovo-gpp/list\n'
+             b'    mount none /data/misc/lenovo-gpp/list /system/etc/gpp_app_list bind\n')
+    fixed = '39d1525109621555c5aae506a67cc7b4a20e9db1c17fb93b83dc7da80f397b8e'
+    if hashlib.sha256(data).hexdigest() != fixed:
+        raise ValueError(f'{file.dst}: unexpected patched gppservice.rc')
+    path.write_bytes(data)
+
 
 blob_fixups: blob_fixups_user_type = {
     'system_ext/priv-app/WfdService/WfdService.apk': blob_fixup()
         .apktool_patch('blob-patches/WfdService'),
     'system/framework/WfdCommon.jar': blob_fixup()
         .apktool_patch('blob-patches/WfdCommon.patch'),
+    'system/etc/init/gppservice.rc': blob_fixup()
+        .call(patch_gppservice_rc, need_tmp_dir=False),
     ('vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini', 'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini'): blob_fixup()
         .call(enable_ull_scan_requests, need_tmp_dir=False),
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
