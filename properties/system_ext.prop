@@ -28,3 +28,7 @@ persist.data.df.mux_count=8
 persist.data.df.ul_mode=5
 persist.data.wda.enable=true
 persist.rmnet.data.enable=true
+
+# Radio
+ril.subscription.types=NV,RUIM
+telephony.active_modems.max_count=2
