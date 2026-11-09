@@ -571,7 +571,7 @@ PRODUCT_PACKAGES += DolbyVisionServiceResOverlayCommon
 PRODUCT_PACKAGES += \
     LenovoPen \
     LenovoPenResTarget \
-    LenovoTouchscreenRotation \
+    LenovoTouch \
     LineageParts \
     init.lenovo.touch.rc \
     vendor.lineage.touch-service.lenovo
