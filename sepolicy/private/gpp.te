@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+# Game list the game tuning service writes for the frame interpolation service
+type lenovo_gpp_data_file, file_type, data_file_type, core_data_file_type;
+
+allow system_app lenovo_gpp_data_file:dir create_dir_perms;
+allow system_app lenovo_gpp_data_file:file create_file_perms;
+allow vendor_gppservice lenovo_gpp_data_file:dir r_dir_perms;
+allow vendor_gppservice lenovo_gpp_data_file:file r_file_perms;
+
+# The service rc bind-mounts that list over the stock one
+allow init system_file:file mounton;
