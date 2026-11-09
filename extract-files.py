@@ -127,6 +127,24 @@ def patch_vibrator_capabilities(ctx, file, file_path, **kwargs):
             blob.seek(start + offset)
             blob.write(replacement)
 
+
+def patch_hexlp_resolution_cap(ctx, file, file_path, **kwargs):
+    path = Path(file_path)
+    data = bytearray(path.read_bytes())
+    expected = 'e24302326bb6379199b014f3142ef259ce5b83d05cb218980430967938a349b6'
+    if hashlib.sha256(data).hexdigest() != expected:
+        raise ValueError(f'{file.dst}: unexpected hexlp session source')
+    pattern = bytes.fromhex('1f 05 1b 71')
+    if data.count(pattern) != 1:
+        raise ValueError(f'{file.dst}: expected one resolution cap, found {data.count(pattern)}')
+    offset = data.index(pattern)
+    data[offset:offset + 4] = bytes.fromhex('1f c5 1d 71')
+    fixed = '498198bbd436d52b7147516f39c15ab233370cee2371f83ed95b310c0b2e834b'
+    if hashlib.sha256(data).hexdigest() != fixed:
+        raise ValueError(f'{file.dst}: unexpected patched hexlp session')
+    path.write_bytes(data)
+
+
 def patch_gppservice_rc(ctx, file, file_path, **kwargs):
     path = Path(file_path)
     data = path.read_bytes()
@@ -159,6 +177,8 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/WfdCommon.patch'),
     'system/etc/init/gppservice.rc': blob_fixup()
         .call(patch_gppservice_rc, need_tmp_dir=False),
+    'system/lib64/libgpphexlpsession.so': blob_fixup()
+        .call(patch_hexlp_resolution_cap, need_tmp_dir=False),
     ('vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini', 'vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini'): blob_fixup()
         .call(enable_ull_scan_requests, need_tmp_dir=False),
     'vendor/bin/init.qti.kernel.debug-alor.sh': blob_fixup()
