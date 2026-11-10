@@ -558,6 +558,13 @@ PRODUCT_PACKAGES += vendor.qti.hardware.perf@2.1.vendor
 
 PRODUCT_PACKAGES += vendor.qti.hardware.perf@2.2.vendor
 
+# system_ext HIDL interfaces needed by the perf client dlopened from gppservice
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@2.0 \
+    vendor.qti.hardware.perf@2.1 \
+    vendor.qti.hardware.perf@2.2 \
+    vendor.qti.hardware.perf@2.3
+
 # QSPA
 PRODUCT_PACKAGES += \
     qspa_application_packages.xml \

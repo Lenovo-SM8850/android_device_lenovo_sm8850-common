@@ -959,7 +959,7 @@ vendor/lib64/vendor.qti.qccvndhal_aidl-V2-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-halimpl.so
 
 # Performance
-system/lib64/vendor.qti.hardware.perf2-V1-ndk.so
+system/lib64/vendor.qti.hardware.perf2-V1-ndk.so;MODULE=vendor.qti.hardware.perf2-V1-ndk-system
 system_ext/lib64/libqti-perfd-client_system.so
 vendor/bin/feature_enabler_client
 vendor/bin/hw/vendor.lenovo.hardware.battery-service
