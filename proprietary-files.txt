@@ -310,6 +310,7 @@ vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.lenovo.hardware.display-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
 # Display (HDR)
 vendor/lib64/libhdrdynamic.so
@@ -380,7 +381,6 @@ vendor/lib64/libfaceid_ca_proxy.arcsoft.so
 vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
 # Firmware / Security
 vendor/apex/com.google.android.widevine-13130248.apex
