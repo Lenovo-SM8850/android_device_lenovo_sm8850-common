@@ -1,2 +1,5 @@
 # Codec services register for service availability notifications.
 allow servicemanager { mediacodec mediaswcodec }:binder call;
+
+# The HDCP HAL waits for the WFD vendor service through availability callbacks.
+allow vndservicemanager vendor_wfdhdcphalservice_qti:binder call;
