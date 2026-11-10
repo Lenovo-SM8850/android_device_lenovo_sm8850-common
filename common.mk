@@ -360,18 +360,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.m
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
-# Game performance
-PRODUCT_PACKAGES += GameTuning
-
-PRODUCT_PACKAGES += GameScene
-
-PRODUCT_PACKAGES += vendor.lenovo.game-policy
-
 # Generic ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
     snapuserd.recovery
+
+# Game performance
+PRODUCT_PACKAGES += GameTuning
+
+$(call inherit-product, vendor/qcom/gpudrivers/gpudrivers.mk)
+
+PRODUCT_PACKAGES += GameScene
+
+PRODUCT_PACKAGES += vendor.lenovo.game-policy
 
 # GPS
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
