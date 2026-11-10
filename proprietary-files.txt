@@ -362,8 +362,8 @@ vendor/etc/vintf/manifest/dvs-aidl-service.xml
 vendor/etc/vintf/manifest/vendor.dolby.media.c2-service-vision.xml
 vendor/lib64/c2.dolby.client.so
 vendor/lib64/c2.dolby.store.so
-vendor/lib64/c2.dolby.vision.dec.so
-vendor/lib64/c2.dolby.vision.sec.dec.so
+vendor/lib64/c2.dolby.vision.dec.so;DISABLE_CHECKELF
+vendor/lib64/c2.dolby.vision.sec.dec.so;DISABLE_CHECKELF
 vendor/lib64/libcodec2_store_dolby.so
 vendor/lib64/libdolbyclstc.so
 vendor/lib64/libdolbydecoderprocessor.so
