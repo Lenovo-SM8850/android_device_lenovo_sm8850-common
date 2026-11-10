@@ -140,6 +140,11 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libdolbyui.so',
     ): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    (
+        'vendor/lib64/c2.dolby.vision.dec.so',
+        'vendor/lib64/c2.dolby.vision.sec.dec.so',
+    ): blob_fixup()
+        .add_needed('libcodec2_shim.so'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     'vendor/etc/seccomp_policy/qsap_qapeservice.policy': blob_fixup()
