@@ -8,6 +8,8 @@ allow system_app vendor_sysfs_battery_supply:dir { search };
 allow system_app vendor_sysfs_battery_supply:file { read getattr open };
 allow system_app vendor_sysfs_headset:dir { search };
 allow system_app vendor_sysfs_headset:file { read getattr open };
+allow system_app vendor_sysfs_kgsl:dir { search };
+allow system_app vendor_sysfs_kgsl_gpuclk:file { read getattr open };
 allow system_app vendor_sysfs_qdss_dev:dir { search };
 allow system_app vendor_sysfs_usb_supply:dir { search };
 allow system_app vendor_sysfs_usb_supply:file { read getattr open };
