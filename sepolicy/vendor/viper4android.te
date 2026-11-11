@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+type viper_control_service, service_manager_type;
+
+add_service(hal_audio_default, viper_control_service)
+
+allow { priv_app priv_app_36 } servicemanager:service_manager list;
+allow { priv_app priv_app_36 } viper_control_service:service_manager find;
+binder_call({ priv_app priv_app_36 }, hal_audio_default)

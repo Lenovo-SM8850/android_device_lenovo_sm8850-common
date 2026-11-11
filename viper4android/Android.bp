@@ -1,0 +1,63 @@
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+license {
+    name: "lenovo_viper4android_app_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-GPL-3.0"],
+    license_text: ["LICENSE.app"],
+}
+
+license {
+    name: "lenovo_viper4android_driver_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-GPL-2.0", "legacy_restricted"],
+    license_text: ["LICENSE.driver", "NOTICE.viperdsp", "NOTICE.pffft"],
+}
+
+android_app_import {
+    name: "ViPER4Android",
+    licenses: ["lenovo_viper4android_app_license"],
+    apk: "ViPER4Android.apk",
+    preprocessed: true,
+    presigned: true,
+    privileged: true,
+    system_ext_specific: true,
+    optional_uses_libs: ["androidx.window.extensions", "androidx.window.sidecar"],
+    dex_preopt: { enabled: false },
+    required: [
+        "privapp-permissions-com.llsl.viper4android.xml",
+        "hiddenapi-com.llsl.viper4android.xml",
+    ],
+}
+
+prebuilt_etc_xml {
+    name: "privapp-permissions-com.llsl.viper4android.xml",
+    src: "privapp-permissions-com.llsl.viper4android.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "hiddenapi-com.llsl.viper4android.xml",
+    src: "hiddenapi-com.llsl.viper4android.xml",
+    sub_dir: "sysconfig",
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libv4a_aidl",
+    licenses: ["lenovo_viper4android_driver_license"],
+    vendor: true,
+    relative_install_path: "soundfx",
+    compile_multilib: "64",
+    enabled: false,
+    arch: {
+        arm64: {
+            enabled: true,
+            srcs: ["libv4a_aidl.so"],
+        },
+    },
+    shared_libs: ["libbase", "libbinder_ndk", "libcutils", "libfmq", "liblog"],
+    strip: { none: true },
+}
