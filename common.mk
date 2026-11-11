@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
     xbl_config_arb_check
 
 # Audio
+PRODUCT_PACKAGES += \
+    ViPER4Android \
+    libv4a_aidl
+
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8850/audio/primary-hal
 AUDIO_PAL_DIR := hardware/qcom-caf/sm8850/audio/pal
 
