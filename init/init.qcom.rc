@@ -531,13 +531,7 @@ on property:sys.boot_completed=1
     chown media audio /sys/kernel/aud_dev/state
     write /sys/devices/virtual/cvp/cvp/boot 1
 
-on property:persist.vendor.radio.atfwd.start=false
-    stop vendor.atfwd
 
-on property:vendor.radio.atfwd.start=false
-    stop vendor.atfwd
-
-# corefile limit
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
@@ -593,19 +587,6 @@ service vendor.sensingdaemon /vendor/bin/sensingdaemon
     user system
     group wifi
     disabled
-
-service ptt_socket_app /system/vendor/bin/ptt_socket_app -d
-    class main
-    user wifi
-    group wifi system inet net_admin
-    capabilities NET_ADMIN
-    oneshot
-
-service ptt_ffbm /system/vendor/bin/ptt_socket_app -f -d
-    user root
-    group root
-    disabled
-    oneshot
 
 service wifi_ftmd /system/vendor/bin/wifi_ftmd
     user system
@@ -672,16 +653,6 @@ on property:sys.boot_completed=1
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
-
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
-service vendor.atfwd /vendor/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
 
 service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
     class main
@@ -761,11 +732,6 @@ service vendor.LKCore-rel /vendor/bin/LKCore
     user system
     group system log diag
 
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
-    class late_start
-    user system
-    group system
-
 service esepmdaemon /system/vendor/bin/esepmdaemon
     class core
     user system
@@ -804,16 +770,6 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
     group system
     capabilities SYS_NICE
     disabled
-
-service chre /vendor/bin/chre
-    class late_start
-    user system
-    group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
-
-on property:vendor.chre.enabled=0
-    stop chre
 
 service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
