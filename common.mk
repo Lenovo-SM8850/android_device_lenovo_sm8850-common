@@ -40,6 +40,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     ViPER4Android \
+    ViPER4AndroidTranslations \
     libv4a_aidl
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8850/audio/primary-hal
@@ -814,3 +815,6 @@ TARGET_BOOT_ANIMATION_RES := 1440
 TARGET_ENABLE_FP_OVERRIDE := false
 TARGET_SUPPORTS_QUICK_TAP := false
 WITH_GMS := true
+
+# Translations
+$(call inherit-product-if-exists, vendor/translations/translations.mk)
