@@ -464,6 +464,8 @@ PRODUCT_PACKAGES += \
 
 # Input
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/input/Vendor_17ef_Product_612b.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_17ef_Product_612b.idc \
+    $(LOCAL_PATH)/configs/input/Vendor_17ef_Product_617f.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_17ef_Product_617f.idc \
     $(LOCAL_PATH)/configs/input/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml \
     $(LOCAL_PATH)/configs/keylayout/Vendor_17ef_Product_617f.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_17ef_Product_617f.kl \
     $(LOCAL_PATH)/configs/keylayout/Vendor_17ef_Product_619e.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_17ef_Product_619e.kl \
