@@ -16,4 +16,7 @@
     </string-array>
 
     <integer name="config_deviceLightCapabilities">75</integer>
+
+    <!-- Lowest selectable charging limit -->
+    <integer name="config_chargingControlLimitMin">20</integer>
 </resources>
