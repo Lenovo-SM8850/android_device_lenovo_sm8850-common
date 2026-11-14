@@ -102,7 +102,6 @@ vendor/lib64/libdev_bt.so
 vendor/lib64/libgsl.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
-vendor/lib64/libmcs.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
