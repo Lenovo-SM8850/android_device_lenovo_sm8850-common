@@ -752,6 +752,10 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.wifi.passpoint
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
 
+PRODUCT_COPY_FILES += \
+    external/wireless-regdb/regulatory.db:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db \
+    external/wireless-regdb/regulatory.db.p7s:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db.p7s
+
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
     firmware_wlan_kiwi_v2_WCNSS_qcom_cfg.ini_symlink \
