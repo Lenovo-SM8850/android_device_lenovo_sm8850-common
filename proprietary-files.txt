@@ -787,6 +787,7 @@ vendor/etc/init/qconfig.rc
 vendor/etc/init/qesdk-manager.rc
 vendor/etc/init/qesdk-secmanager.rc
 vendor/etc/init/qguard.rc
+vendor/etc/init/qms.rc
 vendor/etc/init/qwesd.rc
 vendor/etc/init/shsusrd.rc
 vendor/etc/init/snapdragon_services.rc
@@ -1051,6 +1052,7 @@ vendor/etc/ZUI_Full.cfg
 vendor/etc/ZUI_Simplified.cfg
 vendor/etc/ZUI_TPUT.cfg
 vendor/etc/avf/early_vms_oem_vm.xml
+vendor/etc/bpf/qmsUidStats.o
 vendor/etc/cgroups.json
 vendor/etc/configstore/wigig.xml
 vendor/etc/copy_aplog_dirs.xml
@@ -1126,6 +1128,7 @@ vendor/etc/sec_config
 vendor/etc/seccomp_policy/c2pa_network.policy
 vendor/etc/seccomp_policy/qesdk.policy
 vendor/etc/seccomp_policy/qesdksec.policy
+vendor/etc/seccomp_policy/qms.policy
 vendor/etc/seccomp_policy/qsap_dcfd.policy
 vendor/etc/seccomp_policy/qti-systemd.policy
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
@@ -1332,6 +1335,7 @@ vendor/bin/qca6234-service.sh
 vendor/bin/qesdk-manager
 vendor/bin/qesdk-secmanager
 vendor/bin/qguard
+vendor/bin/qms
 vendor/bin/qrtr-cfg
 vendor/bin/qrtr-lookup
 vendor/bin/qrtr-ns
@@ -1447,6 +1451,12 @@ vendor/lib64/libqesdk_manager.so
 vendor/lib64/libqesdoem_query_sys.so
 vendor/lib64/libqisl.so
 vendor/lib64/libqlmclient_dyn.so
+vendor/lib64/libqms.so
+vendor/lib64/libqms_client.so
+vendor/lib64/libqms_coex_sdk.so
+vendor/lib64/libqms_optimized_route_mgr_sdk.so
+vendor/lib64/libqms_packetstats_sdk.so
+vendor/lib64/libqms_sdf_sdk.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqrtrclient.so
 vendor/lib64/libqsocket.so
@@ -1542,6 +1552,7 @@ vendor/etc/vintf/manifest/cacert-saidl.xml
 vendor/etc/vintf/manifest/fm_hci.xml
 vendor/etc/vintf/manifest/qasr_vintf.xml
 vendor/etc/vintf/manifest/qesdk-manager.xml
+vendor/etc/vintf/manifest/qms-saidl.xml
 vendor/etc/vintf/manifest/snapdragon_services.xml
 vendor/etc/vintf/manifest/vendor.lenovo.hardware.touchscreen-service.xml
 vendor/etc/vintf/manifest/vendor.lenovo.hardware.ufs-service.xml
