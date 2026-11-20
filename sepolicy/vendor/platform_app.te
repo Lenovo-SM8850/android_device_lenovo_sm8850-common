@@ -1,2 +1,5 @@
 allow platform_app vendor_persist_vibrator_prop:file { read getattr map open };
 allow platform_app vendor_persist_vibrator_prop:property_service { set };
+
+# Suppress hexlp service lookup denials.
+dontaudit platform_app vendor_hal_unsignedhexlp_service:service_manager find;

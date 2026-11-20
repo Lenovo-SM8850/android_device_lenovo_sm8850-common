@@ -3,5 +3,8 @@ allow system_server vendor_firstboot_prop:file { read getattr map open };
 allow system_server vendor_persist_vibrator_prop:file { read getattr map open };
 allow system_server vendor_persist_vibrator_prop:property_service { set };
 
+# Suppress hexlp service lookup denials.
+dontaudit system_server vendor_hal_unsignedhexlp_service:service_manager find;
+
 # Suppress vibrator LED probe denials.
 dontaudit system_server vendor_sysfs_vibrator:file { getattr open read };
