@@ -700,6 +700,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig/game-service-unavailable.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game-service-unavailable.xml
 
+# Clone profiles
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig/preinstalled-packages-sm8850-common.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-sm8850-common.xml
+
 # Thermal
 PRODUCT_PACKAGES += android.hardware.thermal-service.qti
 
