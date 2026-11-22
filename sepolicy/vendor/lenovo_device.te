@@ -3,4 +3,3 @@
 allow platform_app lenovo_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow priv_app lenovo_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow system_app lenovo_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
-allow untrusted_app_all lenovo_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
