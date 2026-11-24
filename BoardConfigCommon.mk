@@ -57,7 +57,8 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_MKBOOTIMG_ARGS += --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 \
     --tags_offset 0x00000100 --dtb_offset 0x01f00000
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 nosoftlockup \
-    console=ttynull qcom_geni_serial.con_enabled=0
+    console=ttynull qcom_geni_serial.con_enabled=0 \
+    sched_proxy_exec=0
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
@@ -95,9 +96,10 @@ BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 # Kernel
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_KERNEL_PLATFORM_TARGET := canoe_perf
-TARGET_KERNEL_VERSION := 6.12
+TARGET_KERNEL_VERSION := 6.18
 TARGET_KERNEL_SOURCE := vendor/lenovo/sm8850
 TARGET_KERNEL_UNSAFE_DDK_HEADERS := true
+TARGET_KERNEL_BAZEL_FLAGS := --//build/kernel/kleaf:user_kmi_symbol_lists=//vendor/lenovo/sm8850/kmi:kmi_symbol_lists
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_NEEDS_DTBOIMAGE := true
 BOARD_DO_NOT_STRIP_RECOVERY_MODULES := true
@@ -107,7 +109,7 @@ BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.vendor_boot))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.recovery))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(filter-out zsmalloc.ko,$(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load)))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
 BOARD_RECOVERY_KERNEL_MODULES_LOAD = $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 BOOT_KERNEL_MODULES += $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)

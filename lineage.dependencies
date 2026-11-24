@@ -1,7 +1,7 @@
 [
   {
     "type": "kernel",
-    "version": "6.12"
+    "version": "6.18"
   },
   {
     "repository": "android_hardware_lenovo",
@@ -9,17 +9,17 @@
   },
   {
     "repository": "android_kernel_lenovo_sm8850",
-    "target_path": "kernel/platform/kernel-6.12/vendor/lenovo/sm8850",
-    "branch": "lineage-24.0"
+    "target_path": "kernel/platform/kernel-6.18/vendor/lenovo/sm8850",
+    "branch": "cnb-6.18"
   },
   {
     "repository": "android_kernel_lenovo_sm8850-devicetrees",
-    "target_path": "kernel/platform/kernel-6.12/vendor/lenovo/sm8850-devicetrees",
+    "target_path": "kernel/platform/kernel-6.18/vendor/lenovo/sm8850-devicetrees",
     "branch": "lineage-24.0"
   },
   {
     "repository": "android_kernel_lenovo_sm8850-modules",
-    "target_path": "kernel/platform/kernel-6.12/vendor/lenovo/sm8850-modules",
-    "branch": "lineage-24.0"
+    "target_path": "kernel/platform/kernel-6.18/vendor/lenovo/sm8850-modules",
+    "branch": "cnb-6.18"
   }
 ]

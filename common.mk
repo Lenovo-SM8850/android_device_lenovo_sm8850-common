@@ -740,7 +740,7 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.usb.host.xml:$
 
 # Vendor DLKM
 PRODUCT_COPY_FILES += \
-    kernel/platform/kernel-6.12/vendor/lenovo/sm8850/modules-lists/modules.systemdlkm_blocklist.msm.canoe:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
+    kernel/platform/kernel-6.18/vendor/lenovo/sm8850/modules-lists/modules.systemdlkm_blocklist.msm.canoe:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
 
 # Vendor mount points
 PRODUCT_PACKAGES += \
