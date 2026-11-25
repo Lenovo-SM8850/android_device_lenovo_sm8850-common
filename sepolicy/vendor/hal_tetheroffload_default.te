@@ -1,0 +1,2 @@
+allowxperm hal_tetheroffload_default self:netlink_route_socket nlmsg unpriv_route_socket_nlmsgs;
+allowxperm hal_tetheroffload_default self:netlink_route_socket nlmsg RTM_GETLINK;

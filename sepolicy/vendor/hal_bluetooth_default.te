@@ -1,0 +1,1 @@
+allowxperm hal_bluetooth_default self:netlink_route_socket nlmsg priv_route_socket_nlmsgs;

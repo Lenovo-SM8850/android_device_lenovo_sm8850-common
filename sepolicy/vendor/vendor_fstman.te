@@ -1,0 +1,1 @@
+allowxperm vendor_fstman self:netlink_route_socket nlmsg priv_route_socket_nlmsgs;
