@@ -107,9 +107,9 @@ BOARD_DO_NOT_STRIP_VENDOR_RAMDISK_MODULES := true
 BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
 
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.vendor_boot))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.recovery))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(filter-out qti_thermal_vendor_hooks.ko,$(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load.recovery)))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(filter-out zsmalloc.ko,$(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load)))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(filter-out zsmalloc.ko qti_thermal_vendor_hooks.ko,$(strip $(shell sed '/^\#/d' $(DEVICE_PATH)/modules.load)))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
 BOARD_RECOVERY_KERNEL_MODULES_LOAD = $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 BOOT_KERNEL_MODULES += $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
